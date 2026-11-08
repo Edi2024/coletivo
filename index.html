@@ -1,0 +1,1019 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta property="og:title" content="Coletivo Vetor Oeste">
+<meta property="og:description" content="Desde 2012, moradores do Vetor Oeste de Jundiaí decidindo juntos. Veja a história, as conquistas e participe.">
+<meta property="og:image" content="eu-amo-vetor-oeste.jpg">
+<link rel="icon" href="formiga.png">
+<title>Coletivo Vetor Oeste</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Coletivo Vetor Oeste, Jundiaí, Brasil. Desde 2012, moradores de 15 bairros organizados em participação coletiva. Community organizing in Jundiaí, Brazil. Participación comunitaria. Participation citoyenne. 社区参与。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+<style>
+/* Layout: portal em páginas (abas no topo), uma coluna larga que vira uma no celular; azul-marinho, laranja da formiga e amarelo; cada página tem uma abertura curta e um bloco interativo */
+:root{
+  --bg:#F6F8FB; --surface:#FFFFFF; --ink:#10233A; --muted:#536276; --line:#DCE3EC; --soft:#EEF3F9;
+  --navy:#0E2A47; --azul:#0B6FB8; --ceu:#1DA1DA; --laranja:#F28A1E; --laranja-forte:#D9601A; --amarelo:#F6C445; --verde:#2E9E4F;
+  --zap:#1E8E4A;
+  --display:"Barlow Condensed","Arial Narrow","PingFang SC","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;
+  --body:"Atkinson Hyperlegible","Segoe UI","PingFang SC","Microsoft YaHei","Noto Sans SC",Verdana,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0B1624;--surface:#13233A;--ink:#EAF1F8;--muted:#A6B6C8;--line:#24384F;--soft:#172B44;--azul:#4BA3E6;--laranja-forte:#F28A1E;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0B1624;--surface:#13233A;--ink:#EAF1F8;--muted:#A6B6C8;--line:#24384F;--soft:#172B44;--azul:#4BA3E6;--laranja-forte:#F28A1E;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.55;margin:0}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);line-height:1;margin:0;text-wrap:balance}
+h1,h2{text-transform:uppercase}
+h2{font-size:clamp(34px,5.6vw,54px);font-weight:800}
+h3{font-size:23px;font-weight:700}
+p{margin:0}
+a{color:inherit}
+img{max-width:100%;display:block}
+button{font-family:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--amarelo);outline-offset:3px}
+.eyebrow{font-family:var(--display);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:16px;color:var(--laranja-forte)}
+.muted{color:var(--muted)}
+.sec{padding-block:44px}
+.cab{display:flex;flex-direction:column;gap:10px;max-width:760px;margin-bottom:26px}
+.cab p{color:var(--muted);font-size:19px}
+
+/* topo */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:20;background:var(--navy)}
+.topo{position:sticky;top:env(safe-area-inset-top,0px);z-index:19;background:var(--navy);color:#fff;box-shadow:0 2px 12px rgba(0,0,0,.18)}
+.topo .l1{display:flex;align-items:center;gap:12px;min-height:58px}
+.topo .marca{height:44px;width:auto}
+.langs{margin-left:auto;display:flex;gap:2px;background:rgba(255,255,255,.08);border-radius:999px;padding:3px}
+.langs button{font-family:var(--display);font-weight:800;font-size:15px;letter-spacing:.04em;border:0;background:transparent;color:#fff;border-radius:999px;padding:5px 10px;cursor:pointer;min-height:34px}
+.langs button[aria-pressed="true"]{background:var(--amarelo);color:#2A1E00}
+.abas{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding-bottom:8px}
+.abas::-webkit-scrollbar{display:none}
+.abas a{font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:.03em;text-decoration:none;white-space:nowrap;padding:7px 13px;border-radius:999px;color:#D3E3F2}
+.abas a[aria-current="page"]{background:#fff;color:var(--navy)}
+.abas a.cta{background:var(--laranja);color:#2A1300}
+
+/* páginas */
+.view[hidden]{display:none!important}
+.pagehead{background:linear-gradient(165deg,var(--navy),#0A4E8A);color:#fff;padding-block:36px 40px}
+.pagehead .eyebrow{color:var(--amarelo)}
+.pagehead h2{margin-top:8px}
+.pagehead p{color:#D3E3F2;font-size:19px;margin-top:10px;max-width:68ch}
+
+/* início */
+.hero{background:linear-gradient(170deg,var(--navy) 0%,#0A4E8A 58%,var(--ceu) 100%);color:#fff;padding-block:38px 56px;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;align-items:center}
+.hero .onde{font-family:var(--display);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--amarelo);font-size:16px}
+.hero h1{font-size:clamp(42px,7.4vw,82px);font-weight:800;margin-top:10px}
+.hero h1 span{color:var(--amarelo)}
+.hero .lead{font-size:20px;color:#E3EEF8;margin-top:16px;max-width:44ch}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:12px 22px;border-radius:999px;font-weight:700;font-size:18px;text-decoration:none;border:0;cursor:pointer}
+.btn svg{width:22px;height:22px;flex:none}
+.btn-zap{background:var(--zap);color:#fff}
+.btn-sol{background:var(--amarelo);color:#2A1E00}
+.btn-vazio{border:2px solid rgba(255,255,255,.75);color:#fff;background:transparent}
+.btn-nav{background:var(--navy);color:#fff}
+.heroimg{position:relative}
+.heroimg .foto{border-radius:24px;aspect-ratio:4/3;object-fit:cover;width:100%;box-shadow:0 20px 40px rgba(0,0,0,.3)}
+.heroimg .ant{position:absolute;width:40%;right:-4%;bottom:-16%;filter:drop-shadow(0 10px 18px rgba(0,0,0,.35));animation:boia 4.5s ease-in-out infinite}
+@keyframes boia{50%{transform:translateY(-8px)}}
+.nums{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:-30px;position:relative}
+.num{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:14px 16px;box-shadow:0 10px 24px rgba(16,35,58,.08)}
+.num b{font-family:var(--display);font-weight:800;font-size:clamp(30px,4.2vw,44px);line-height:1;color:var(--azul);display:block;font-variant-numeric:tabular-nums}
+.num span{font-size:14px;color:var(--muted);display:block;margin-top:4px;line-height:1.3}
+.nome{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:22px;margin-top:28px}
+.nome .data{font-family:var(--display);font-weight:800;font-size:clamp(40px,7vw,64px);line-height:.9;color:var(--laranja-forte);text-align:center}
+.nome .data small{display:block;font-size:20px;color:var(--muted);letter-spacing:.06em}
+.nome p{font-size:19px}
+.atalhos{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.atalho{background:var(--surface);border:1px solid var(--line);border-radius:20px;overflow:hidden;text-decoration:none;display:flex;flex-direction:column;transition:transform .15s,box-shadow .15s}
+.atalho:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(16,35,58,.12)}
+.atalho img{aspect-ratio:16/10;object-fit:cover;width:100%}
+.atalho div{padding:14px 16px 18px;display:flex;flex-direction:column;gap:4px}
+.atalho b{font-family:var(--display);font-size:24px;line-height:1;text-transform:uppercase}
+.atalho span{font-size:15px;color:var(--muted)}
+.jeito{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.jeito div{background:var(--soft);border-radius:18px;padding:18px;display:flex;flex-direction:column;gap:8px}
+.jeito svg{width:40px;height:40px;color:var(--laranja-forte)}
+.jeito b{font-family:var(--display);font-size:22px;line-height:1.05;text-transform:uppercase}
+.jeito span{font-size:15px;color:var(--muted)}
+.voz-destaque{background:var(--navy);color:#fff;border-radius:24px;padding:28px;display:grid;grid-template-columns:120px 1fr;gap:22px;align-items:center}
+.voz-destaque img{width:120px;height:120px;border-radius:50%;object-fit:cover;border:4px solid var(--amarelo)}
+.voz-destaque q{font-family:var(--display);font-size:clamp(26px,4vw,38px);line-height:1.1;display:block}
+.voz-destaque q::before,.voz-destaque q::after{content:""}
+.voz-destaque .quem{margin-top:10px;color:var(--amarelo);font-weight:700}
+.voz-destaque .tr{margin-top:6px;color:#C7D6E6;font-size:15px}
+
+/* história */
+.anos{display:flex;gap:6px;overflow-x:auto;padding-bottom:8px;scrollbar-width:thin}
+.anos button{font-family:var(--display);font-weight:800;font-size:20px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:12px;padding:8px 12px;cursor:pointer;flex:none;min-width:64px}
+.anos button[aria-pressed="true"]{background:var(--laranja);border-color:var(--laranja);color:#2A1300}
+.anos button.fase{border-color:transparent;background:var(--soft)}
+.fases{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:18px}
+.fases div{border-radius:16px;padding:14px 16px;color:#fff}
+.fases b{font-family:var(--display);font-size:22px;text-transform:uppercase;display:block;line-height:1}
+.fases span{font-size:14px;opacity:.9}
+.f1{background:var(--azul)}.f2{background:var(--laranja-forte)}.f3{background:var(--navy)}
+.ano-det{display:grid;grid-template-columns:1fr 320px;gap:20px;margin-top:18px;align-items:start}
+.ano-det .grande{font-family:var(--display);font-weight:800;font-size:96px;line-height:.85;color:var(--azul)}
+.evs{display:grid;gap:10px;margin-top:12px}
+.ev{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px 16px}
+.ev a{font-size:15px;font-weight:700;color:var(--laranja-forte)}
+.ano-det figure{margin:0}
+.ano-det figure img{border-radius:18px;width:100%;aspect-ratio:4/3;object-fit:cover}
+.ano-det figcaption{font-size:14px;color:var(--muted);margin-top:6px}
+.navano{display:flex;gap:10px;margin-top:16px}
+.navano button{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:8px 16px;font-weight:700;cursor:pointer;min-height:44px}
+
+/* participação */
+.graf{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:18px}
+.graf .ctrl{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;margin-bottom:10px}
+.seg{display:inline-flex;background:var(--soft);border-radius:999px;padding:3px}
+.seg button{border:0;background:transparent;color:var(--ink);font-weight:700;padding:7px 14px;border-radius:999px;cursor:pointer;min-height:38px;font-size:15px}
+.seg button[aria-pressed="true"]{background:var(--navy);color:#fff}
+.leg{display:flex;flex-wrap:wrap;gap:14px;font-size:14px;color:var(--muted)}
+.leg i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.graf .box{overflow-x:auto}
+.graf svg{display:block;min-width:680px;width:100%;height:auto}
+.graf svg .bar{cursor:pointer}
+.detalhe{margin-top:12px;background:var(--soft);border-radius:14px;padding:12px 16px;font-size:16px;min-height:52px}
+.metodo{font-size:14px;color:var(--muted);margin-top:10px}
+.mob{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.mob div{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:16px;border-top:5px solid var(--laranja)}
+.mob b{font-family:var(--display);font-weight:800;font-size:40px;line-height:1;color:var(--azul);display:block}
+.mob em{font-style:normal;font-family:var(--display);font-weight:700;color:var(--laranja-forte);font-size:16px;letter-spacing:.05em}
+.mob span{font-size:15px;color:var(--muted);display:block}
+.encontros{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.enc{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:16px;display:flex;flex-direction:column;gap:6px}
+.enc .d{font-family:var(--display);font-weight:700;color:var(--laranja-forte);font-size:17px;letter-spacing:.04em;text-transform:uppercase}
+.enc p{font-size:15px;color:var(--muted)}
+.vozes{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.voz{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px;display:flex;flex-direction:column;gap:8px;border-left:6px solid var(--amarelo)}
+.voz q{font-family:var(--display);font-size:24px;line-height:1.1}
+.voz .tr{font-size:15px;color:var(--muted);font-style:italic}
+.voz .quem{font-size:15px;font-weight:700}
+.voz a{font-size:14px;color:var(--azul);font-weight:700}
+
+/* conquistas */
+.filtros{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.filtros button{font-family:var(--display);font-weight:700;font-size:17px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:6px 15px;cursor:pointer;min-height:40px}
+.filtros button[aria-pressed="true"]{background:var(--navy);color:#fff;border-color:var(--navy)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:16px 18px;display:flex;flex-direction:column;gap:6px}
+.card .top{display:flex;gap:8px;flex-wrap:wrap}
+.chip{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:3px 10px}
+.ok{background:#D9F0E0;color:#14632F}.and{background:#FCF0C8;color:#7A5600}.cob{background:#D7ECF9;color:#0B4F86}.cat{background:var(--soft);color:var(--muted)}
+.card p{font-size:15px;color:var(--muted)}
+.placar{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px}
+.placar div{border-radius:18px;padding:16px;text-align:center}
+.placar b{font-family:var(--display);font-weight:800;font-size:48px;line-height:1;display:block}
+.placar .p1{background:#D9F0E0;color:#14632F}.placar .p2{background:#FCF0C8;color:#7A5600}.placar .p3{background:#D7ECF9;color:#0B4F86}
+.lista{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.lista li a,.lista li .row{display:grid;grid-template-columns:96px 1fr auto;gap:14px;align-items:baseline;padding:13px 16px;background:var(--surface);border:1px solid var(--line);border-radius:14px;text-decoration:none}
+.lista .d{font-family:var(--display);font-weight:700;color:var(--laranja-forte);font-size:18px;font-variant-numeric:tabular-nums}
+.lista .t{font-weight:700}
+.lista .v{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--azul);white-space:nowrap}
+
+/* galeria */
+.gal{columns:3 260px;column-gap:12px}
+.gal button{display:block;width:100%;margin:0 0 12px;break-inside:avoid;border:0;padding:0;background:none;cursor:zoom-in;border-radius:16px;overflow:hidden;position:relative;text-align:left}
+.gal img{width:100%;height:auto}
+.gal span{position:absolute;left:10px;bottom:10px;background:rgba(14,42,71,.86);color:#fff;font-size:14px;padding:4px 10px;border-radius:8px}
+.lb{position:fixed;inset:0;z-index:30;background:rgba(5,14,26,.92);display:grid;place-items:center;padding:calc(20px + env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) calc(20px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.lb[hidden],.toast[hidden]{display:none!important}
+.lb img{max-height:78vh;width:auto;max-width:100%;border-radius:12px}
+.lb p{color:#fff;text-align:center;margin-top:10px}
+.lb button{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));right:calc(14px + env(safe-area-inset-right,0px));background:#fff;color:var(--navy);border:0;border-radius:999px;padding:8px 16px;font-weight:700;cursor:pointer;min-height:44px}
+
+/* orçamento */
+.niveis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.nivel{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:20px;display:flex;flex-direction:column;gap:8px}
+.nivel .val{font-family:var(--display);font-weight:800;font-size:40px;line-height:1;color:var(--azul)}
+.nivel .st{align-self:flex-start;font-size:13px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;border-radius:999px;padding:4px 12px}
+.st.aberto{background:#D9F0E0;color:#14632F}.st.fechado{background:#F6D9D9;color:#8A1F1F}
+.nivel ul{margin:0;padding-left:18px;font-size:15px;color:var(--muted);display:grid;gap:4px}
+.nivel a{font-size:14px;color:var(--azul);font-weight:700}
+.cal{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:18px;overflow-x:auto}
+.cal table{border-collapse:separate;border-spacing:3px;min-width:720px;width:100%;font-size:14px}
+.cal th{font-family:var(--display);font-weight:700;color:var(--muted);text-align:center;font-size:15px}
+.cal td{height:34px;border-radius:6px;background:var(--soft)}
+.cal td.rot{background:none;font-weight:700;white-space:nowrap;padding-right:8px;width:190px}
+.cal td.m{background:var(--azul)}.cal td.e{background:var(--laranja)}.cal td.u{background:var(--navy)}
+.cal td.agora{outline:2px solid var(--amarelo);outline-offset:-2px}
+.pauta{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.pauta div{background:var(--soft);border-radius:14px;padding:12px 14px;font-weight:700}
+.aviso{background:#FFF6DA;color:#4A3600;border-radius:16px;padding:14px 18px;font-size:16px}
+
+/* mundo */
+.ods{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.od{border-radius:18px;padding:18px;color:#fff;display:flex;flex-direction:column;gap:6px;min-height:170px}
+.od b{font-family:var(--display);font-weight:800;font-size:46px;line-height:1}
+.od span{font-weight:700}
+.od p{font-size:14px;opacity:.95}
+.o3{background:#4C9F38}.o4{background:#C5192D}.o10{background:#DD1367}.o11{background:#FD9D24;color:#2A1300}.o16{background:#00689D}.o17{background:#19486A}
+.agenda{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.agenda li{display:grid;grid-template-columns:150px 1fr;gap:16px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px 16px}
+.agenda .q{font-family:var(--display);font-weight:800;color:var(--laranja-forte);font-size:20px;line-height:1.05}
+.agenda b{display:block}
+.agenda span{font-size:15px;color:var(--muted)}
+.passos{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;counter-reset:p}
+.passos div{background:var(--navy);color:#fff;border-radius:18px;padding:18px}
+.passos div::before{counter-increment:p;content:counter(p);display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--amarelo);color:#2A1E00;font-family:var(--display);font-weight:800;font-size:22px;margin-bottom:10px}
+.passos b{font-family:var(--display);font-size:22px;display:block;line-height:1.05;text-transform:uppercase}
+.passos span{font-size:15px;color:#C7D6E6}
+
+/* participe */
+.opcoes{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.opcao{display:grid;grid-template-columns:44px 1fr 18px;gap:12px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:14px 16px;text-decoration:none;min-height:78px}
+.opcao svg.ic{width:38px;height:38px;color:var(--zap)}
+.opcao svg.seta{width:18px;height:18px;opacity:.5}
+.opcao b{display:block;font-size:17px}
+.opcao span{font-size:14px;color:var(--muted)}
+.votos{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.voto{background:var(--laranja);color:#2A1300;border-radius:16px;padding:14px 16px;text-decoration:none;font-family:var(--display);font-weight:800;font-size:22px;text-transform:uppercase;display:flex;justify-content:space-between;align-items:center}
+.voto span{font-size:14px;background:var(--navy);color:#fff;border-radius:999px;padding:4px 10px;font-family:var(--body)}
+
+footer{background:#081B2F;color:#A6B6C8;font-size:15px;margin-top:20px}
+footer .wrap{padding-block:30px;display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between}
+footer img{height:64px;width:auto}
+footer a{color:#fff}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--navy);color:#fff;padding:12px 18px;border-radius:12px;font-weight:700;z-index:40}
+
+@media (max-width:900px){
+  .hero .wrap,.ano-det,.voz-destaque{grid-template-columns:1fr}
+  .heroimg{max-width:460px}
+  .nums{grid-template-columns:1fr 1fr;margin-top:22px}
+  .atalhos,.jeito{grid-template-columns:1fr 1fr}
+  .fases,.mob,.encontros,.niveis,.ods,.placar{grid-template-columns:1fr}
+  .vozes,.opcoes{grid-template-columns:1fr}
+  .passos{grid-template-columns:1fr 1fr}
+  .votos{grid-template-columns:1fr 1fr}
+  .lista li a,.lista li .row{grid-template-columns:1fr;gap:2px}
+  .agenda li{grid-template-columns:1fr;gap:4px}
+  .nome{grid-template-columns:1fr;text-align:center}
+  .voz-destaque img{margin:0 auto}
+}
+@media (max-width:440px){.atalhos,.jeito,.passos,.votos{grid-template-columns:1fr}.langs button{padding:5px 7px;font-size:14px}.topo .marca{height:36px}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="zap" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 2.9 2.9 0 0 0-.9 2.2 5 5 0 0 0 1.1 2.7 11.5 11.5 0 0 0 4.4 3.9c1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.5-.3z"/></symbol>
+  <symbol id="seta" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="roda" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><g fill="currentColor"><circle cx="12" cy="3" r="1.8"/><circle cx="12" cy="21" r="1.8"/><circle cx="3" cy="12" r="1.8"/><circle cx="21" cy="12" r="1.8"/><circle cx="5.6" cy="5.6" r="1.8"/><circle cx="18.4" cy="18.4" r="1.8"/><circle cx="18.4" cy="5.6" r="1.8"/><circle cx="5.6" cy="18.4" r="1.8"/></g></symbol>
+  <symbol id="cafe" viewBox="0 0 24 24"><path d="M4 9h12v6a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5zM16 11h2a2 2 0 0 1 0 4h-2M8 3v3M12 3v3" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="doc" viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6zM9 12h7M9 16h7M9 8h3" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="volta" viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 3-6.2M4 4v4h4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="mega" viewBox="0 0 24 24"><path d="M3 10v4h4l8 5V5L7 10zM18 9a4 4 0 0 1 0 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round" stroke-linecap="round"/></symbol>
+  <symbol id="rua" viewBox="0 0 24 24"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11zM12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z" stroke="currentColor" stroke-width="2" fill="none"/></symbol>
+  <symbol id="maos" viewBox="0 0 24 24"><path d="M3 12l4-4 4 3 3-3 7 6M7 16l3 3 4-1 4-4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="globo" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" fill="none"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18" stroke="currentColor" stroke-width="2" fill="none"/></symbol>
+</svg>
+
+<header class="topo">
+  <div class="wrap">
+    <div class="l1">
+      <a href="#inicio"><img class="marca" src="coletivo-logo-branco.png" alt="Coletivo Vetor Oeste"></a>
+      <div class="langs" role="group" aria-label="Idioma / Language">
+        <button type="button" data-l="pt" aria-pressed="true">PT</button>
+        <button type="button" data-l="en" aria-pressed="false">EN</button>
+        <button type="button" data-l="es" aria-pressed="false">ES</button>
+        <button type="button" data-l="fr" aria-pressed="false">FR</button>
+        <button type="button" data-l="zh" aria-pressed="false">中文</button>
+      </div>
+    </div>
+    <nav class="abas" aria-label="Páginas" id="abas"></nav>
+  </div>
+</header>
+
+<main>
+<!-- INÍCIO -->
+<div class="view" id="v-inicio">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <span class="onde" data-t="heroOnde"></span>
+        <h1><span data-t="heroH1a" style="color:#fff"></span> <span data-t="heroH1b"></span></h1>
+        <p class="lead" data-t="heroLead"></p>
+        <div class="btns">
+          <a class="btn btn-sol" href="#historia" data-t="btnHistoria"></a>
+          <a class="btn btn-vazio" href="#participacao" data-t="btnParticipacao"></a>
+        </div>
+      </div>
+      <div class="heroimg">
+        <img class="foto" src="grupo-1.jpg" alt="" data-ta="altGrupo">
+        <img class="ant" src="formiga.png" alt="">
+      </div>
+    </div>
+  </section>
+  <div class="wrap">
+    <div class="nums">
+      <div class="num"><b>14</b><span data-t="n1"></span></div>
+      <div class="num"><b>15+</b><span data-t="n2"></span></div>
+      <div class="num"><b>140 mil+</b><span data-t="n3"></span></div>
+      <div class="num"><b>300+</b><span data-t="n4"></span></div>
+      <div class="num"><b>~100</b><span data-t="n5"></span></div>
+    </div>
+    <div class="nome">
+      <div class="data">20/11<small>2012</small></div>
+      <p data-t="nomeTxt"></p>
+    </div>
+  </div>
+  <section class="sec">
+    <div class="wrap">
+      <div class="cab"><span class="eyebrow" data-t="jeitoEye"></span><h2 data-t="jeitoH"></h2></div>
+      <div class="jeito">
+        <div><svg><use href="#roda"/></svg><b data-t="j1"></b><span data-t="j1s"></span></div>
+        <div><svg><use href="#cafe"/></svg><b data-t="j2"></b><span data-t="j2s"></span></div>
+        <div><svg><use href="#doc"/></svg><b data-t="j3"></b><span data-t="j3s"></span></div>
+        <div><svg><use href="#volta"/></svg><b data-t="j4"></b><span data-t="j4s"></span></div>
+      </div>
+    </div>
+  </section>
+  <section class="sec" style="padding-top:0">
+    <div class="wrap">
+      <div class="voz-destaque" id="vozDestaque"></div>
+    </div>
+  </section>
+  <section class="sec" style="padding-top:0">
+    <div class="wrap">
+      <div class="cab"><span class="eyebrow" data-t="explorEye"></span><h2 data-t="explorH"></h2></div>
+      <div class="atalhos" id="atalhos"></div>
+    </div>
+  </section>
+</div>
+
+<!-- HISTÓRIA -->
+<div class="view" id="v-historia" hidden>
+  <div class="pagehead"><div class="wrap"><span class="eyebrow" data-t="nav_historia"></span><h2 data-t="histH"></h2><p data-t="histP"></p></div></div>
+  <section class="sec"><div class="wrap">
+    <div class="fases">
+      <div class="f1"><b>2012 – 2016</b><span data-t="fase1"></span></div>
+      <div class="f2"><b>2017 – 2022</b><span data-t="fase2"></span></div>
+      <div class="f3"><b>2023 – 2026</b><span data-t="fase3"></span></div>
+    </div>
+    <div class="anos" id="anos" role="group" aria-label="Anos"></div>
+    <div class="ano-det" id="anoDet"></div>
+  </div></section>
+</div>
+
+<!-- PARTICIPAÇÃO -->
+<div class="view" id="v-participacao" hidden>
+  <div class="pagehead"><div class="wrap"><span class="eyebrow" data-t="nav_participacao"></span><h2 data-t="partH"></h2><p data-t="partP"></p></div></div>
+  <section class="sec"><div class="wrap">
+    <div class="cab"><span class="eyebrow" data-t="icpEye"></span><h2 data-t="icpH" style="font-size:clamp(28px,4.4vw,42px)"></h2></div>
+    <div class="graf">
+      <div class="ctrl">
+        <div class="seg" role="group"><button type="button" data-m="ano" aria-pressed="true" data-t="porAno"></button><button type="button" data-m="acu" aria-pressed="false" data-t="acumulado"></button></div>
+        <div class="leg" id="legIcp"></div>
+      </div>
+      <div class="box"><svg id="icp" viewBox="0 0 960 360" role="img"></svg></div>
+      <div class="detalhe" id="icpDet" aria-live="polite"></div>
+      <p class="metodo" data-t="metodo"></p>
+    </div>
+  </div></section>
+  <section class="sec" style="padding-top:0"><div class="wrap">
+    <div class="cab"><span class="eyebrow" data-t="mobEye"></span><h2 data-t="mobH" style="font-size:clamp(28px,4.4vw,42px)"></h2></div>
+    <div class="mob" id="mob"></div>
+  </div></section>
+  <section class="sec" style="padding-top:0"><div class="wrap">
+    <div class="cab"><span class="eyebrow" data-t="encEye"></span><h2 data-t="encH" style="font-size:clamp(28px,4.4vw,42px)"></h2></div>
+    <div class="encontros" id="encontros"></div>
+  </div></section>
+  <section class="sec" style="padding-top:0"><div class="wrap">
+    <div class="cab"><span class="eyebrow" data-t="vozEye"></span><h2 data-t="vozH" style="font-size:clamp(28px,4.4vw,42px)"></h2><p data-t="vozP"></p></div>
+    <div class="filtros" id="filtroVoz" role="group"></div>
+    <div class="vozes" id="vozes"></div>
+    <p class="muted" style="margin-top:14px;font-size:15px" data-t="vozFalta"></p>
+  </div></section>
+</div>
+
+<!-- CONQUISTAS -->
+<div class="view" id="v-conquistas" hidden>
+  <div class="pagehead"><div class="wrap"><span class="eyebrow" data-t="nav_conquistas"></span><h2 data-t="conqH"></h2><p data-t="conqP"></p></div></div>
+  <section class="sec"><div class="wrap">
+    <div class="placar" id="placar"></div>
+    <div class="filtros" id="filtroArea" role="group"></div>
+    <div class="cards" id="conqCards"></div>
+  </div></section>
+  <section class="sec" style="padding-top:0"><div class="wrap">
+    <div class="cab"><span class="eyebrow" data-t="cobEye"></span><h2 data-t="cobH" style="font-size:clamp(28px,4.4vw,42px)"></h2><p data-t="cobP"></p></div>
+    <ul class="lista" id="cobLista"></ul>
+  </div></section>
+</div>
+
+<!-- IMPRENSA -->
+<div class="view" id="v-imprensa" hidden>
+  <div class="pagehead"><div class="wrap"><span class="eyebrow" data-t="nav_imprensa"></span><h2 data-t="impH"></h2><p data-t="impP"></p></div></div>
+  <section class="sec"><div class="wrap">
+    <div class="filtros" id="filtroImp" role="group"></div>
+    <ul class="lista" id="impLista"></ul>
+  </div></section>
+</div>
+
+<!-- GALERIA -->
+<div class="view" id="v-galeria" hidden>
+  <div class="pagehead"><div class="wrap"><span class="eyebrow" data-t="nav_galeria"></span><h2 data-t="galH"></h2><p data-t="galP"></p></div></div>
+  <section class="sec"><div class="wrap">
+    <div class="filtros" id="filtroGal" role="group"></div>
+    <div class="gal" id="gal"></div>
+  </div></section>
+</div>
+
+<!-- ORÇAMENTO -->
+<div class="view" id="v-orcamento" hidden>
+  <div class="pagehead"><div class="wrap"><span class="eyebrow" data-t="nav_orcamento"></span><h2 data-t="orcH"></h2><p data-t="orcP"></p></div></div>
+  <section class="sec"><div class="wrap">
+    <div class="cab"><span class="eyebrow" data-t="agoraEye"></span><h2 data-t="agoraH" style="font-size:clamp(28px,4.4vw,42px)"></h2></div>
+    <div class="niveis" id="niveis"></div>
+  </div></section>
+  <section class="sec" style="padding-top:0"><div class="wrap">
+    <div class="cab"><span class="eyebrow" data-t="calEye"></span><h2 data-t="calH" style="font-size:clamp(28px,4.4vw,42px)"></h2><p data-t="calP"></p></div>
+    <div class="cal" id="cal"></div>
+  </div></section>
+  <section class="sec" style="padding-top:0"><div class="wrap">
+    <div class="cab"><span class="eyebrow" data-t="pautaEye"></span><h2 data-t="pautaH" style="font-size:clamp(28px,4.4vw,42px)"></h2></div>
+    <div class="pauta" id="pauta"></div>
+    <div class="btns"><a class="btn btn-zap" data-msg="ideia" href="#"><svg><use href="#zap"/></svg><span data-t="btnIdeia"></span></a></div>
+    <p class="aviso" style="margin-top:18px" data-t="orcAviso"></p>
+  </div></section>
+</div>
+
+<!-- MUNDO -->
+<div class="view" id="v-mundo" hidden>
+  <div class="pagehead"><div class="wrap"><span class="eyebrow" data-t="nav_mundo"></span><h2 data-t="munH"></h2><p data-t="munP"></p></div></div>
+  <section class="sec"><div class="wrap">
+    <div class="cab"><span class="eyebrow" data-t="odsEye"></span><h2 data-t="odsH" style="font-size:clamp(28px,4.4vw,42px)"></h2></div>
+    <div class="ods" id="ods"></div>
+  </div></section>
+  <section class="sec" style="padding-top:0"><div class="wrap">
+    <div class="cab"><span class="eyebrow" data-t="agEye"></span><h2 data-t="agH" style="font-size:clamp(28px,4.4vw,42px)"></h2></div>
+    <ul class="agenda" id="agenda"></ul>
+  </div></section>
+  <section class="sec" style="padding-top:0"><div class="wrap">
+    <div class="cab"><span class="eyebrow" data-t="caminhoEye"></span><h2 data-t="caminhoH" style="font-size:clamp(28px,4.4vw,42px)"></h2></div>
+    <div class="passos" id="passos"></div>
+  </div></section>
+  <section class="sec" style="padding-top:0"><div class="wrap">
+    <div class="cab"><span class="eyebrow" data-t="intEye"></span><h2 data-t="intH" style="font-size:clamp(28px,4.4vw,42px)"></h2><p data-t="intP"></p></div>
+    <div class="opcoes" id="intOp"></div>
+  </div></section>
+</div>
+
+<!-- PARTICIPE -->
+<div class="view" id="v-participe" hidden>
+  <div class="pagehead"><div class="wrap"><span class="eyebrow" data-t="nav_participe"></span><h2 data-t="parH"></h2><p data-t="parP"></p></div></div>
+  <section class="sec"><div class="wrap">
+    <div class="opcoes" id="parOp"></div>
+    <p class="muted" style="margin-top:14px" data-t="audio"></p>
+  </div></section>
+  <section class="sec" style="padding-top:0"><div class="wrap">
+    <div class="cab"><span class="eyebrow" data-t="votoEye"></span><h2 data-t="votoH" style="font-size:clamp(28px,4.4vw,42px)"></h2></div>
+    <div class="votos" id="votos"></div>
+    <div class="btns"><button class="btn btn-nav" id="compartilhar" type="button" data-t="share"></button></div>
+  </div></section>
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="coletivo-logo-branco.png" alt="Coletivo">
+    <div>
+      <p data-t="foot"></p>
+      <p><a href="https://www.instagram.com/vetoroestejundiai/" target="_blank" rel="noopener">Instagram @vetoroestejundiai</a> · <a href="https://www.facebook.com/VetorOesteJundiai/" target="_blank" rel="noopener">Facebook</a> · #EuMoroEuCuido</p>
+    </div>
+  </div>
+</footer>
+<div class="lb" id="lb" hidden><div><img id="lbImg" alt=""><p id="lbTxt"></p></div><button type="button" id="lbX" data-t="fechar"></button></div>
+<div class="toast" id="toast" hidden></div>
+
+<script>
+/* Número do WhatsApp do Coletivo: só números, com 55 e DDD. Vazio abre o WhatsApp para escolher o contato. */
+const ZAP = "";
+const LANGS=["pt","en","es","fr","zh"];
+const VIEWS=["inicio","historia","participacao","conquistas","imprensa","galeria","orcamento","mundo","participe"];
+let L="pt";
+const X=a=>Array.isArray(a)?(a[LANGS.indexOf(L)]||a[0]):a;
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+const UI={
+nav_inicio:["Início","Home","Inicio","Accueil","首页"],
+nav_historia:["História","History","Historia","Histoire","历史"],
+nav_participacao:["Participação","Participation","Participación","Participation","参与"],
+nav_conquistas:["Conquistas","Results","Logros","Résultats","成果"],
+nav_imprensa:["Imprensa","Press","Prensa","Presse","媒体报道"],
+nav_galeria:["Galeria","Gallery","Galería","Galerie","图库"],
+nav_orcamento:["Orçamento","Public budget","Presupuesto","Budget public","公共预算"],
+nav_mundo:["Mundo","World","Mundo","Monde","世界"],
+nav_participe:["Participe","Join us","Participa","Rejoindre","加入我们"],
+heroOnde:["Jundiaí · São Paulo · Brasil","Jundiaí · São Paulo · Brazil","Jundiaí · São Paulo · Brasil","Jundiaí · São Paulo · Brésil","巴西 · 圣保罗州 · 容迪亚伊"],
+heroH1a:["Da região dos invisíveis","From the invisible region","De la región de los invisibles","De la région des invisibles","从“被遗忘的地区”"],
+heroH1b:["ao orgulho de morar no Vetor Oeste.","to the pride of living in Vetor Oeste.","al orgullo de vivir en el Vetor Oeste.","à la fierté de vivre au Vetor Oeste.","到以住在西区（Vetor Oeste）为荣。"],
+heroLead:["Moradores de 15 bairros do lado oeste de Jundiaí se juntaram em 2012, sentaram na mesma roda e passaram a decidir juntos. Vieram saúde, moradia, escola, cultura e uma identidade nova.","In 2012, residents of 15 neighborhoods on the west side of Jundiaí came together, sat at the same table and began deciding together. Health care, housing, schools, culture and a new identity followed.","En 2012, vecinos de 15 barrios del oeste de Jundiaí se unieron, se sentaron en la misma ronda y empezaron a decidir juntos. Llegaron salud, vivienda, escuelas, cultura y una identidad nueva.","En 2012, les habitants de 15 quartiers de l'ouest de Jundiaí se sont réunis autour de la même table et ont commencé à décider ensemble. Santé, logement, écoles, culture et une nouvelle identité ont suivi.","2012年，容迪亚伊西部15个街区的居民聚在一起，围坐一桌，开始共同做决定。随之而来的是医疗、住房、学校、文化，以及一个全新的身份认同。"],
+btnHistoria:["Ver a história","See our story","Ver la historia","Voir l'histoire","查看历史"],
+btnParticipacao:["Ver a participação","See participation","Ver la participación","Voir la participation","查看参与情况"],
+n1:["anos de trabalho coletivo","years of collective work","años de trabajo colectivo","ans de travail collectif","年的集体行动"],
+n2:["bairros organizados","organized neighborhoods","barrios organizados","quartiers organisés","个有组织的街区"],
+n3:["moradores na região","residents in the region","habitantes en la región","habitants dans la région","名居民"],
+n4:["conselheiros voluntários","volunteer council members","consejeros voluntarios","conseillers bénévoles","名志愿委员"],
+n5:["conquistas para a região","wins for the region","logros para la región","victoires pour la région","项地区成果"],
+nomeTxt:["Antes desse dia, o nome Vetor Oeste não existia. Foi o Coletivo que deu nome, identidade e voz a esta região de Jundiaí. Hoje tem gente que diz com orgulho: eu moro no Vetor Oeste.","Before this day, the name Vetor Oeste did not exist. The Coletivo gave this part of Jundiaí a name, an identity and a voice. Today people say with pride: I live in Vetor Oeste.","Antes de ese día, el nombre Vetor Oeste no existía. Fue el Coletivo el que dio nombre, identidad y voz a esta región de Jundiaí. Hoy la gente dice con orgullo: vivo en el Vetor Oeste.","Avant ce jour, le nom Vetor Oeste n'existait pas. C'est le Coletivo qui a donné un nom, une identité et une voix à cette partie de Jundiaí. Aujourd'hui, on dit avec fierté : j'habite au Vetor Oeste.","在这一天之前，“Vetor Oeste”这个名字并不存在。是这个集体为容迪亚伊的这片地区赋予了名字、身份和声音。如今人们自豪地说：我住在Vetor Oeste。"],
+jeitoEye:["Como a gente trabalha","How we work","Cómo trabajamos","Notre façon de faire","我们如何工作"],
+jeitoH:["Quatro passos, sempre juntos","Four steps, always together","Cuatro pasos, siempre juntos","Quatre étapes, toujours ensemble","四个步骤，始终在一起"],
+j1:["Roda sem cabeceira","A table with no head seat","Ronda sin cabecera","Une table sans place d'honneur","没有主位的圆桌"],
+j1s:["Toda voz vale o mesmo.","Every voice counts the same.","Cada voz vale lo mismo.","Chaque voix compte autant.","每个声音同样重要。"],
+j2:["Escuta no Café Coletivo","Listening at the Community Coffee","Escucha en el Café Colectivo","Écoute au Café Collectif","在集体咖啡会上倾听"],
+j2s:["Cada um traz algo para a mesa.","Everyone brings something to the table.","Cada uno trae algo a la mesa.","Chacun apporte quelque chose.","每人带一样东西来分享。"],
+j3:["Cobrança por escrito","Written demands","Reclamo por escrito","Revendication écrite","书面诉求"],
+j3s:["Ofício e abaixo-assinado.","Official letters and petitions.","Oficios y firmas.","Courriers et pétitions.","公函与联名请愿。"],
+j4:["Retorno para o morador","Feedback to residents","Respuesta al vecino","Retour aux habitants","向居民反馈"],
+j4s:["Mesmo quando a resposta é ainda não.","Even when the answer is not yet.","Aunque la respuesta sea todavía no.","Même quand la réponse est pas encore.","即使答案是“还没有”。"],
+explorEye:["Explore o portal","Explore","Explora el portal","Explorer","浏览网站"],
+explorH:["Tudo o que construímos, organizado","Everything we built, organized","Todo lo que construimos, organizado","Tout ce que nous avons construit","我们所建立的一切"],
+histH:["14 anos, ano a ano","14 years, year by year","14 años, año por año","14 ans, année après année","14年，逐年回顾"],
+histP:["Toque em um ano para ver o que aconteceu. A história tem três fases.","Tap a year to see what happened. The story has three phases.","Toca un año para ver qué pasó. La historia tiene tres fases.","Touchez une année pour voir ce qui s'est passé. L'histoire a trois phases.","点击年份查看当年发生的事。历史分为三个阶段。"],
+fase1:["Organização e grandes obras","Organizing and major public works","Organización y grandes obras","Organisation et grands travaux","组织起来与大型工程"],
+fase2:["Voz na Câmara e cidadania","A voice in the City Council and citizenship","Voz en el Concejo y ciudadanía","Une voix au conseil municipal et citoyenneté","进入市议会与公民行动"],
+fase3:["Café Coletivo como fórum permanente","Community Coffee as a permanent forum","Café Colectivo como foro permanente","Le Café Collectif comme forum permanent","集体咖啡会成为常设论坛"],
+anterior:["Ano anterior","Previous year","Año anterior","Année précédente","上一年"],
+proximo:["Próximo ano","Next year","Año siguiente","Année suivante","下一年"],
+verNoticia:["Ver a notícia","Read the news","Ver la noticia","Lire l'article","查看新闻"],
+partH:["A participação cresceu, e deu resultado","Participation grew, and it delivered","La participación creció y dio resultados","La participation a grandi et a porté ses fruits","参与不断增长，并带来了成果"],
+partP:["Encontros, cafés, festas e mutirões, ano a ano. Os números vêm do que está registrado em documentos, fotos e notícias.","Meetings, coffees, festivals and work days, year by year. Figures come from what is recorded in documents, photos and news.","Encuentros, cafés, fiestas y jornadas, año por año. Las cifras vienen de lo registrado en documentos, fotos y noticias.","Réunions, cafés, fêtes et chantiers, année après année. Les chiffres viennent des documents, photos et articles.","逐年记录的会议、咖啡会、节庆与义务劳动。数据来自文件、照片与新闻中的记录。"],
+icpEye:["Índice Coletivo de Participação","Collective Participation Index","Índice Colectivo de Participación","Indice collectif de participation","集体参与指数"],
+icpH:["A evolução do Coletivo, ano a ano","How the Coletivo evolved, year by year","La evolución del Coletivo, año por año","L'évolution du Coletivo, année après année","集体的逐年发展"],
+porAno:["Por ano","Per year","Por año","Par an","按年"],
+acumulado:["Acumulado","Cumulative","Acumulado","Cumulé","累计"],
+metodo:["Como calculamos. Cada encontro registrado vale 2 pontos, cada conquista 3, cada ofício ou abaixo-assinado 1 e cada matéria na imprensa 1. É um índice próprio do Coletivo, feito a partir dos registros. Toque numa barra para ver o ano.","How we calculate it. Each recorded meeting scores 2 points, each win 3, each official letter or petition 1 and each news story 1. This is the Coletivo's own index, built from its records. Tap a bar to see the year.","Cómo lo calculamos. Cada encuentro registrado vale 2 puntos, cada logro 3, cada oficio o firma 1 y cada noticia 1. Es un índice propio del Coletivo, hecho con sus registros. Toca una barra para ver el año.","Méthode. Chaque réunion enregistrée vaut 2 points, chaque victoire 3, chaque courrier ou pétition 1 et chaque article 1. C'est un indice propre au Coletivo, construit à partir de ses archives. Touchez une barre pour voir l'année.","计算方法：每次有记录的会议2分，每项成果3分，每封公函或请愿1分，每篇新闻报道1分。这是本集体根据自身记录编制的指数。点击柱状图查看该年详情。"],
+dEnc:["Encontros","Meetings","Encuentros","Réunions","会议"],
+dConq:["Conquistas","Wins","Logros","Victoires","成果"],
+dCob:["Cobranças","Demands","Reclamos","Revendications","诉求"],
+dImp:["Imprensa","Press","Prensa","Presse","媒体"],
+pontos:["pontos","points","puntos","points","分"],
+mobEye:["Mobilização","Mobilization","Movilización","Mobilisation","动员"],
+mobH:["Gente participando de verdade","People really taking part","Gente participando de verdad","Des gens vraiment engagés","真正参与的人们"],
+encEye:["Encontros e cafés","Meetings and coffees","Encuentros y cafés","Réunions et cafés","会议与咖啡会"],
+encH:["Onde o bairro fala","Where the neighborhood speaks","Donde el barrio habla","Là où le quartier parle","街区发声的地方"],
+vozEye:["Vozes dos moradores","Residents' voices","Voces de los vecinos","Voix des habitants","居民之声"],
+vozFalta:["Creche do Residencial Jundiaí e Instituto Federal ainda sem falas publicadas. Mande a sua pelo WhatsApp na página Participe.","Daycare and Federal Institute: no published quotes yet.","Guardería e Instituto Federal: aún sin frases publicadas.","Crèche et Institut fédéral : pas encore de citations publiées.","托儿所与联邦理工学院：暂无公开发言。"],
+vozH:["O que os moradores disseram","What residents said","Lo que dijeron los vecinos","Ce que les habitants ont dit","居民们说了什么"],
+vozP:["Falas publicadas em jornais e portais, com a fonte. Escolha a conquista para ver o que os moradores disseram.","Quotes published in newspapers and websites, with the source. The original stays in Portuguese.","Frases publicadas en periódicos y portales, con la fuente. El original queda en portugués.","Citations publiées dans la presse, avec la source. L'original reste en portugais.","摘自报纸与网站的发言，附来源。原文为葡萄牙语。"],
+conqH:["O que a força do bairro trouxe","What neighborhood power delivered","Lo que trajo la fuerza del barrio","Ce que la force du quartier a obtenu","街区力量带来的成果"],
+conqP:["Conquistas registradas pelo próprio Coletivo em ofícios, leis e notícias, e o que ainda está na luta.","Wins recorded by the Coletivo in letters, laws and news, and what is still being fought for.","Logros registrados por el Coletivo en oficios, leyes y noticias, y lo que sigue en lucha.","Victoires enregistrées par le Coletivo dans des courriers, lois et articles, et ce qui reste à obtenir.","集体在公函、法律与新闻中记录的成果，以及仍在争取的事项。"],
+resolvido:["Resolvido","Delivered","Resuelto","Obtenu","已实现"],
+andando:["Andando","In progress","En curso","En cours","进行中"],
+naLuta:["Na luta","Still fighting","En lucha","En lutte","争取中"],
+todas:["Todas","All","Todas","Toutes","全部"],
+cobEye:["Cobranças por escrito","Written demands","Reclamos por escrito","Revendications écrites","书面诉求"],
+cobH:["Pedido de bairro vira documento","A neighborhood request becomes a document","El pedido del barrio se vuelve documento","La demande du quartier devient un document","街区的诉求变成正式文件"],
+cobP:["Cerca de 40 ofícios e 5 abaixo-assinados de 2014 a 2025. Alguns deles.","About 40 official letters and 5 petitions from 2014 to 2025. Some of them.","Cerca de 40 oficios y 5 firmas de 2014 a 2025. Algunos.","Environ 40 courriers et 5 pétitions de 2014 à 2025. En voici quelques-uns.","2014至2025年间约40封公函和5份联名请愿，以下为部分。"],
+impH:["O Vetor Oeste nos jornais","Vetor Oeste in the news","El Vetor Oeste en la prensa","Le Vetor Oeste dans la presse","媒体中的Vetor Oeste"],
+impP:["Matérias da Prefeitura, da Câmara e da Tribuna de Jundiaí. Os títulos estão em português, como foram publicados.","Stories from the City Hall, the City Council and Tribuna de Jundiaí. Headlines are in Portuguese, as published.","Noticias de la Alcaldía, del Concejo y de Tribuna de Jundiaí. Los títulos están en portugués, como se publicaron.","Articles de la mairie, du conseil municipal et de la Tribuna de Jundiaí. Titres en portugais, tels que publiés.","来自市政府、市议会和《容迪亚伊论坛报》的报道。标题保留葡萄牙语原文。"],
+galH:["Nossas ações em imagens","Our actions in pictures","Nuestras acciones en imágenes","Nos actions en images","图片中的行动"],
+galP:["Café Coletivo, Arraiá, Eu Moro Eu Cuido e as pessoas que fazem o Coletivo. Toque para ampliar.","Community Coffee, the Arraiá festival, the I Live Here, I Care program and the people behind it all. Tap to enlarge.","Café Colectivo, Arraiá, Yo Vivo Yo Cuido y la gente que hace el Coletivo. Toca para ampliar.","Café Collectif, Arraiá, J'habite ici j'en prends soin et les gens du Coletivo. Touchez pour agrandir.","集体咖啡会、东北节庆、“我住这里我爱护”以及集体的成员们。点击放大。"],
+orcH:["Onde o dinheiro público é decidido","Where public money is decided","Dónde se decide el dinero público","Où se décide l'argent public","公共资金在哪里决定"],
+orcP:["Cidade, Estado e União decidem o orçamento em fases. Aqui está o que está aberto agora e o calendário de 2027 para levar as ideias do bairro.","City, State and Federal governments decide budgets in stages. Here is what is open now and the 2027 calendar to bring neighborhood ideas in.","Ciudad, Estado y Gobierno Federal deciden el presupuesto por etapas. Aquí está lo que está abierto ahora y el calendario de 2027.","Ville, État et Union décident le budget par étapes. Voici ce qui est ouvert maintenant et le calendrier 2027.","市、州和联邦分阶段决定预算。以下是当前开放的环节和2027年日程。"],
+agoraEye:["Agora, outubro de 2026","Now, October 2026","Ahora, octubre de 2026","Maintenant, octobre 2026","现在：2026年10月"],
+agoraH:["Orçamento de 2027 em votação","The 2027 budget is being voted","El presupuesto 2027 en votación","Le budget 2027 en cours de vote","2027年预算正在表决"],
+aberto:["Aberto agora","Open now","Abierto ahora","Ouvert maintenant","现在开放"],
+fechado:["Consulta encerrada","Consultation closed","Consulta cerrada","Consultation close","征询已结束"],
+calEye:["Calendário 2027","2027 calendar","Calendario 2027","Calendrier 2027","2027年日程"],
+calH:["2027 é o ano da grande janela","2027 is the year of the big window","2027 es el año de la gran ventana","2027, l'année de la grande fenêtre","2027年是重要的窗口期"],
+calP:["Com novos governos no Estado e na União, 2027 é quando se escrevem os planos de 2028 a 2031. Quem leva proposta cedo entra no plano.","With new state and federal governments, 2027 is when the 2028–2031 plans are written. Proposals brought early make it into the plan.","Con nuevos gobiernos en el Estado y la Unión, 2027 es cuando se escriben los planes 2028–2031. Quien llega temprano entra en el plan.","Avec de nouveaux gouvernements, c'est en 2027 que s'écrivent les plans 2028–2031. Les propositions précoces y entrent.","州和联邦新政府上任后，2028–2031年规划将在2027年制定。越早提出建议，越有机会被纳入。"],
+pautaEye:["Nossa pauta","Our agenda","Nuestra agenda","Notre agenda","我们的议程"],
+pautaH:["O que o Vetor Oeste vai levar","What Vetor Oeste will bring","Lo que el Vetor Oeste llevará","Ce que le Vetor Oeste portera","Vetor Oeste将提出的诉求"],
+btnIdeia:["Mandar uma ideia para o orçamento","Send a budget idea","Enviar una idea para el presupuesto","Envoyer une idée pour le budget","提交预算建议"],
+orcAviso:["Datas de emendas mudam a cada ano. Antes de mandar um pedido, confirme o calendário na Câmara de Jundiaí, na Alesp e na Comissão de Orçamento do Congresso.","Amendment dates change every year. Before sending a request, confirm the calendar with the Jundiaí City Council, the São Paulo State Assembly and Congress's Budget Committee.","Las fechas de enmiendas cambian cada año. Confirma el calendario en el Concejo de Jundiaí, la Alesp y la Comisión de Presupuesto del Congreso.","Les dates d'amendements changent chaque année. Vérifiez le calendrier auprès du conseil de Jundiaí, de l'Alesp et de la commission budgétaire du Congrès.","修正案日期每年不同。提交前请向容迪亚伊市议会、圣保罗州议会和国会预算委员会确认日程。"],
+munH:["Uma experiência local que conversa com o mundo","A local experience that speaks to the world","Una experiencia local que dialoga con el mundo","Une expérience locale qui parle au monde","与世界对话的本地经验"],
+munP:["O que fazemos no Vetor Oeste é o que a Agenda 2030 da ONU pede: cidades mais justas, decididas com as pessoas.","What we do in Vetor Oeste is what the UN 2030 Agenda calls for: fairer cities, decided with the people.","Lo que hacemos en el Vetor Oeste es lo que pide la Agenda 2030 de la ONU: ciudades más justas, decididas con la gente.","Ce que nous faisons au Vetor Oeste, c'est ce que demande l'Agenda 2030 de l'ONU : des villes plus justes, décidées avec les gens.","我们在Vetor Oeste所做的，正是联合国2030议程所倡导的：与民众共同决定、更加公平的城市。"],
+odsEye:["Objetivos de Desenvolvimento Sustentável","Sustainable Development Goals","Objetivos de Desarrollo Sostenible","Objectifs de développement durable","可持续发展目标"],
+odsH:["Seis ODS na prática do bairro","Six SDGs in neighborhood practice","Seis ODS en la práctica del barrio","Six ODD dans la pratique du quartier","街区实践中的六个可持续发展目标"],
+agEye:["Agenda global","Global agenda","Agenda global","Agenda mondial","全球议程"],
+agH:["Onde o Vetor Oeste pode estar","Where Vetor Oeste can take part","Dónde puede estar el Vetor Oeste","Où le Vetor Oeste peut être présent","Vetor Oeste可以参与的场合"],
+caminhoEye:["Caminho","Roadmap","Camino","Feuille de route","路线图"],
+caminhoH:["Do bairro para o mundo","From the neighborhood to the world","Del barrio al mundo","Du quartier au monde","从街区走向世界"],
+intEye:["Contato internacional","International contact","Contacto internacional","Contact international","国际联系"],
+intH:["Vamos trocar experiências","Let's share experiences","Compartamos experiencias","Partageons nos expériences","让我们交流经验"],
+intP:["Universidades, organizações e coletivos de outros países: queremos conhecer vocês.","Universities, organizations and community groups from other countries: we want to meet you.","Universidades, organizaciones y colectivos de otros países: queremos conocerlos.","Universités, organisations et collectifs d'autres pays : nous voulons vous connaître.","其他国家的大学、组织和社区团体：我们期待认识你们。"],
+parH:["O Coletivo é feito por quem aparece","The Coletivo is made by those who show up","El Coletivo lo hace quien aparece","Le Coletivo est fait par ceux qui viennent","集体由每一位到场的人组成"],
+parP:["Escolha uma opção. O WhatsApp abre com a mensagem pronta, é só enviar.","Choose an option. WhatsApp opens with the message ready to send.","Elige una opción. WhatsApp se abre con el mensaje listo.","Choisissez une option. WhatsApp s'ouvre avec le message prêt.","选择一项，WhatsApp将打开并附上已写好的消息。"],
+audio:["Não sabe escrever direito pelo celular? Mande um áudio. A gente escuta tudo.","Not comfortable typing? Send a voice message. We listen to everything.","¿No te gusta escribir? Manda un audio. Escuchamos todo.","Pas à l'aise pour écrire ? Envoyez un message vocal.","不方便打字？发送语音消息即可，我们都会听。"],
+votoEye:["Vote a prioridade","Vote the priority","Vota la prioridad","Votez la priorité","投票选出优先事项"],
+votoH:["O que vem primeiro no seu bairro?","What comes first in your neighborhood?","¿Qué va primero en tu barrio?","Qu'est-ce qui passe en premier ?","你的街区最需要什么？"],
+votar:["Votar","Vote","Votar","Voter","投票"],
+share:["Mandar o portal para um vizinho","Share the portal","Enviar el portal a un vecino","Partager le portail","分享本网站"],
+copiado:["Link copiado. Cole no WhatsApp.","Link copied. Paste it in WhatsApp.","Enlace copiado. Pégalo en WhatsApp.","Lien copié. Collez-le dans WhatsApp.","链接已复制。"],
+fechar:["Fechar","Close","Cerrar","Fermer","关闭"],
+foot:["Coletivo Vetor Oeste · Jundiaí, São Paulo, Brasil · desde 20 de novembro de 2012","Coletivo Vetor Oeste · Jundiaí, São Paulo, Brazil · since November 20, 2012","Coletivo Vetor Oeste · Jundiaí, São Paulo, Brasil · desde el 20 de noviembre de 2012","Coletivo Vetor Oeste · Jundiaí, São Paulo, Brésil · depuis le 20 novembre 2012","Coletivo Vetor Oeste · 巴西圣保罗州容迪亚伊 · 成立于2012年11月20日"],
+altGrupo:["Moradores do Coletivo com a camiseta Eu amo Vetor Oeste","Coletivo members wearing the I love Vetor Oeste shirt","Integrantes del Coletivo con la camiseta Amo Vetor Oeste","Membres du Coletivo avec le t-shirt J'aime Vetor Oeste","身穿“我爱Vetor Oeste”T恤的集体成员"]
+};
+
+/* ATALHOS DA HOME */
+const ATALHOS=[
+ ["historia","arraia-quadrilha.jpg",["De 2009 a 2026, ano a ano","2009 to 2026, year by year","De 2009 a 2026, año por año","De 2009 à 2026, année par année","2009至2026年，逐年回顾"]],
+ ["participacao","cafe-roda.jpg",["Índice, encontros e vozes","Index, meetings and voices","Índice, encuentros y voces","Indice, réunions et voix","指数、会议与居民之声"]],
+ ["conquistas","upa.jpg",["O que já saiu e o que falta","What we won and what is missing","Lo logrado y lo que falta","Ce qui est obtenu et ce qui manque","已实现与待争取"]],
+ ["imprensa","reuniao.jpg",["Matérias desde 2013","Stories since 2013","Noticias desde 2013","Articles depuis 2013","2013年以来的报道"]],
+ ["galeria","arraia-publico.jpg",["Fotos das nossas ações","Photos of our actions","Fotos de nuestras acciones","Photos de nos actions","行动照片"]],
+ ["orcamento","cafe-mesa.jpg",["Prazos e como levar ideias","Deadlines and how to bring ideas","Plazos y cómo llevar ideas","Échéances et comment proposer","时间节点与提交方式"]],
+ ["mundo","eu-amo-vetor-oeste.jpg",["ODS e agenda internacional","SDGs and global agenda","ODS y agenda internacional","ODD et agenda internationale","可持续发展目标与国际议程"]],
+ ["participe","eumoro-2016.jpg",["Entre para o Coletivo","Join the Coletivo","Únete al Coletivo","Rejoignez le Coletivo","加入集体"]]
+];
+
+/* HISTÓRIA */
+const P="https://jundiai.sp.gov.br/noticias/";
+const HIST=[
+ {a:"2009",f:1,img:null,ev:[[["Lideranças da região começam a lutar por uma área de lazer.","Local leaders begin fighting for a leisure area.","Líderes de la región empiezan a luchar por un área de recreación.","Des leaders locaux commencent à se battre pour un espace de loisirs.","当地骨干开始争取一块休闲场地。"],null]]},
+ {a:"2012",f:1,img:"logo-2012.png",ev:[[["20 de novembro. Nasce o Coletivo Vetor Oeste, e com ele o próprio nome Vetor Oeste. A primeira reunião teve 8 pessoas. Hoje somos centenas.","November 20. The Coletivo Vetor Oeste is born, and with it the very name Vetor Oeste. The first meeting had 8 people. Today we are hundreds.","20 de noviembre. Nace el Coletivo Vetor Oeste y con él el propio nombre Vetor Oeste. La primera reunión tuvo 8 personas. Hoy somos cientos.","20 novembre. Naissance du Coletivo Vetor Oeste, et du nom Vetor Oeste lui-même. La première réunion comptait 8 personnes. Aujourd'hui, nous sommes des centaines.","11月20日，Vetor Oeste集体成立，“Vetor Oeste”这个名字也由此诞生。第一次会议只有8人，如今已有数百人。"],null]]},
+ {a:"2013",f:1,img:"arraia-quadrilha.jpg",ev:[
+  [["Reuniões a cada 15 dias com moradores. Secretários municipais vêm ao bairro pela primeira vez.","Meetings with residents every 15 days. City secretaries come to the neighborhood for the first time.","Reuniones cada 15 días con vecinos. Los secretarios municipales vienen al barrio por primera vez.","Réunions tous les 15 jours. Les adjoints municipaux viennent dans le quartier pour la première fois.","每15天与居民开会一次。市政府官员首次来到街区。"],P+"2013/02/secretarios-ouvem-populacao-do-vetor-oeste/"],
+  [["10ª reunião do Coletivo, com o prefeito no Centro Comunitário do Novo Horizonte.","10th Coletivo meeting, with the mayor at the Novo Horizonte community center.","10ª reunión del Coletivo, con el alcalde en el centro comunitario de Novo Horizonte.","10e réunion du Coletivo, avec le maire au centre communautaire de Novo Horizonte.","集体第10次会议，市长出席于新地平线社区中心。"],P+"2013/04/29/prefeito-participa-de-reuniao-do-coletivo-vetor-oeste/"],
+  [["A Viela é da Comunidade. Jovens e grafiteiros recuperam vielas do Residencial Jundiaí.","The Alley Belongs to the Community. Young people and graffiti artists restore alleys.","El Callejón es de la Comunidad. Jóvenes y grafiteros recuperan callejones.","La ruelle est à la communauté. Jeunes et graffeurs rénovent les ruelles.","“小巷属于社区”：青年与涂鸦艺术家修复小巷。"],P+"2013/06/10/jovens-transformam-vielas-no-residencial-jundiai-1/"],
+  [["1º Arraiá Nordestino do Vetor Oeste, em homenagem às famílias nordestinas da região.","First Northeastern Arraiá, honoring the region's migrant families from Brazil's Northeast.","1er Arraiá Nordestino, en homenaje a las familias nordestinas.","1er Arraiá Nordestino, en hommage aux familles venues du Nordeste.","首届东北节（Arraiá），向来自巴西东北部的移民家庭致敬。"],P+"2013/07/vetor-oeste-tera-o-1o-arraia-nordestino-da-familia-neste-final-de-semana/"],
+  [["Ônibus reorganizados. O Residencial Jundiaí 2 passa a ter linha.","Bus lines reorganized. Residencial Jundiaí 2 gets a bus line.","Autobuses reorganizados. Residencial Jundiaí 2 tiene línea.","Bus réorganisés. Residencial Jundiaí 2 a enfin une ligne.","公交线路重组，Residencial Jundiaí 2开通公交。"],P+"2013/10/31/duas-novas-linhas-sao-criadas-no-vetor-oeste"]]},
+ {a:"2014",f:1,img:"arraia-publico.jpg",ev:[
+  [["R$ 130 milhões em investimentos entre 2013 e 2014: UPA 24h, 1.088 moradias, asfalto, UBS e escola ampliadas.","R$ 130 million invested in 2013–2014: 24-hour clinic, 1,088 homes, paving, expanded health post and school.","R$ 130 millones invertidos en 2013–2014: clínica 24 horas, 1.088 viviendas, asfalto, centro de salud y escuela ampliados.","130 millions de reais investis en 2013–2014 : urgences 24 h, 1 088 logements, voirie, poste de santé et école agrandis.","2013–2014年获得1.3亿雷亚尔投资：24小时急诊、1088套住房、道路铺装、卫生站与学校扩建。"],null],
+  [["2º Arraiá reúne mais de 7 mil pessoas.","The 2nd Arraiá draws more than 7,000 people.","El 2º Arraiá reúne a más de 7 mil personas.","Le 2e Arraiá réunit plus de 7 000 personnes.","第二届东北节吸引超过7000人。"],P+"2015/05/12/arraia-do-vetor-oeste-entra-para-calendario-municipal-de-eventos/"]]},
+ {a:"2015",f:1,img:"arraia-palco.jpg",ev:[
+  [["Jornal Vetor Oeste mensal e TV Vetor Oeste na internet.","Monthly Vetor Oeste newspaper and Vetor Oeste web TV.","Periódico mensual y TV Vetor Oeste en internet.","Journal mensuel et web TV Vetor Oeste.","每月出版《Vetor Oeste报》并开设网络电视。"],null],
+  [["Lei 8.414/2015 põe o Arraiá no calendário oficial da cidade.","Law 8,414/2015 puts the Arraiá on the official city calendar.","La Ley 8.414/2015 incluye el Arraiá en el calendario oficial.","La loi 8.414/2015 inscrit l'Arraiá au calendrier officiel.","第8414/2015号法律将东北节列入城市官方日历。"],P+"2015/05/12/arraia-do-vetor-oeste-entra-para-calendario-municipal-de-eventos/"],
+  [["Moradores eleitos para o Conselho do Hospital São Vicente e o Conselho de Segurança. Abaixo-assinado com mais de 2 mil assinaturas.","Residents elected to the hospital and safety councils. Petition with over 2,000 signatures.","Vecinos electos en los consejos del hospital y de seguridad. Firmas de más de 2 mil personas.","Habitants élus aux conseils de l'hôpital et de sécurité. Pétition de plus de 2 000 signatures.","居民当选医院委员会和治安委员会成员；联名请愿超过2000人签名。"],null]]},
+ {a:"2016",f:1,img:null,ev:[
+  [["4º Arraiá, já como evento oficial do município.","4th Arraiá, now an official city event.","4º Arraiá, ya como evento oficial.","4e Arraiá, désormais événement officiel.","第四届东北节，已成为市级官方活动。"],null],
+  [["O coordenador do Coletivo é eleito vereador. A região passa a ter voz na Câmara.","The Coletivo's coordinator is elected city councilor. The region gains a voice in the City Council.","El coordinador del Coletivo es electo concejal. La región gana voz en el Concejo.","Le coordinateur du Coletivo est élu conseiller municipal. La région a une voix au conseil.","集体协调人当选市议员，地区在市议会有了声音。"],null]]},
+ {a:"2017",f:2,img:"eumoro-2016.jpg",ev:[
+  [["Eu Moro, Eu Cuido com a Paróquia São José, contra o lixo e a dengue.","I Live Here, I Care with São José Parish, against litter and dengue.","Yo Vivo, Yo Cuido con la Parroquia San José, contra la basura y el dengue.","J'habite ici, j'en prends soin avec la paroisse São José, contre les déchets et la dengue.","与圣若瑟堂区合作开展“我住这里我爱护”，对抗垃圾与登革热。"],P+"2017/05/04/ggim-prestigia-atividades-no-vetor-oeste/"],
+  [["5ª Reunião: 8 grupos listam as prioridades, entre elas o Instituto Federal.","5th Meeting: 8 groups list priorities, including a Federal Institute campus.","5ª Reunión: 8 grupos listan prioridades, entre ellas el Instituto Federal.","5e réunion : 8 groupes listent les priorités, dont un Institut fédéral.","第五次会议：8个小组列出优先事项，包括联邦理工学院。"],null]]},
+ {a:"2018",f:2,img:"upa.jpg",ev:[
+  [["UPA 24h Vetor Oeste e Clínica da Família abertas.","Vetor Oeste 24-hour clinic and Family Clinic open.","Abren la clínica 24 horas y la Clínica de la Familia.","Ouverture des urgences 24 h et de la clinique familiale.","Vetor Oeste 24小时急诊与家庭诊所开业。"],P+"2020/07/21/vetor-oeste-tem-r-765-milhoes-em-obras-concluidas-desde-2017/"],
+  [["Festa do Bom Jardim vira lei e acabam os alagamentos no Almerinda Chaves.","Bom Jardim festival becomes law and flooding ends in Almerinda Chaves.","La fiesta de Bom Jardim se vuelve ley y terminan las inundaciones en Almerinda Chaves.","La fête de Bom Jardim devient loi et les inondations cessent à Almerinda Chaves.","Bom Jardim节庆入法，Almerinda Chaves内涝问题解决。"],null]]},
+ {a:"2019",f:2,img:null,ev:[[["Viaduto do Córrego das Valquírias entregue.","Valquírias Creek overpass delivered.","Se entrega el viaducto del arroyo Valquírias.","Livraison du viaduc du ruisseau Valquírias.","Valquírias溪高架桥建成。"],P+"2020/07/21/vetor-oeste-tem-r-765-milhoes-em-obras-concluidas-desde-2017/"]]},
+ {a:"2020",f:2,img:null,ev:[[["Plano de Bairro do Novo Horizonte: 100 sugestões dos moradores.","Novo Horizonte Neighborhood Plan: 100 suggestions from residents.","Plan de Barrio de Novo Horizonte: 100 sugerencias de vecinos.","Plan de quartier de Novo Horizonte : 100 suggestions d'habitants.","新地平线街区规划：居民提出100条建议。"],P+"2022/01/24/plano-de-bairro-do-jardim-novo-horizonte-vai-virar-projeto-de-lei"]]},
+ {a:"2021",f:2,img:"cafe-mesa.jpg",ev:[
+  [["Café Coletivo Plano de Bairros com mais de 60 lideranças de 15 bairros.","Community Coffee Neighborhood Plan with over 60 leaders from 15 neighborhoods.","Café Colectivo Plan de Barrios con más de 60 líderes de 15 barrios.","Café Collectif Plan de quartiers avec plus de 60 leaders de 15 quartiers.","“街区规划”集体咖啡会：来自15个街区的60多位骨干参与。"],null],
+  [["Café Coletivo online em plena pandemia.","Online Community Coffee during the pandemic.","Café Colectivo en línea durante la pandemia.","Café Collectif en ligne pendant la pandémie.","疫情期间线上集体咖啡会。"],P+"2021/05/16/moradores-discutem-investimentos-para-o-vetor-oeste-com-prefeito/"],
+  [["Mil mudas de árvores plantadas no mesmo dia.","A thousand trees planted in one day.","Mil árboles plantados el mismo día.","Mille arbres plantés le même jour.","一天种下一千棵树。"],P+"2021/06/05/vetor-oeste-faz-plantio-simultaneo-de-1-mil-mudas-de-arvores/"]]},
+ {a:"2022",f:2,img:"maos.jpg",ev:[[["Plano de Bairro vira projeto de lei. O Arraiá volta e o Coletivo faz 10 anos.","The Neighborhood Plan becomes a bill. The Arraiá returns and the Coletivo turns 10.","El Plan de Barrio se vuelve proyecto de ley. Vuelve el Arraiá y el Coletivo cumple 10 años.","Le plan de quartier devient projet de loi. L'Arraiá revient et le Coletivo a 10 ans.","街区规划成为法案；东北节恢复举办，集体成立十周年。"],P+"2022/01/24/plano-de-bairro-do-jardim-novo-horizonte-vai-virar-projeto-de-lei"]]},
+ {a:"2023",f:3,img:"cafe-grupo.jpg",ev:[
+  [["8º Arraiá com mais de 5 mil pessoas por dia.","8th Arraiá with more than 5,000 people a day.","8º Arraiá con más de 5 mil personas por día.","8e Arraiá avec plus de 5 000 personnes par jour.","第八届东北节每天超过5000人。"],null],
+  [["Café Coletivo nas obras do Instituto Federal e Café de 11 anos.","Community Coffee at the Federal Institute construction site, and the 11th anniversary Coffee.","Café Colectivo en las obras del Instituto Federal y Café de 11 años.","Café Collectif sur le chantier de l'Institut fédéral et café des 11 ans.","在联邦理工学院工地举办集体咖啡会，并庆祝成立11周年。"],null]]},
+ {a:"2024",f:3,img:"cafe-roda.jpg",ev:[[["Cafés Coletivos dentro do Instituto Federal.","Community Coffees inside the Federal Institute.","Cafés Colectivos dentro del Instituto Federal.","Cafés Collectifs à l'Institut fédéral.","在联邦理工学院内举办集体咖啡会。"],null]]},
+ {a:"2025",f:3,img:"grupo-2.jpg",ev:[
+  [["Carta Compromisso com 15 propostas entregue ao prefeito.","Commitment Letter with 15 proposals handed to the mayor.","Carta Compromiso con 15 propuestas entregada al alcalde.","Lettre d'engagement de 15 propositions remise au maire.","向市长递交包含15项提案的承诺书。"],P+"2025/01/27/reuniao-no-almerinda-chaves-reune-moradores-e-equipe-do-governo-para-discutir-melhorias-na-regiao/"],
+  [["Cafés no IF e no Medeiros. Nova marca do Coletivo.","Coffees at the Federal Institute and in Medeiros. New Coletivo brand.","Cafés en el IF y en Medeiros. Nueva marca del Coletivo.","Cafés à l'IF et à Medeiros. Nouvelle identité du Coletivo.","在联邦理工学院和Medeiros举办咖啡会；集体启用新标识。"],null],
+  [["Eu Moro, Eu Cuido com 50 placas e frases das crianças das escolas.","I Live Here, I Care with 50 signs carrying schoolchildren's messages.","Yo Vivo, Yo Cuido con 50 carteles con frases de los niños.","J'habite ici, j'en prends soin avec 50 panneaux de messages d'enfants.","“我住这里我爱护”：50块写有学生寄语的标牌。"],"https://tribunadejundiai.com.br/cidades/jundiai/eu-moro-eu-cuido-vetor-oeste-jundiai/"]]},
+ {a:"2026",f:3,img:"coletivo-logo.png",ev:[
+  [["Reunião de segurança pública, vistorias nos bairros, caminhada pelo Vetor Oeste e podcast com moradores.","Public safety meeting, neighborhood inspections, a walk through Vetor Oeste and a residents' podcast.","Reunión de seguridad, recorridos por los barrios, caminata y pódcast con vecinos.","Réunion de sécurité, visites de quartiers, marche et podcast avec les habitants.","公共安全会议、街区巡查、Vetor Oeste徒步和居民播客。"],null],
+  [["14 anos, rumo aos 15 em 2027.","14 years, heading for 15 in 2027.","14 años, rumbo a los 15 en 2027.","14 ans, en route vers les 15 ans en 2027.","成立14年，迈向2027年的15周年。"],null]]}
+];
+
+/* ÍNDICE: [ano, encontros, conquistas, cobranças, imprensa] — contagem do que está registrado */
+const ICP=[["2012",1,0,0,0],["2013",5,2,0,6],["2014",2,3,1,0],["2015",6,3,12,4],["2016",2,1,10,2],["2017",4,0,6,1],["2018",1,3,1,1],["2019",1,1,0,0],["2020",1,0,0,1],["2021",2,1,0,3],["2022",2,1,0,2],["2023",4,0,1,0],["2024",2,0,0,0],["2025",4,1,2,4],["2026",4,0,0,0]];
+const W8={enc:2,conq:3,cob:1,imp:1};
+const CORES=["#0B6FB8","#2E9E4F","#F28A1E","#F6C445"];
+
+const MOB=[
+ ["7 mil","2014",["pessoas no 2º Arraiá Nordestino","people at the 2nd Arraiá","personas en el 2º Arraiá","personnes au 2e Arraiá","人参加第二届东北节"]],
+ ["200 a 300","2013–2016",["pessoas por reunião nos primeiros anos","people per meeting in the early years","personas por reunión en los primeros años","personnes par réunion les premières années","早期每次会议参与人数"]],
+ ["2 mil","2015",["assinaturas por escola em tempo integral","signatures for a full-time school","firmas por una escuela de tiempo completo","signatures pour une école à temps plein","人签名争取全日制学校"]],
+ ["60+","2021",["lideranças de 15 bairros no Plano de Bairros","leaders from 15 neighborhoods in the Neighborhood Plan","líderes de 15 barrios en el Plan de Barrios","leaders de 15 quartiers dans le Plan de quartiers","位来自15个街区的骨干参与街区规划"]],
+ ["5 mil","2023",["pessoas por dia no 8º Arraiá","people a day at the 8th Arraiá","personas por día en el 8º Arraiá","personnes par jour au 8e Arraiá","人每天参加第八届东北节"]],
+ ["3x","2025",["mais participantes na reunião do Almerinda Chaves","more participants at the Almerinda Chaves meeting","más participantes en la reunión de Almerinda Chaves","plus de participants à la réunion d'Almerinda Chaves","Almerinda Chaves会议参与人数增至三倍"]]
+];
+const ENC=[
+ ["17/02/2013",["Secretários ouvem o Vetor Oeste","City secretaries listen to Vetor Oeste","Secretarios escuchan al Vetor Oeste","Les adjoints écoutent le Vetor Oeste","市政官员倾听Vetor Oeste"],["Primeira conversa direta com a Prefeitura.","First direct talk with City Hall.","Primera conversación directa con la Alcaldía.","Premier dialogue direct avec la mairie.","首次与市政府直接对话。"]],
+ ["28/04/2013",["10ª reunião do Coletivo","10th Coletivo meeting","10ª reunión del Coletivo","10e réunion du Coletivo","集体第10次会议"],["Dez reuniões em menos de seis meses.","Ten meetings in under six months.","Diez reuniones en menos de seis meses.","Dix réunions en moins de six mois.","不到六个月开了十次会。"]],
+ ["13/12/2015",["Café Coletivo de fim de ano","Year-end Community Coffee","Café Colectivo de fin de año","Café Collectif de fin d'année","年终集体咖啡会"],["Metas para 2016 e Natal solidário.","Goals for 2016 and a solidarity Christmas.","Metas para 2016 y Navidad solidaria.","Objectifs 2016 et Noël solidaire.","制定2016年目标，举办爱心圣诞活动。"]],
+ ["02/07/2017",["4º Café Coletivo","4th Community Coffee","4º Café Colectivo","4e Café Collectif","第四次集体咖啡会"],["Roda de conversa com prestação de contas.","Circle talk with a progress report.","Ronda de conversación con rendición de cuentas.","Cercle de parole avec bilan.","圆桌讨论与工作汇报。"]],
+ ["21/02/2021",["Plano de Bairros","Neighborhood Plan","Plan de Barrios","Plan de quartiers","街区规划"],["Mais de 60 lideranças em grupos de saúde, educação, mobilidade e segurança.","Over 60 leaders in health, education, mobility and safety groups.","Más de 60 líderes en grupos de salud, educación, movilidad y seguridad.","Plus de 60 leaders en groupes santé, éducation, mobilité, sécurité.","60多位骨干分组讨论医疗、教育、交通与安全。"]],
+ ["16/05/2021",["Café Coletivo online","Online Community Coffee","Café Colectivo en línea","Café Collectif en ligne","线上集体咖啡会"],["Cerca de 85 a 100 participantes.","About 85 to 100 participants.","Entre 85 y 100 participantes.","Environ 85 à 100 participants.","约85至100人参与。"]],
+ ["20/11/2023",["Café de 11 anos","11th anniversary Coffee","Café de 11 años","Café des 11 ans","11周年咖啡会"],["Chácara do Nardão, no feriado.","At Chácara do Nardão, on the holiday.","En la Chácara do Nardão, en el feriado.","À la Chácara do Nardão, jour férié.","在Nardão农庄，假日举办。"]],
+ ["26/01/2025",["Reunião no Almerinda Chaves","Almerinda Chaves meeting","Reunión en Almerinda Chaves","Réunion à Almerinda Chaves","Almerinda Chaves会议"],["Carta Compromisso com 15 propostas.","Commitment Letter with 15 proposals.","Carta Compromiso con 15 propuestas.","Lettre d'engagement de 15 propositions.","递交15项提案的承诺书。"]],
+ ["20/11/2026",["Café de 14 anos","14th anniversary Coffee","Café de 14 años","Café des 14 ans","14周年咖啡会"],["Local e horário em breve.","Place and time coming soon.","Lugar y hora próximamente.","Lieu et horaire bientôt.","地点和时间即将公布。"]]
+];
+const VTEMA={todas:["Todas","All","Todas","Toutes","全部"],upa:["UPA 24h","24h clinic","Clínica 24h","Urgences 24h","24小时急诊"],rua8:["Asfalto da Rua 8","Rua 8 paving","Asfalto Rua 8","Rua 8 goudronnée","第八街铺装"],praca:["Praça Onofre Canedo","Onofre Canedo square","Plaza Onofre Canedo","Place Onofre Canedo","Onofre Canedo广场"],campo:["Campo sintético","Synthetic pitch","Cancha sintética","Terrain synthétique","人工草球场"],coletivo:["Participação","Participation","Participación","Participation","参与"]};
+const TR="https://tribunadejundiai.com.br/cidades/jundiai/jundiai-reuniao-no-almerinda-chaves-reune-moradores-e-governo-para-discutir-melhorias/";
+const VOZES=[
+ ["Esse asfalto é uma bênção. Ninguém acreditava que um dia pudesse se tornar realidade.",["This paving is a blessing. Nobody believed it could ever become real.","Este asfalto es una bendición. Nadie creía que algún día pudiera hacerse realidad.","Ce goudron est une bénédiction. Personne ne croyait que cela deviendrait réalité.","这条柏油路是一份恩赐。没人相信有一天它会成真。"],"Maura Batista Pereira, há 17 anos no Novo Horizonte","Prefeitura de Jundiaí, 2015",P+"2015/02/25/na-rua-8-asfalto-transforma-cotidiano-dos-moradores/","rua8"],
+ ["Foi uma promessa cumprida.",["It was a promise kept.","Fue una promesa cumplida.","C'était une promesse tenue.","这是一个兑现了的承诺。"],"Josenilson da Silva, Novo Horizonte","Prefeitura de Jundiaí, 2015",P+"2015/02/25/na-rua-8-asfalto-transforma-cotidiano-dos-moradores/","rua8"],
+ ["A rua está ficando bonita. A gente poderá transitar pela via com mais segurança.",["The street is getting beautiful. We'll be able to get around more safely.","La calle está quedando bonita. Podremos transitar con más seguridad.","La rue devient belle. Nous pourrons circuler en sécurité.","街道变漂亮了，我们可以更安全地通行。"],"Josimar Florêncio da Silva, Novo Horizonte","Prefeitura de Jundiaí, 2020",P+"2020/05/13/rua-8-no-novo-horizonte-ja-tem-asfalto-guias-calcadas-e-bocas-de-lobo/","rua8"],
+ ["Sempre fui muito bem atendida. Já na triagem identificam a nossa condição e priorizam os graves.",["I have always been very well cared for. At triage they already identify our condition and prioritize serious cases.","Siempre me atendieron muy bien. En el triaje ya identifican nuestra condición y priorizan los graves.","J'ai toujours été très bien soignée. Dès le tri, ils identifient notre état et priorisent les cas graves.","我每次都得到很好的照顾。分诊时就能判断病情，优先处理重症。"],"Neusa Narcizo, Residencial Jundiaí","Prefeitura de Jundiaí, 2022",P+"2022/07/17/upa-vetor-oeste-dobra-numero-de-atendimentos/","upa"],
+ ["Minhas filhas levam minhas netas lá e sempre tiveram um ótimo atendimento.",["My daughters take my granddaughters there and they have always had great care.","Mis hijas llevan a mis nietas y siempre tuvieron una excelente atención.","Mes filles y emmènent mes petites-filles et ont toujours été très bien reçues.","我的女儿们带孙女去那里，一直得到很好的服务。"],"Neusa Narcizo, Residencial Jundiaí","Prefeitura de Jundiaí, 2022",P+"2022/07/17/upa-vetor-oeste-dobra-numero-de-atendimentos/","upa"],
+ ["Moro há 23 anos aqui e sempre ouvia que seria uma área de lazer. Nunca fizeram.",["I've lived here 23 years and always heard it would be a leisure area. It never happened.","Vivo aquí hace 23 años y siempre oía que sería un área de recreación. Nunca la hicieron.","J'habite ici depuis 23 ans et j'entendais toujours qu'on ferait un espace de loisirs. Rien n'a été fait.","我在这里住了23年，总听说要建休闲区，却一直没建。"],"Maria Rodrigues Santos, Almerinda Chaves, na entrega da praça","Prefeitura de Jundiaí, 2013",P+"2013/10/19/almerinda-chaves-populacao-comemora-nova-area-de-lazer/","praca"],
+ ["O bairro cresceu, mas nunca tivemos um espaço desse.",["The neighborhood grew, but we never had a place like this.","El barrio creció, pero nunca tuvimos un espacio así.","Le quartier a grandi, mais nous n'avions jamais eu un tel espace.","街区发展了，但我们从未有过这样的地方。"],"Neusa Maria Brito Santos, moradora há 43 anos","Prefeitura de Jundiaí, 2013",P+"2013/10/19/almerinda-chaves-populacao-comemora-nova-area-de-lazer/","praca"],
+ ["Estamos deixando de ser o bairro dos invisíveis, definitivamente.",["We are leaving behind being the invisible neighborhood, for good.","Estamos dejando de ser el barrio de los invisibles, definitivamente.","Nous cessons pour de bon d'être le quartier des invisibles.","我们正在彻底告别“被遗忘的街区”。"],"Coordenação do Coletivo, na entrega da praça Onofre Canedo","Prefeitura de Jundiaí, 2013",P+"2013/10/19/almerinda-chaves-populacao-comemora-nova-area-de-lazer/","praca"],
+ ["Treino no espaço há muito tempo. Gosto muito de participar das atividades, melhoram as dores.",["I've trained here for a long time. I love the activities, they ease my pain.","Entreno aquí hace mucho. Me gustan las actividades, alivian los dolores.","Je m'entraîne ici depuis longtemps. J'aime les activités, elles soulagent mes douleurs.","我在这里锻炼很久了，很喜欢这些活动，能缓解疼痛。"],"Eunice Xavier, Residencial Jundiaí I","Prefeitura de Jundiaí, 2022",P+"2022/07/10/na-area-de-lazer-onofre-canedo-diversao-e-garantida-para-toda-a-familia/","campo"],
+ ["Estamos aproveitando as férias para curtir o campo. É um espaço muito gostoso.",["We're using the holidays to enjoy the pitch. It's a really nice place.","Aprovechamos las vacaciones para disfrutar la cancha. Es un espacio muy lindo.","Nous profitons des vacances pour le terrain. C'est un endroit très agréable.","我们趁假期来球场玩，这里非常舒服。"],"Jean Pinto da Cunha, frequentador do campo","Prefeitura de Jundiaí, 2022",P+"2022/07/10/na-area-de-lazer-onofre-canedo-diversao-e-garantida-para-toda-a-familia/","campo"],
+ ["Quem mora no bairro sabe as dificuldades que enfrentamos.",["Those who live in the neighborhood know the difficulties we face.","Quien vive en el barrio sabe las dificultades que enfrentamos.","Ceux qui vivent dans le quartier connaissent nos difficultés.","住在街区的人最清楚我们面临的困难。"],"Nilma Luzia da Silva Caldeira, cofundadora do Coletivo","Tribuna de Jundiaí, 2025",TR,"coletivo"],
+ ["Fortalecendo cada bairro, vamos construir uma Jundiaí melhor para todos.",["By strengthening each neighborhood, we will build a better Jundiaí for all.","Fortaleciendo cada barrio, construiremos un Jundiaí mejor para todos.","En renforçant chaque quartier, nous construirons un Jundiaí meilleur pour tous.","壮大每一个街区，我们将为所有人建设更好的容迪亚伊。"],"Nilma Luzia da Silva Caldeira","Tribuna de Jundiaí, 2025",TR,"coletivo"],
+ ["Somente com a participação da sociedade teremos uma cidade melhor.",["Only with society's participation will we have a better city.","Solo con la participación de la sociedad tendremos una ciudad mejor.","Ce n'est qu'avec la participation de la société que nous aurons une ville meilleure.","只有社会参与，我们才能拥有更好的城市。"],"Nilma, no Café Coletivo","Café Coletivo",null,"coletivo"],
+ ["O Vetor Oeste cresceu muito e precisamos desse olhar da Prefeitura.",["Vetor Oeste has grown a lot and we need City Hall to look at us.","El Vetor Oeste creció mucho y necesitamos esa mirada de la Alcaldía.","Le Vetor Oeste a beaucoup grandi et nous avons besoin de l'attention de la mairie.","Vetor Oeste发展很快，我们需要市政府的关注。"],"Mariana Angelita Rodrigues, Residencial Jundiaí I","Câmara Municipal de Jundiaí","https://www.jundiai.sp.leg.br/imprensa/noticias/moradores-do-vetor-oeste-apresentam-demandas-em-reuniao-com-prefeito-e-vereador-edicarlos-vieira","coletivo"],
+ ["Passei a estudar mais sobre o tema e acredito que a criação do Distrito do Vetor Oeste vai nos ajudar muito.",["I started studying the subject more and I believe creating a Vetor Oeste District will help us a lot.","Empecé a estudiar más el tema y creo que el Distrito del Vetor Oeste nos ayudará mucho.","Je me suis mise à étudier le sujet et je crois que le District du Vetor Oeste nous aidera beaucoup.","我开始深入研究这个议题，相信设立Vetor Oeste区会对我们大有帮助。"],"Mariana Angelita Rodrigues, Residencial Jundiaí I","Câmara Municipal de Jundiaí","https://www.jundiai.sp.leg.br/imprensa/noticias/cresce-apoio-para-criacao-do-distrito-do-vetor-oeste","coletivo"],
+ ["Os moradores terão responsabilidade para cuidar da viela.",["Residents will be responsible for taking care of the alley.","Los vecinos tendrán la responsabilidad de cuidar el callejón.","Les habitants seront responsables de l'entretien de la ruelle.","居民将负责照看这条小巷。"],"Natália Ferreira, Residencial Jundiaí 1","Prefeitura de Jundiaí, 2013",P+"2013/06/10/jovens-transformam-vielas-no-residencial-jundiai-1/","coletivo"]
+];
+
+/* CONQUISTAS */
+const AREAS={saude:["Saúde","Health","Salud","Santé","医疗"],moradia:["Moradia","Housing","Vivienda","Logement","住房"],infra:["Infraestrutura","Infrastructure","Infraestructura","Infrastructures","基础设施"],educ:["Educação","Education","Educación","Éducation","教育"],transp:["Transporte","Transport","Transporte","Transport","交通"],cult:["Cultura","Culture","Cultura","Culture","文化"],part:["Participação","Participation","Participación","Participation","参与"]};
+const CONQ=[
+ ["saude","ok",["UPA 24h no Residencial Jundiaí","24-hour emergency clinic","Clínica de urgencias 24 horas","Urgences 24 h","24小时急诊中心"],["Com ambulância do SAMU.","With an emergency ambulance.","Con ambulancia del SAMU.","Avec ambulance du SAMU.","配备急救车。"]],
+ ["saude","ok",["UBS Novo Horizonte ampliada","Expanded Novo Horizonte health post","Centro de salud ampliado","Poste de santé agrandi","新地平线卫生站扩建"],["Mais espaço e mais médicos.","More space and more doctors.","Más espacio y más médicos.","Plus d'espace et de médecins.","更多空间与医生。"]],
+ ["moradia","ok",["1.088 moradias","1,088 homes","1.088 viviendas","1 088 logements","1088套住房"],["Começo da reurbanização do Novo Horizonte.","Start of Novo Horizonte's urban upgrading.","Inicio de la reurbanización de Novo Horizonte.","Début de la rénovation de Novo Horizonte.","新地平线城市更新启动。"]],
+ ["infra","ok",["Asfalto da Rua Oito","Paving of Rua Oito","Asfalto de la Rua Oito","Goudronnage de la Rua Oito","第八街铺装"],["Primeiro e segundo trechos.","First and second sections.","Primer y segundo tramo.","Premier et deuxième tronçons.","第一、二段完工。"]],
+ ["infra","ok",["Fim dos alagamentos no Almerinda","End of flooding in Almerinda","Fin de inundaciones en Almerinda","Fin des inondations à Almerinda","Almerinda内涝解决"],["Galerias de água de chuva ampliadas.","Expanded storm drains.","Desagües pluviales ampliados.","Égouts pluviaux agrandis.","雨水管网扩容。"]],
+ ["infra","ok",["Mais de 20 vielas concretadas","Over 20 alleys paved","Más de 20 callejones pavimentados","Plus de 20 ruelles bétonnées","20多条小巷铺装"],["Projeto A Viela é da Comunidade.","The Alley Belongs to the Community project.","Proyecto El Callejón es de la Comunidad.","Projet La ruelle est à la communauté.","“小巷属于社区”项目。"]],
+ ["cult","ok",["Praça Onofre Canedo","Onofre Canedo square","Plaza Onofre Canedo","Place Onofre Canedo","Onofre Canedo广场"],["30 mil m² de lazer no Almerinda Chaves, 2013. Depois ganhou campo sintético.","30,000 m² leisure area in Almerinda Chaves, 2013. Later a synthetic pitch.","30 mil m² de recreación en Almerinda Chaves, 2013. Luego cancha sintética.","30 000 m² de loisirs à Almerinda Chaves, 2013. Puis un terrain synthétique.","2013年Almerinda Chaves三万平方米休闲区，后增建人工草球场。"]],
+ ["educ","ok",["Creche do Residencial Jundiaí II","Residencial Jundiaí II daycare","Guardería Residencial Jundiaí II","Crèche Residencial Jundiaí II","Residencial Jundiaí II托儿所"],["EMEB Fernanda de Favre, 120 vagas, 2020.","120 places, 2020.","120 plazas, 2020.","120 places, 2020.","120个学位，2020年。"]],
+ ["educ","ok",["720 novas vagas em escolas e creches","720 new school and daycare places","720 nuevas plazas en escuelas y guarderías","720 nouvelles places en école et crèche","学校和托儿所新增720个学位"],["Quatro obras e EMEB Beatriz Pupo ampliada.","Four projects and an expanded school.","Cuatro obras y una escuela ampliada.","Quatre chantiers et une école agrandie.","四项工程，一所学校扩建。"]],
+ ["educ","and",["Instituto Federal no Vetor Oeste","Federal Institute campus in Vetor Oeste","Instituto Federal en el Vetor Oeste","Institut fédéral au Vetor Oeste","联邦理工学院落户Vetor Oeste"],["Luta desde 2015. Os cafés já acontecem no IF.","Fighting since 2015. Coffees already take place there.","En lucha desde 2015. Los cafés ya se hacen ahí.","En lutte depuis 2015. Les cafés y ont déjà lieu.","自2015年起争取，咖啡会已在此举办。"]],
+ ["transp","ok",["Ônibus a R$ 1","R$ 1 bus fare","Autobús a R$ 1","Bus à 1 real","1雷亚尔公交票价"],["Tarifa social aos domingos e feriados.","Social fare on Sundays and holidays.","Tarifa social en domingos y feriados.","Tarif social dimanches et fériés.","周日及节假日优惠票价。"]],
+ ["transp","ok",["Linha para o Residencial Jundiaí 2","Bus line to Residencial Jundiaí 2","Línea al Residencial Jundiaí 2","Ligne vers Residencial Jundiaí 2","开通至Residencial Jundiaí 2的线路"],["O bairro passou a ter ônibus.","The neighborhood finally got a bus.","El barrio tuvo autobús.","Le quartier a enfin un bus.","街区终于通了公交。"]],
+ ["cult","ok",["Arraiá Nordestino na lei","Northeastern Arraiá in law","Arraiá Nordestino en ley","L'Arraiá inscrit dans la loi","东北节写入法律"],["Lei 8.414/2015.","Law 8,414/2015.","Ley 8.414/2015.","Loi 8.414/2015.","第8414/2015号法律。"]],
+ ["cult","ok",["Festa do Bom Jardim no calendário","Bom Jardim festival on the calendar","Fiesta de Bom Jardim en el calendario","Fête de Bom Jardim au calendrier","Bom Jardim节庆列入日历"],["No calendário municipal.","On the city calendar.","En el calendario municipal.","Au calendrier municipal.","列入市级日历。"]],
+ ["part","ok",["Moradores nos conselhos","Residents on public councils","Vecinos en los consejos","Des habitants dans les conseils","居民进入公共委员会"],["Hospital São Vicente e Segurança.","Hospital and public safety councils.","Hospital y Seguridad.","Hôpital et Sécurité.","医院委员会与治安委员会。"]],
+ ["part","ok",["Mil árvores num dia","A thousand trees in a day","Mil árboles en un día","Mille arbres en un jour","一天种下一千棵树"],["Plantio coletivo em 2021.","Community planting in 2021.","Plantación colectiva en 2021.","Plantation collective en 2021.","2021年集体植树。"]],
+ ["infra","luta",["Duplicação da Estrada do Varjão","Widening of Estrada do Varjão","Duplicación de la Estrada do Varjão","Élargissement de l'Estrada do Varjão","Varjão路拓宽"],["",""]],
+ ["infra","luta",["Fim dos alagamentos da Rua Oito e do Varjão","End of flooding on Rua Oito and Varjão","Fin de inundaciones en Rua Oito y Varjão","Fin des inondations Rua Oito et Varjão","解决第八街与Varjão内涝"],["",""]],
+ ["educ","luta",["Escola estadual em tempo integral","Full-time state school","Escuela estatal de tiempo completo","École publique à temps plein","州立全日制学校"],["",""]],
+ ["cult","luta",["Oficinas culturais nos bairros","Cultural workshops in the neighborhoods","Talleres culturales en los barrios","Ateliers culturels dans les quartiers","街区文化工作坊"],["",""]],
+ ["part","luta",["Subprefeitura do Vetor Oeste","Vetor Oeste sub-city hall","Subalcaldía del Vetor Oeste","Mairie annexe du Vetor Oeste","Vetor Oeste分区政府"],["",""]],
+ ["infra","luta",["Parque do Cerrado no Residencial Jundiaí","Cerrado Park","Parque del Cerrado","Parc du Cerrado","塞拉多公园"],["",""]]
+];
+const COB=[["2025","Carta Compromisso com 15 propostas","Prefeitura"],["2025","Convite de parceria para o Eu Moro, Eu Cuido","Empresas"],["2023","Ofício pela Hamburgada do Bem","Empresa"],["2018","Abaixo-assinado pelo asfalto da Rua Oito","Prefeitura"],["2017","Abaixo-assinado pelo loteamento Retentém, no Traviú","Prefeitura"],["2017","Abaixo-assinado pela pista de caminhada da José Benassi","Prefeitura"],["2017","Ofício pedindo unidade do SESI no Vetor Oeste","FIESP"],["2016","Dez ofícios de estrutura para o 4º Arraiá","Prefeitura"],["2015","Abaixo-assinado por escola em tempo integral, mais de 2 mil assinaturas","Governo do Estado"],["2015","Ofício pelo Centro Comunitário da Estrada do Varjão","Prefeitura"]];
+
+/* IMPRENSA */
+const IMP=[
+ ["2013","Secretários ouvem população do Vetor Oeste","Prefeitura",P+"2013/02/secretarios-ouvem-populacao-do-vetor-oeste/"],
+ ["2013","Atividades em homenagem à mulher na região oeste","Prefeitura",P+"2013/03/08/atividades-gratuitas-em-homenagem-a-mulher-na-regiao-oeste/"],
+ ["2013","Prefeito participa de reunião do Coletivo Vetor Oeste","Prefeitura",P+"2013/04/29/prefeito-participa-de-reuniao-do-coletivo-vetor-oeste/"],
+ ["2013","Jovens transformam vielas no Residencial Jundiaí 1","Prefeitura",P+"2013/06/10/jovens-transformam-vielas-no-residencial-jundiai-1/"],
+ ["2013","Vetor Oeste terá o 1º Arraiá Nordestino da Família","Prefeitura",P+"2013/07/vetor-oeste-tera-o-1o-arraia-nordestino-da-familia-neste-final-de-semana/"],
+ ["2013","Duas novas linhas são criadas no Vetor Oeste","Prefeitura",P+"2013/10/31/duas-novas-linhas-sao-criadas-no-vetor-oeste"],
+ ["2015","Vetor Oeste encerra primeiro ciclo do Prefeitura em Ação","Prefeitura",P+"2015/02/28/vetor-oeste-encerra-primeiro-ciclo-do-prefeitura-em-acao"],
+ ["2015","Arraiá do Vetor Oeste entra para Calendário Municipal de Eventos","Prefeitura",P+"2015/05/12/arraia-do-vetor-oeste-entra-para-calendario-municipal-de-eventos/"],
+ ["2015","Prefeito participa do 3º Arraial Nordestino do Vetor Oeste","Prefeitura",P+"2015/06/14/vetor-oeste-celebra-o-seu-3o-arraial-nordestino/"],
+ ["2015","Prefeitura analisa projeto-piloto para Vetor Oeste","Prefeitura",P+"2015/12/02/prefeitura-analisa-projeto-piloto-para-vetor-oeste"],
+ ["2016","Prefeitura lança Ponto de Entrega Voluntária no Vetor Oeste","Prefeitura",P+"2016/05/14/prefeitura-lanca-ponto-de-entrega-voluntaria-no-vetor-oeste/"],
+ ["2016","Novo Horizonte tem segundo Ponto de Entrega de Entulho","Prefeitura",P+"2016/07/02/novo-horizonte-tem-segundo-ponto-de-entrega-de-entulho/"],
+ ["2017","GGIM prestigia atividades no Vetor Oeste","Prefeitura",P+"2017/05/04/ggim-prestigia-atividades-no-vetor-oeste/"],
+ ["2018","Administradora da UPA Vetor Oeste inicia processo de seleção","Prefeitura",P+"2018/10/10/administradora-da-upa-vetor-oeste-inicia-processo-de-selecao/"],
+ ["2020","Vetor Oeste tem R$ 76,5 milhões em obras concluídas desde 2017","Prefeitura",P+"2020/07/21/vetor-oeste-tem-r-765-milhoes-em-obras-concluidas-desde-2017/"],
+ ["2021","Moradores discutem investimentos para o Vetor Oeste com prefeito","Prefeitura",P+"2021/05/16/moradores-discutem-investimentos-para-o-vetor-oeste-com-prefeito/"],
+ ["2021","Coletivo Vetor Oeste discute com prefeito os investimentos para a região","Tribuna","https://tribunadejundiai.com.br/cidades/jundiai/coletivo-vetor-oeste-discute-com-prefeito-os-investimentos-para-a-regiao/"],
+ ["2021","Vetor Oeste faz plantio simultâneo de 1 mil mudas de árvores","Prefeitura",P+"2021/06/05/vetor-oeste-faz-plantio-simultaneo-de-1-mil-mudas-de-arvores/"],
+ ["2022","Plano de Bairro do Jardim Novo Horizonte vai virar projeto de lei","Prefeitura",P+"2022/01/24/plano-de-bairro-do-jardim-novo-horizonte-vai-virar-projeto-de-lei"],
+ ["2022","Plano de Bairro do Novo Horizonte é apresentado para vereadores","Prefeitura",P+"2022/03/17/plano-de-bairro-do-novo-horizonte-e-apresentado-para-vereadores-da-regiao/"],
+ ["2025","Reunião no Almerinda Chaves reúne moradores e equipe do governo","Prefeitura",P+"2025/01/27/reuniao-no-almerinda-chaves-reune-moradores-e-equipe-do-governo-para-discutir-melhorias-na-regiao/"],
+ ["2025","Reunião no Almerinda Chaves reúne moradores e Governo","Tribuna","https://tribunadejundiai.com.br/cidades/jundiai/jundiai-reuniao-no-almerinda-chaves-reune-moradores-e-governo-para-discutir-melhorias/"],
+ ["2025","Prefeitura dará início às ações de revitalização no Vetor Oeste","Prefeitura",P+"2025/03/02/prefeitura-de-jundiai-dara-inicio-as-acoes-de-revitalizacao-em-bairros-do-vetor-oeste/"],
+ ["2025","Vetor Oeste celebra 10 anos do projeto Eu Moro, Eu Cuido","Tribuna","https://tribunadejundiai.com.br/cidades/jundiai/eu-moro-eu-cuido-vetor-oeste-jundiai/"],
+ ["","Cresce apoio para criação do Distrito do Vetor Oeste","Câmara","https://www.jundiai.sp.leg.br/imprensa/noticias/cresce-apoio-para-criacao-do-distrito-do-vetor-oeste"],
+ ["","Moradores do Vetor Oeste apresentam demandas em reunião com o prefeito","Câmara","https://www.jundiai.sp.leg.br/imprensa/noticias/moradores-do-vetor-oeste-apresentam-demandas-em-reuniao-com-prefeito-e-vereador-edicarlos-vieira"]
+];
+
+/* GALERIA */
+const GCAT={todas:UI.todas,cafe:["Café Coletivo","Community Coffee","Café Colectivo","Café Collectif","集体咖啡会"],arraia:["Arraiá","Arraiá","Arraiá","Arraiá","东北节"],eumoro:["Eu Moro, Eu Cuido","I Live Here, I Care","Yo Vivo, Yo Cuido","J'habite ici, j'en prends soin","我住这里我爱护"],gente:["Pessoas","People","Personas","Personnes","人们"],marca:["Marca","Brand","Marca","Identité","标识"]};
+const GAL=[
+ ["cafe-grupo.jpg","cafe",["Café Coletivo ao ar livre","Outdoor Community Coffee","Café Colectivo al aire libre","Café Collectif en plein air","户外集体咖啡会"]],
+ ["arraia-quadrilha.jpg","arraia",["Quadrilha no Arraiá Nordestino","Square dance at the Arraiá","Cuadrilla en el Arraiá","Quadrille à l'Arraiá","东北节方阵舞"]],
+ ["eumoro-plantio.jpg","eumoro",["Crianças plantando árvores","Children planting trees","Niños plantando árboles","Enfants plantant des arbres","孩子们植树"]],
+ ["grupo-1.jpg","gente",["Eu amo Vetor Oeste","I love Vetor Oeste","Amo Vetor Oeste","J'aime Vetor Oeste","我爱Vetor Oeste"]],
+ ["cafe-mesa.jpg","cafe",["Mesa partilhada do Café Coletivo","Shared table at the Community Coffee","Mesa compartida del Café Colectivo","Table partagée du Café Collectif","集体咖啡会共享餐桌"]],
+ ["arraia-publico.jpg","arraia",["Público do Arraiá","Arraiá crowd","Público del Arraiá","Public de l'Arraiá","东北节观众"]],
+ ["eumoro-2016.jpg","eumoro",["Mutirão Eu Moro, Eu Cuido","I Live Here, I Care work day","Jornada Yo Vivo, Yo Cuido","Journée J'habite ici, j'en prends soin","“我住这里我爱护”义务劳动"]],
+ ["cafe-roda.jpg","cafe",["A roda vista de cima","The circle seen from above","La ronda vista desde arriba","Le cercle vu d'en haut","俯瞰圆圈"]],
+ ["arraia-palco.jpg","arraia",["Palco do Arraiá","Arraiá stage","Escenario del Arraiá","Scène de l'Arraiá","东北节舞台"]],
+ ["grupo-2.jpg","gente",["Gente que veste a camisa","People who wear the shirt","Gente que se pone la camiseta","Ceux qui portent le maillot","身穿集体T恤的人们"]],
+ ["mutirao.jpg","eumoro",["Depois do mutirão","After the clean-up","Después de la jornada","Après le chantier","义务劳动之后"]],
+ ["cafe-fala.jpg","gente",["Nilma no Café Coletivo","Nilma at the Community Coffee","Nilma en el Café Colectivo","Nilma au Café Collectif","Nilma在集体咖啡会上"]],
+ ["reuniao.jpg","cafe",["Anotando as demandas","Writing down the demands","Anotando las demandas","Noter les demandes","记录诉求"]],
+ ["maos.jpg","gente",["Mãos em roda","Hands in a circle","Manos en ronda","Mains en cercle","围成一圈的手"]],
+ ["convite-cafe-11anos.jpg","cafe",["Convite do Café de 11 anos","11th anniversary Coffee invitation","Invitación al Café de 11 años","Invitation au café des 11 ans","11周年咖啡会邀请"]],
+ ["eu-amo-vetor-oeste.jpg","marca",["Eu amo Vetor Oeste 2023 a 2030","I love Vetor Oeste 2023–2030","Amo Vetor Oeste 2023–2030","J'aime Vetor Oeste 2023–2030","我爱Vetor Oeste 2023–2030"]],
+ ["logo-2012.png","marca",["A primeira marca, 2012","The first logo, 2012","La primera marca, 2012","Le premier logo, 2012","2012年首个标识"]],
+ ["logo.png","marca",["Coletivo Vetor Oeste","Coletivo Vetor Oeste","Coletivo Vetor Oeste","Coletivo Vetor Oeste","Coletivo Vetor Oeste"]],
+ ["camiseta.jpg","marca",["Camiseta Eu amo Vetor Oeste","I love Vetor Oeste shirt","Camiseta Amo Vetor Oeste","T-shirt J'aime Vetor Oeste","“我爱Vetor Oeste”T恤"]],
+ ["wind-banner.jpg","marca",["Vozes unidas, bairros fortalecidos","United voices, stronger neighborhoods","Voces unidas, barrios fortalecidos","Voix unies, quartiers renforcés","团结发声，壮大街区"]]
+];
+
+/* ORÇAMENTO */
+const NIVEIS=[
+ {n:["Município de Jundiaí","City of Jundiaí","Municipio de Jundiaí","Ville de Jundiaí","容迪亚伊市"],v:"R$ 4,74 bi",s:"aberto",
+  i:[["LOA 2027 apresentada em audiência pública em 8 de setembro.","2027 budget presented at a public hearing on September 8.","LOA 2027 presentada en audiencia pública el 8 de septiembre.","Budget 2027 présenté en audience publique le 8 septembre.","2027年预算于9月8日公开听证会上发布。"],
+     ["A consulta pública online foi até 18 de setembro.","The online consultation ran until September 18.","La consulta en línea fue hasta el 18 de septiembre.","La consultation en ligne a duré jusqu'au 18 septembre.","网上公众征询截至9月18日。"],
+     ["Agora a Câmara analisa e vota até o fim do ano. Os vereadores ainda podem apresentar emendas.","The City Council now reviews and votes by year-end. Councilors can still file amendments.","Ahora el Concejo analiza y vota hasta fin de año. Los concejales aún pueden presentar enmiendas.","Le conseil municipal examine et vote d'ici la fin de l'année. Les élus peuvent encore amender.","市议会正在审议，年底前表决；议员仍可提出修正案。"]],
+  l:"https://jundiai.sp.gov.br/noticias/2026/09/10/loa-2027-jundiai-apresenta-previsao-de-orcamento-de-r-474-bilhoes-e-detalha-prioridades-para-o-proximo-ano/"},
+ {n:["Estado de São Paulo","São Paulo State","Estado de São Paulo","État de São Paulo","圣保罗州"],v:"R$ 411,2 bi",s:"aberto",
+  i:[["Proposta de orçamento de 2027 assinada em 30 de setembro e enviada à Assembleia.","2027 budget bill signed on September 30 and sent to the State Assembly.","Propuesta de presupuesto 2027 firmada el 30 de septiembre y enviada a la Asamblea.","Projet de budget 2027 signé le 30 septembre et envoyé à l'Assemblée.","2027年预算草案于9月30日签署并提交州议会。"],
+     ["As audiências regionais e a votação online foram em junho. Já encerradas.","Regional hearings and online voting took place in June. Already closed.","Las audiencias regionales y la votación en línea fueron en junio. Ya cerradas.","Audiences régionales et vote en ligne en juin. Déjà clos.","地区听证会与网上投票已于6月结束。"],
+     ["Os deputados estaduais apresentam emendas durante a tramitação, até a votação no fim do ano.","State deputies file amendments during review, until the year-end vote.","Los diputados estatales presentan enmiendas hasta la votación de fin de año.","Les députés de l'État amendent jusqu'au vote de fin d'année.","州议员可在年底表决前提出修正案。"]],
+  l:"https://www.jornalcruzeiro.com.br/sorocaba/informacao-livre/2026/10/766169-tarcisio-envia-a-alesp-proposta-de-orcamento-de-rs-4112-bilhoes.html"},
+ {n:["União (Governo Federal)","Federal Government","Gobierno Federal","Gouvernement fédéral","联邦政府"],v:"R$ 44,8 bi",s:"aberto",
+  i:[["Valor reservado a emendas impositivas no orçamento de 2027, enviado ao Congresso em 31 de agosto.","Amount reserved for mandatory parliamentary amendments in the 2027 budget, sent to Congress on August 31.","Monto reservado a enmiendas obligatorias en el presupuesto 2027, enviado al Congreso el 31 de agosto.","Montant réservé aux amendements obligatoires du budget 2027, envoyé au Congrès le 31 août.","2027年预算中预留给强制性议员修正案的金额，8月31日提交国会。"],
+     ["No ano passado, as emendas foram apresentadas de 24 de outubro a 13 de novembro. O prazo deste ano deve ser parecido.","Last year, amendments were filed from October 24 to November 13. This year's window should be similar.","El año pasado, las enmiendas fueron del 24 de octubre al 13 de noviembre. Este año debe ser parecido.","L'an dernier, les amendements ont été déposés du 24 octobre au 13 novembre. Cette année devrait être similaire.","去年修正案提交期为10月24日至11月13日，今年预计类似。"],
+     ["Caminho: levar a pauta do bairro aos deputados federais da região.","How: bring the neighborhood agenda to the region's federal deputies.","Cómo: llevar la agenda del barrio a los diputados federales de la región.","Comment : porter l'agenda du quartier aux députés fédéraux de la région.","途径：向本地区联邦众议员提交街区诉求。"]],
+  l:"https://cnm.org.br/comunicacao/noticias/prazo-para-apresentacao-de-emendas-na-loa-2026-vai-de-24-de-outubro-a-13-de-novembro"}
+];
+const MESES=["Jan","Fev","Mar","Abr","Mai","Jun","Jul","Ago","Set","Out","Nov","Dez"];
+const CAL=[
+ [["Município: emendas na LOA 2027","City: 2027 budget amendments","Municipio: enmiendas LOA 2027","Ville : amendements budget 2027","市级：2027预算修正"],"m",[],"2026"],
+ [["Município: LDO 2028","City: 2028 budget guidelines","Municipio: LDO 2028","Ville : orientations 2028","市级：2028预算指导法"],"m",[4,5,6]],
+ [["Município: consulta e LOA 2028","City: consultation and 2028 budget","Municipio: consulta y LOA 2028","Ville : consultation et budget 2028","市级：征询与2028预算"],"m",[8,9,10,11,12]],
+ [["Estado: plano de 4 anos 2028–2031","State: 2028–2031 four-year plan","Estado: plan cuatrienal 2028–2031","État : plan quadriennal 2028–2031","州：2028–2031四年规划"],"e",[3,4,5,6,7,8]],
+ [["Estado: audiências e LOA 2028","State: hearings and 2028 budget","Estado: audiencias y LOA 2028","État : audiences et budget 2028","州：听证会与2028预算"],"e",[5,6,9,10,11,12]],
+ [["União: plano de 4 anos 2028–2031","Federal: 2028–2031 four-year plan","Unión: plan cuatrienal 2028–2031","Union : plan quadriennal 2028–2031","联邦：2028–2031四年规划"],"u",[3,4,5,6,7,8]],
+ [["União: emendas na LOA 2028","Federal: 2028 budget amendments","Unión: enmiendas LOA 2028","Union : amendements budget 2028","联邦：2028预算修正"],"u",[10,11]]
+];
+const PAUTA=[["Duplicação da Estrada do Varjão","Widening Estrada do Varjão","Duplicación de la Estrada do Varjão","Élargir l'Estrada do Varjão","拓宽Varjão路"],["Fim dos alagamentos da Rua Oito","End flooding on Rua Oito","Fin de inundaciones en Rua Oito","Fin des inondations Rua Oito","解决第八街内涝"],["Escola estadual em tempo integral","Full-time state school","Escuela estatal de tiempo completo","École publique à temps plein","州立全日制学校"],["Sede definitiva do Instituto Federal","Permanent Federal Institute campus","Sede definitiva del Instituto Federal","Campus définitif de l'Institut fédéral","联邦理工学院永久校址"],["Mais segurança nos bairros","Safer neighborhoods","Más seguridad en los barrios","Des quartiers plus sûrs","更安全的街区"],["Oficinas culturais nos bairros","Cultural workshops","Talleres culturales","Ateliers culturels","街区文化工作坊"],["Parque do Cerrado","Cerrado Park","Parque del Cerrado","Parc du Cerrado","塞拉多公园"],["Conselho Regional de Bairros","Regional Council of Neighborhoods","Consejo Regional de Barrios","Conseil régional des quartiers","地区街区委员会"]];
+
+/* MUNDO */
+const ODS=[
+ ["10",["Redução das desigualdades","Reduced inequalities","Reducción de desigualdades","Inégalités réduites","减少不平等"],["Voz para bairros periféricos que ficavam fora das decisões.","A voice for outlying neighborhoods left out of decisions.","Voz para barrios periféricos excluidos de las decisiones.","Une voix pour les quartiers périphériques exclus des décisions.","为被排除在决策之外的城郊街区发声。"]],
+ ["11",["Cidades sustentáveis","Sustainable cities","Ciudades sostenibles","Villes durables","可持续城市"],["Moradia, transporte, áreas verdes e plano de bairro com os moradores.","Housing, transport, green spaces and neighborhood planning with residents.","Vivienda, transporte, áreas verdes y plan barrial con vecinos.","Logement, transport, espaces verts et plan de quartier avec les habitants.","与居民共同推进住房、交通、绿地和街区规划。"]],
+ ["16",["Instituições participativas","Participatory institutions","Instituciones participativas","Institutions participatives","参与式机构"],["Decisões que respondem às pessoas e incluem todo mundo.","Decision-making that is responsive and includes everyone.","Decisiones que responden a la gente e incluyen a todos.","Des décisions qui répondent aux gens et incluent tout le monde.","回应民众、包容所有人的决策。"]],
+ ["17",["Parcerias","Partnerships","Alianzas","Partenariats","伙伴关系"],["Moradores, escolas, igrejas, empresas e poder público na mesma mesa.","Residents, schools, churches, businesses and government at the same table.","Vecinos, escuelas, iglesias, empresas y gobierno en la misma mesa.","Habitants, écoles, églises, entreprises et pouvoirs publics à la même table.","居民、学校、教会、企业与政府同桌共商。"]],
+ ["3",["Saúde e bem-estar","Good health","Salud y bienestar","Bonne santé","良好健康"],["UPA 24h, posto ampliado e moradores no conselho do hospital.","24-hour clinic, expanded health post, residents on the hospital council.","Clínica 24 horas, centro de salud ampliado y vecinos en el consejo del hospital.","Urgences 24 h, poste de santé agrandi, habitants au conseil de l'hôpital.","24小时急诊、卫生站扩建，居民进入医院委员会。"]],
+ ["4",["Educação de qualidade","Quality education","Educación de calidad","Éducation de qualité","优质教育"],["720 novas vagas e a luta pelo Instituto Federal.","720 new places and the fight for a Federal Institute campus.","720 nuevas plazas y la lucha por el Instituto Federal.","720 nouvelles places et la lutte pour l'Institut fédéral.","新增720个学位，争取联邦理工学院。"]]
+];
+const AGENDA=[
+ [["Março a agosto de 2027","March–August 2027","Marzo a agosto de 2027","Mars à août 2027","2027年3月至8月"],["Planos de 4 anos do Estado e da União","State and Federal four-year plans","Planes cuatrienales del Estado y la Unión","Plans quadriennaux de l'État et de l'Union","州和联邦四年规划"],["Levar a pauta do Vetor Oeste aos planos 2028–2031.","Bring the Vetor Oeste agenda into the 2028–2031 plans.","Llevar la agenda del Vetor Oeste a los planes 2028–2031.","Porter l'agenda du Vetor Oeste dans les plans 2028–2031.","将Vetor Oeste诉求纳入2028–2031年规划。"]],
+ [["Outubro de 2027","October 2027","Octubre de 2027","Octobre 2027","2027年10月"],["Circuito Urbano do ONU-Habitat Brasil","UN-Habitat Brazil Urban Circuit","Circuito Urbano de ONU-Hábitat Brasil","Circuit urbain d'ONU-Habitat Brésil","联合国人居署巴西“城市巡回”活动"],["Inscrever um evento sobre participação no bairro. A chamada costuma abrir em junho.","Register an event on neighborhood participation. The call usually opens in June.","Inscribir un evento sobre participación barrial. La convocatoria suele abrir en junio.","Inscrire un événement sur la participation. L'appel ouvre en général en juin.","报名举办关于街区参与的活动，征集通常于6月开始。"]],
+ [["31 de outubro","October 31","31 de octubre","31 octobre","10月31日"],["Dia Mundial das Cidades","World Cities Day","Día Mundial de las Ciudades","Journée mondiale des villes","世界城市日"],["Data para contar a história do Vetor Oeste ao mundo.","A date to tell Vetor Oeste's story to the world.","Fecha para contar la historia del Vetor Oeste al mundo.","Une date pour raconter le Vetor Oeste au monde.","向世界讲述Vetor Oeste故事的日子。"]],
+ [["20 de novembro de 2027","November 20, 2027","20 de noviembre de 2027","20 novembre 2027","2027年11月20日"],["15 anos do Coletivo","The Coletivo's 15th anniversary","15 años del Coletivo","15 ans du Coletivo","集体成立15周年"],["Lançar a história em livro ou documentário, com convidados de outros países.","Launch the story as a book or documentary, with guests from abroad.","Lanzar la historia en libro o documental, con invitados de otros países.","Lancer l'histoire en livre ou documentaire, avec des invités étrangers.","以书籍或纪录片发布集体历史，邀请外国嘉宾。"]],
+ [["1º de junho de 2029","June 1, 2029","1 de junio de 2029","1er juin 2029","2029年6月1日"],["Status consultivo na ONU (ECOSOC)","UN consultative status (ECOSOC)","Estatus consultivo en la ONU (ECOSOC)","Statut consultatif à l'ONU (ECOSOC)","联合国经社理事会咨商地位"],["Com dois anos de associação registrada, pedir o credenciamento.","After two years as a registered association, apply for accreditation.","Con dos años de asociación registrada, pedir la acreditación.","Après deux ans d'association enregistrée, demander l'accréditation.","注册满两年后申请认证。"]]
+];
+const PASSOS=[
+ [["Associação com CNPJ","Registered association","Asociación registrada","Association enregistrée","注册为协会"],["Estatuto, diretoria eleita e contas abertas em 2027.","Bylaws, elected board and open accounts in 2027.","Estatuto, directiva electa y cuentas abiertas en 2027.","Statuts, bureau élu et comptes ouverts en 2027.","2027年制定章程、选举理事会、公开账目。"]],
+ [["Cadastro na rede da ONU","UN civil society registry","Registro en la red de la ONU","Inscription au réseau de l'ONU","加入联合国民间社会网络"],["Perfil no sistema de sociedade civil das Nações Unidas.","Profile in the UN civil society system.","Perfil en el sistema de sociedad civil de la ONU.","Profil dans le système société civile de l'ONU.","在联合国民间社会系统建立档案。"]],
+ [["Parcerias internacionais","International partnerships","Alianzas internacionales","Partenariats internationaux","国际合作"],["Universidades e coletivos de outros países estudando e trocando métodos.","Universities and community groups abroad studying and sharing methods.","Universidades y colectivos de otros países estudiando e intercambiando métodos.","Universités et collectifs étrangers qui étudient et échangent des méthodes.","与国外大学和社区团体研究、交流方法。"]],
+ [["Voz nos debates globais","A voice in global debates","Voz en los debates globales","Une voix dans les débats mondiaux","在全球讨论中发声"],["ONU-Habitat, Fórum Urbano Mundial e ECOSOC.","UN-Habitat, World Urban Forum and ECOSOC.","ONU-Hábitat, Foro Urbano Mundial y ECOSOC.","ONU-Habitat, Forum urbain mondial et ECOSOC.","联合国人居署、世界城市论坛与经社理事会。"]]
+];
+const INT=[
+ ["trocar",["Trocar experiências","Share experiences","Compartir experiencias","Partager des expériences","交流经验"],["Conversa online entre coletivos de bairro","Online talks between neighborhood groups","Charlas en línea entre colectivos","Échanges en ligne entre collectifs","社区团体线上交流"]],
+ ["visitar",["Visitar o Vetor Oeste","Visit Vetor Oeste","Visitar el Vetor Oeste","Visiter le Vetor Oeste","参访Vetor Oeste"],["Participe de um Café Coletivo em Jundiaí","Join a Community Coffee in Jundiaí","Participa de un Café Colectivo","Participez à un Café Collectif","参加一次集体咖啡会"]],
+ ["parceria",["Parceria ou pesquisa","Partnership or research","Alianza o investigación","Partenariat ou recherche","合作或研究"],["Universidades, ONGs e redes internacionais","Universities, NGOs and international networks","Universidades, ONG y redes internacionales","Universités, ONG et réseaux internationaux","大学、非政府组织与国际网络"]]
+];
+
+/* PARTICIPE */
+const PAR=[
+ ["participar","zap",["Quero entrar no Coletivo","I want to join","Quiero unirme","Je veux rejoindre","我想加入"],["Avisos e convites dos encontros","Updates and meeting invitations","Avisos e invitaciones","Annonces et invitations","会议通知与邀请"]],
+ ["demanda","mega",["Tenho um problema na minha rua","There's a problem on my street","Hay un problema en mi calle","Il y a un problème dans ma rue","我的街道有问题"],["Buraco, luz, ônibus, mato, segurança","Potholes, lights, buses, safety","Baches, luz, autobús, seguridad","Nids-de-poule, éclairage, bus, sécurité","坑洼、路灯、公交、安全"]],
+ ["representante","rua",["Quero ser a voz da minha rua","I want to represent my street","Quiero representar mi calle","Je veux représenter ma rue","我想代表我的街道"],["Coordenador de rua ou bairro","Street or neighborhood coordinator","Coordinador de calle o barrio","Coordinateur de rue ou de quartier","街道或街区协调人"]],
+ ["cafe","cafe",["Quero um Café Coletivo no meu bairro","A Community Coffee in my neighborhood","Un Café Colectivo en mi barrio","Un Café Collectif dans mon quartier","在我的街区举办集体咖啡会"],["A roda vai até você","The circle comes to you","La ronda va hasta ti","Le cercle vient à vous","圆桌会来到你身边"]],
+ ["voluntario","maos",["Quero ser voluntário","I want to volunteer","Quiero ser voluntario","Je veux être bénévole","我想做志愿者"],["Arraiá, mutirão, foto, vídeo","Festival, clean-ups, photos, video","Arraiá, jornadas, fotos, video","Arraiá, chantiers, photos, vidéo","节庆、义务劳动、摄影、视频"]],
+ ["memoria","doc",["Tenho foto ou história do Coletivo","I have photos or stories","Tengo fotos o historias","J'ai des photos ou des histoires","我有照片或故事"],["Ajude a contar a nossa memória","Help tell our story","Ayuda a contar nuestra memoria","Aidez à raconter notre mémoire","帮助记录我们的历史"]],
+ ["empresa","maos",["Minha empresa quer ser parceira","My company wants to partner","Mi empresa quiere ser aliada","Mon entreprise veut s'associer","我的公司想合作"],["Eu Moro, Eu Cuido e Arraiá","I Live Here, I Care and the Arraiá","Yo Vivo, Yo Cuido y Arraiá","J'habite ici et l'Arraiá","“我住这里我爱护”与东北节"]]
+];
+const VOTOS=[["Segurança","Safety","Seguridad","Sécurité","安全"],["Saúde","Health","Salud","Santé","医疗"],["Transporte","Transport","Transporte","Transport","交通"],["Lazer e esporte","Leisure and sport","Ocio y deporte","Loisirs et sport","休闲与体育"],["Meio ambiente","Environment","Medio ambiente","Environnement","环境"],["Moradia","Housing","Vivienda","Logement","住房"]];
+const MSG={
+ participar:["Oi! Vi o portal do Coletivo e quero participar. Meu nome é ____ e moro no bairro ____.","Hello! I saw the Coletivo portal and want to take part. My name is ____.","¡Hola! Vi el portal del Coletivo y quiero participar. Me llamo ____.","Bonjour ! J'ai vu le portail du Coletivo et je veux participer. Je m'appelle ____.","你好！我看到了集体的网站，想参与。我叫____。"],
+ demanda:["Oi! Tenho um problema na minha rua.\n\nBairro: ____\nRua: ____\nO que está acontecendo: ____"],
+ representante:["Oi! Quero ser a voz da minha rua no Coletivo. Moro na rua ____, bairro ____."],
+ cafe:["Oi! Quero um Café Coletivo no meu bairro. Bairro: ____."],
+ voluntario:["Oi! Quero ajudar o Coletivo como voluntário. Posso ajudar com: ____"],
+ memoria:["Oi! Tenho fotos ou histórias do Coletivo. São de que ano: ____"],
+ empresa:["Oi! Represento a empresa ____ e quero conversar sobre parceria com o Coletivo."],
+ ideia:["Oi! Tenho uma ideia para o orçamento público do Vetor Oeste: ____"],
+ trocar:["Olá! Vi o portal do Coletivo Vetor Oeste e quero trocar experiências. Sou de ____ (país).","Hello! I found the Coletivo Vetor Oeste portal and would love to share experiences. I am from ____ (country).","¡Hola! Vi el portal del Coletivo Vetor Oeste y quiero compartir experiencias. Soy de ____ (país).","Bonjour ! J'ai découvert le portail du Coletivo Vetor Oeste et j'aimerais échanger. Je viens de ____ (pays).","你好！我看到了Vetor Oeste集体的网站，希望交流经验。我来自____（国家）。"],
+ visitar:["Olá! Gostaria de visitar o Vetor Oeste e participar de um Café Coletivo. Sou de ____.","Hello! I would like to visit Vetor Oeste and join a Community Coffee. I am from ____.","¡Hola! Me gustaría visitar el Vetor Oeste y un Café Colectivo. Soy de ____.","Bonjour ! J'aimerais visiter le Vetor Oeste et un Café Collectif. Je viens de ____.","你好！我想参访Vetor Oeste并参加集体咖啡会。我来自____。"],
+ parceria:["Olá! Represento ____ e quero conversar sobre parceria ou pesquisa com o Coletivo Vetor Oeste.","Hello! I represent ____ and would like to discuss a partnership or research with the Coletivo Vetor Oeste.","¡Hola! Represento a ____ y quiero conversar sobre una alianza o investigación.","Bonjour ! Je représente ____ et souhaite parler d'un partenariat ou d'une recherche.","你好！我代表____，希望与Vetor Oeste集体探讨合作或研究。"]
+};
+const wa=t=>{const e=encodeURIComponent(t);return ZAP?"https://wa.me/"+ZAP+"?text="+e:"https://wa.me/?text="+e};
+
+/* RENDER */
+function renderAbas(v){
+  document.getElementById("abas").innerHTML=VIEWS.map(k=>`<a href="#${k}" ${k===v?'aria-current="page"':''} ${k==="participe"?'class="cta"':''}>${esc(X(UI["nav_"+k]))}</a>`).join("");
+}
+let anoSel="2012";
+function renderHist(){
+  document.getElementById("anos").innerHTML=HIST.map(h=>`<button type="button" data-a="${h.a}" aria-pressed="${h.a===anoSel}">${h.a}</button>`).join("");
+  const i=HIST.findIndex(h=>h.a===anoSel), h=HIST[i];
+  const fig=h.img?`<figure><img src="${h.img}" alt=""></figure>`:"";
+  document.getElementById("anoDet").innerHTML=`<div><div class="grande">${h.a}</div><div class="evs">${h.ev.map(([t,u])=>`<div class="ev"><p>${esc(X(t))}</p>${u?`<a href="${u}" target="_blank" rel="noopener">${esc(X(UI.verNoticia))}</a>`:""}</div>`).join("")}</div>
+   <div class="navano">${i>0?`<button type="button" data-a="${HIST[i-1].a}">‹ ${esc(X(UI.anterior))}</button>`:""}${i<HIST.length-1?`<button type="button" data-a="${HIST[i+1].a}">${esc(X(UI.proximo))} ›</button>`:""}</div></div>${fig}`;
+}
+let modo="ano", icpSel=null;
+function renderICP(){
+  const svg=document.getElementById("icp"); const W=960,H=360,Lm=46,R=10,T=18,B=40;
+  const parts=ICP.map(([a,e,c,o,m])=>[a,e*W8.enc,c*W8.conq,o*W8.cob,m*W8.imp]);
+  let acc=[0,0,0,0]; const data=parts.map(([a,...v])=>{ if(modo==="acu"){acc=acc.map((x,k)=>x+v[k]);return [a,...acc];} return [a,...v]; });
+  const tot=data.map(d=>d.slice(1).reduce((s,x)=>s+x,0)); const max=Math.ceil(Math.max(...tot)/10)*10||10;
+  const bw=(W-Lm-R)/data.length, sy=v=>T+(H-T-B)*(1-v/max);
+  const tc=getComputedStyle(document.documentElement).getPropertyValue("--muted").trim()||"#536276";
+  let s=""; const step=max>100?50:10;
+  for(let v=0;v<=max;v+=step){s+=`<line x1="${Lm}" x2="${W-R}" y1="${sy(v)}" y2="${sy(v)}" stroke="${tc}" stroke-opacity=".18"/><text x="${Lm-8}" y="${sy(v)+5}" text-anchor="end" font-size="13" fill="${tc}">${v}</text>`;}
+  data.forEach((d,i)=>{ let y0=H-B; const x=Lm+i*bw+bw*.15, w=bw*.7;
+    d.slice(1).forEach((v,k)=>{ if(!v) return; const hgt=(H-T-B)*v/max; y0-=hgt; s+=`<rect class="bar" data-i="${i}" x="${x}" y="${y0}" width="${w}" height="${hgt}" fill="${CORES[k]}" rx="2"/>`; });
+    s+=`<text x="${x+w/2}" y="${sy(tot[i])-6}" text-anchor="middle" font-size="13" font-weight="700" fill="${tc}">${tot[i]}</text>`;
+    s+=`<text x="${x+w/2}" y="${H-B+20}" text-anchor="middle" font-size="13" fill="${tc}">${d[0]}</text>`;
+    s+=`<rect class="bar" data-i="${i}" x="${Lm+i*bw}" y="${T}" width="${bw}" height="${H-T-B}" fill="transparent"/>`;
+  });
+  svg.innerHTML=s;
+  document.getElementById("legIcp").innerHTML=[UI.dEnc,UI.dConq,UI.dCob,UI.dImp].map((n,k)=>`<span><i style="background:${CORES[k]}"></i>${esc(X(n))}</span>`).join("");
+  mostraICP(icpSel===null?ICP.length-1:icpSel);
+}
+function mostraICP(i){
+  icpSel=i; const [a,e,c,o,m]=ICP[i]; const p=e*W8.enc+c*W8.conq+o*W8.cob+m*W8.imp;
+  document.getElementById("icpDet").innerHTML=`<b>${a}</b> · ${p} ${esc(X(UI.pontos))} · ${esc(X(UI.dEnc))} ${e} · ${esc(X(UI.dConq))} ${c} · ${esc(X(UI.dCob))} ${o} · ${esc(X(UI.dImp))} ${m}`;
+}
+let vozSel="todas";
+function renderPart(){
+  renderICP();
+  document.getElementById("mob").innerHTML=MOB.map(([n,a,t])=>`<div><em>${a}</em><b>${n}</b><span>${esc(X(t))}</span></div>`).join("");
+  document.getElementById("encontros").innerHTML=ENC.map(([d,t,p])=>`<div class="enc"><span class="d">${d}</span><h3>${esc(X(t))}</h3><p>${esc(X(p))}</p></div>`).join("");
+  document.getElementById("filtroVoz").innerHTML=Object.entries(VTEMA).map(([k,n])=>`<button type="button" data-v="${k}" aria-pressed="${k===vozSel}">${esc(X(n))}</button>`).join("");
+  document.getElementById("vozes").innerHTML=VOZES.filter(v=>vozSel==="todas"||v[5]===vozSel).map(([q,tr,quem,f,u])=>`<div class="voz"><q>${esc(q)}</q>${L!=="pt"?`<span class="tr">${esc(X(["",...tr]))}</span>`:""}<span class="quem">${esc(quem)}</span>${u?`<a href="${u}" target="_blank" rel="noopener">${esc(f)}</a>`:`<span class="muted" style="font-size:14px">${esc(f)}</span>`}</div>`).join("");
+}
+let areaSel="todas";
+function renderConq(){
+  const ok=CONQ.filter(c=>c[1]==="ok").length, an=CONQ.filter(c=>c[1]==="and").length, lu=CONQ.filter(c=>c[1]==="luta").length;
+  document.getElementById("placar").innerHTML=`<div class="p1"><b>${ok}</b>${esc(X(UI.resolvido))}</div><div class="p2"><b>${an}</b>${esc(X(UI.andando))}</div><div class="p3"><b>${lu}</b>${esc(X(UI.naLuta))}</div>`;
+  document.getElementById("filtroArea").innerHTML=[["todas",UI.todas],...Object.entries(AREAS)].map(([k,n])=>`<button type="button" data-ar="${k}" aria-pressed="${k===areaSel}">${esc(X(n))}</button>`).join("");
+  const st={ok:["ok",UI.resolvido],and:["and",UI.andando],luta:["cob",UI.naLuta]};
+  document.getElementById("conqCards").innerHTML=CONQ.filter(c=>areaSel==="todas"||c[0]===areaSel).map(([a,s,t,d])=>`<div class="card"><div class="top"><span class="chip ${st[s][0]}">${esc(X(st[s][1]))}</span><span class="chip cat">${esc(X(AREAS[a]))}</span></div><h3>${esc(X(t))}</h3>${X(d)?`<p>${esc(X(d))}</p>`:""}</div>`).join("");
+  document.getElementById("cobLista").innerHTML=COB.map(([d,t,v])=>`<li><div class="row"><span class="d">${d}</span><span class="t">${esc(t)}</span><span class="v">${esc(v)}</span></div></li>`).join("");
+}
+let impSel="todas";
+function renderImp(){
+  const fontes=["todas","Prefeitura","Câmara","Tribuna"];
+  document.getElementById("filtroImp").innerHTML=fontes.map(f=>`<button type="button" data-fi="${f}" aria-pressed="${f===impSel}">${f==="todas"?esc(X(UI.todas)):f}</button>`).join("");
+  document.getElementById("impLista").innerHTML=IMP.filter(r=>impSel==="todas"||r[2]===impSel).map(([d,t,v,u])=>`<li><a href="${u}" target="_blank" rel="noopener"><span class="d">${d||"—"}</span><span class="t">${esc(t)}</span><span class="v">${esc(v)}</span></a></li>`).join("");
+}
+let galSel="todas";
+function renderGal(){
+  document.getElementById("filtroGal").innerHTML=Object.entries(GCAT).map(([k,n])=>`<button type="button" data-g="${k}" aria-pressed="${k===galSel}">${esc(X(n))}</button>`).join("");
+  document.getElementById("gal").innerHTML=GAL.map((g,i)=>[g,i]).filter(([g])=>galSel==="todas"||g[1]===galSel).map(([[src,c,t],i])=>`<button type="button" data-gi="${i}"><img src="${src}" alt="${esc(X(t))}" loading="lazy" style="${src.endsWith('.png')?'background:#fff;padding:14px':''}"><span>${esc(X(t))}</span></button>`).join("");
+}
+function renderOrc(){
+  document.getElementById("niveis").innerHTML=NIVEIS.map(n=>`<div class="nivel"><span class="st ${n.s}">${esc(X(n.s==="aberto"?UI.aberto:UI.fechado))}</span><h3>${esc(X(n.n))}</h3><div class="val">${n.v}</div><ul>${n.i.map(t=>`<li>${esc(X(t))}</li>`).join("")}</ul><a href="${n.l}" target="_blank" rel="noopener">${esc(X(UI.verNoticia))}</a></div>`).join("");
+  let t=`<table><thead><tr><th></th>${MESES.map(m=>`<th>${m}</th>`).join("")}</tr></thead><tbody>`;
+  t+=`<tr><td class="rot">${esc(X(CAL[0][0]))} <small>(out–dez 2026)</small></td>${MESES.map((m,k)=>`<td class="${k>=9?'m agora':''}"></td>`).join("")}</tr>`;
+  CAL.slice(1).forEach(([r,c,ms])=>{t+=`<tr><td class="rot">${esc(X(r))}</td>${MESES.map((m,k)=>`<td class="${ms.includes(k+1)?c:''}"></td>`).join("")}</tr>`;});
+  t+=`</tbody></table>`;
+  document.getElementById("cal").innerHTML=t;
+  document.getElementById("pauta").innerHTML=PAUTA.map(p=>`<div>${esc(X(p))}</div>`).join("");
+}
+function renderMundo(){
+  document.getElementById("ods").innerHTML=ODS.map(([n,t,p])=>`<div class="od o${n}"><b>${n}</b><span>${esc(X(t))}</span><p>${esc(X(p))}</p></div>`).join("");
+  document.getElementById("agenda").innerHTML=AGENDA.map(([q,t,p])=>`<li><span class="q">${esc(X(q))}</span><div><b>${esc(X(t))}</b><span>${esc(X(p))}</span></div></li>`).join("");
+  document.getElementById("passos").innerHTML=PASSOS.map(([t,p])=>`<div><b>${esc(X(t))}</b><span>${esc(X(p))}</span></div>`).join("");
+  document.getElementById("intOp").innerHTML=INT.map(([k,t,p])=>`<a class="opcao" href="${wa(X(MSG[k]))}" target="_blank" rel="noopener"><svg class="ic"><use href="#globo"/></svg><div><b>${esc(X(t))}</b><span>${esc(X(p))}</span></div><svg class="seta"><use href="#seta"/></svg></a>`).join("");
+}
+function renderPar(){
+  document.getElementById("parOp").innerHTML=PAR.map(([k,ic,t,p])=>`<a class="opcao" href="${wa(X(MSG[k]))}" target="_blank" rel="noopener"><svg class="ic"><use href="#${ic}"/></svg><div><b>${esc(X(t))}</b><span>${esc(X(p))}</span></div><svg class="seta"><use href="#seta"/></svg></a>`).join("");
+  document.getElementById("votos").innerHTML=VOTOS.map(v=>`<a class="voto" href="${wa("Oi! Meu voto de prioridade para o meu bairro é: "+v[0]+".\n\nMeu bairro: ____")}" target="_blank" rel="noopener">${esc(X(v))}<span>${esc(X(UI.votar))}</span></a>`).join("");
+}
+let vozI=0;
+function renderInicio(){
+  document.getElementById("atalhos").innerHTML=ATALHOS.map(([k,img,d])=>`<a class="atalho" href="#${k}"><img src="${img}" alt="" loading="lazy" ${img.endsWith('.png')?'style="background:#fff"':''}><div><b>${esc(X(UI["nav_"+k]))}</b><span>${esc(X(d))}</span></div></a>`).join("");
+  const v=VOZES[vozI%VOZES.length];
+  document.getElementById("vozDestaque").innerHTML=`<img src="formiga.png" alt="" style="background:#fff;object-fit:contain;padding:10px"><div><q>${esc(v[0])}</q>${L!=="pt"?`<div class="tr">${esc(X(["",...v[1]]))}</div>`:""}<div class="quem">${esc(v[2])}</div><div class="tr">${esc(v[3])}</div></div>`;
+}
+function aplicaTextos(){
+  document.documentElement.lang=L==="pt"?"pt-BR":(L==="zh"?"zh-Hans":L);
+  document.querySelectorAll("[data-t]").forEach(e=>{const k=e.dataset.t; if(UI[k]) e.textContent=X(UI[k]);});
+  document.querySelectorAll("[data-ta]").forEach(e=>{const k=e.dataset.ta; if(UI[k]) e.alt=X(UI[k]);});
+  document.querySelectorAll("[data-msg]").forEach(a=>{a.href=wa(X(MSG[a.dataset.msg]));a.target="_blank";a.rel="noopener";});
+  document.querySelectorAll(".langs button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.l===L?"true":"false"));
+}
+function tudo(){aplicaTextos();renderInicio();renderHist();renderPart();renderConq();renderImp();renderGal();renderOrc();renderMundo();renderPar();renderAbas(atual());}
+function atual(){const h=(location.hash||"").replace("#","");return VIEWS.includes(h)?h:"inicio";}
+function mostra(){
+  const v=atual(); VIEWS.forEach(k=>{document.getElementById("v-"+k).hidden=(k!==v);});
+  renderAbas(v); window.scrollTo(0,0);
+  const ab=document.querySelector('.abas a[aria-current="page"]'); if(ab&&ab.scrollIntoView) ab.scrollIntoView({block:"nearest",inline:"center"});
+}
+/* eventos */
+document.querySelector(".langs").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;L=b.dataset.l;try{localStorage.setItem("coletivo-lang",L)}catch(_){ }tudo();});
+document.getElementById("anos").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;anoSel=b.dataset.a;renderHist();});
+document.getElementById("anoDet").addEventListener("click",e=>{const b=e.target.closest("button[data-a]");if(!b)return;anoSel=b.dataset.a;renderHist();document.getElementById("anos").querySelector(`[data-a="${anoSel}"]`)?.scrollIntoView({block:"nearest",inline:"center"});});
+document.querySelector("#v-participacao .seg").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;modo=b.dataset.m;document.querySelectorAll("#v-participacao .seg button").forEach(x=>x.setAttribute("aria-pressed",x===b?"true":"false"));renderICP();});
+document.getElementById("icp").addEventListener("click",e=>{const r=e.target.closest(".bar");if(r)mostraICP(+r.dataset.i);});
+document.getElementById("filtroVoz").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;vozSel=b.dataset.v;renderPart();});
+document.getElementById("filtroArea").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;areaSel=b.dataset.ar;renderConq();});
+document.getElementById("filtroImp").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;impSel=b.dataset.fi;renderImp();});
+document.getElementById("filtroGal").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;galSel=b.dataset.g;renderGal();});
+const lb=document.getElementById("lb");
+document.getElementById("gal").addEventListener("click",e=>{const b=e.target.closest("button[data-gi]");if(!b)return;const g=GAL[+b.dataset.gi];document.getElementById("lbImg").src=g[0];document.getElementById("lbImg").alt=X(g[2]);document.getElementById("lbTxt").textContent=X(g[2]);lb.hidden=false;document.getElementById("lbX").focus();});
+document.getElementById("lbX").addEventListener("click",()=>lb.hidden=true);
+lb.addEventListener("click",e=>{if(e.target===lb)lb.hidden=true;});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")lb.hidden=true;});
+window.addEventListener("hashchange",mostra);
+const toast=document.getElementById("toast");
+document.getElementById("compartilhar").addEventListener("click",async()=>{
+  const txt="Coletivo Vetor Oeste, Jundiaí. Veja a nossa história e participe: "+location.href.split("#")[0];
+  try{await navigator.clipboard.writeText(txt);toast.textContent=X(UI.copiado);toast.hidden=false;setTimeout(()=>toast.hidden=true,2600);}catch(_){window.location.href=wa(txt);}
+});
+setInterval(()=>{if(atual()==="inicio"&&!document.hidden){vozI++;renderInicio();}},9000);
+/* início */
+(function(){let s=null;try{s=localStorage.getItem("coletivo-lang")}catch(_){ } if(s&&LANGS.includes(s))L=s; else {const n=(navigator.language||"pt").slice(0,2).toLowerCase(); if(LANGS.includes(n))L=n;} tudo(); mostra();})();
+</script>
+
+</body>
+</html>
