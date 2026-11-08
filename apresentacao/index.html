@@ -1,0 +1,800 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Vetor Oeste 14 anos · Linha do tempo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Figtree:wght@400;600;700;800&display=swap">
+<style>
+:root{--bg:#040f3a;--ink:#fffbea;--soft:#c9d4ff;--y:#ffd21f;--blue:#0b2a8f;--deep:#071a5c;--red:#ffb4a8;--green:#3ddc84;--card:rgba(7,26,92,.84)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#040f3a;--ink:#fffbea}}
+:root[data-theme="dark"]{--bg:#040f3a;--ink:#fffbea}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%}
+body{background:var(--bg);color:var(--ink);font-family:Figtree,system-ui,sans-serif;overflow:hidden}
+h1,h2,h3,.big{font-family:'Bricolage Grotesque',Figtree,sans-serif;font-weight:800;line-height:1.02;letter-spacing:-.01em}
+#stage{position:fixed;inset:0}
+.slide{position:absolute;inset:0;display:none;overflow:hidden}
+.slide.on{display:block;animation:fade .9s ease both}
+.slide.on.t1{animation:tzoom 1s cubic-bezier(.2,.8,.2,1) both}.slide.on.t2{animation:tslide .9s cubic-bezier(.2,.8,.2,1) both}.slide.on.t3{animation:tcirc 1.1s cubic-bezier(.6,0,.2,1) both}.slide.on.t4{animation:tblur 1s ease both}
+@keyframes tzoom{from{opacity:0;transform:scale(1.18);filter:blur(10px)}to{opacity:1;transform:none;filter:none}}
+@keyframes tslide{from{opacity:.2;transform:translateX(12vw) skewX(-4deg)}to{opacity:1;transform:none}}
+@keyframes tcirc{from{clip-path:circle(0% at 50% 60%)}to{clip-path:circle(150% at 50% 60%)}}
+@keyframes tblur{from{opacity:0;filter:blur(18px) brightness(2)}to{opacity:1;filter:none}}
+.w{display:inline-block;opacity:0}
+.slide.on .w{animation:win .75s cubic-bezier(.2,.9,.25,1.2) both;animation-delay:calc(var(--d)*85ms + .3s)}
+@keyframes win{from{opacity:0;transform:translateY(.6em) rotate(6deg) scale(.8);filter:blur(6px)}to{opacity:1;transform:none;filter:none}}
+.slide.on .steps>div,.slide.on .cards .card,.slide.on .chips>*{animation:popin .6s cubic-bezier(.2,.9,.3,1.3) both}
+.slide.on .steps>div:nth-child(1),.slide.on .cards .card:nth-child(1),.slide.on .chips>*:nth-child(1){animation-delay:0.64s}.slide.on .steps>div:nth-child(2),.slide.on .cards .card:nth-child(2),.slide.on .chips>*:nth-child(2){animation-delay:0.78s}.slide.on .steps>div:nth-child(3),.slide.on .cards .card:nth-child(3),.slide.on .chips>*:nth-child(3){animation-delay:0.92s}.slide.on .steps>div:nth-child(4),.slide.on .cards .card:nth-child(4),.slide.on .chips>*:nth-child(4){animation-delay:1.06s}.slide.on .steps>div:nth-child(5),.slide.on .cards .card:nth-child(5),.slide.on .chips>*:nth-child(5){animation-delay:1.20s}.slide.on .steps>div:nth-child(6),.slide.on .cards .card:nth-child(6),.slide.on .chips>*:nth-child(6){animation-delay:1.34s}.slide.on .steps>div:nth-child(7),.slide.on .cards .card:nth-child(7),.slide.on .chips>*:nth-child(7){animation-delay:1.48s}.slide.on .steps>div:nth-child(8),.slide.on .cards .card:nth-child(8),.slide.on .chips>*:nth-child(8){animation-delay:1.62s}.slide.on .steps>div:nth-child(9),.slide.on .cards .card:nth-child(9),.slide.on .chips>*:nth-child(9){animation-delay:1.76s}.slide.on .steps>div:nth-child(10),.slide.on .cards .card:nth-child(10),.slide.on .chips>*:nth-child(10){animation-delay:1.90s}.slide.on .steps>div:nth-child(11),.slide.on .cards .card:nth-child(11),.slide.on .chips>*:nth-child(11){animation-delay:2.04s}.slide.on .steps>div:nth-child(12),.slide.on .cards .card:nth-child(12),.slide.on .chips>*:nth-child(12){animation-delay:2.18s}
+@keyframes popin{from{opacity:0;transform:translateY(30px) scale(.85)}to{opacity:1;transform:none}}
+
+/* v13 linha do tempo */
+#tl{position:fixed;left:3vw;width:80vw;top:.6vh;height:3.6vh;z-index:18;pointer-events:none;opacity:0;transition:opacity .8s}
+#tl.on{opacity:1}
+#tl .bar{position:absolute;left:0;right:0;top:50%;height:3px;background:rgba(255,255,255,.18);border-radius:3px}
+#tlfill{position:absolute;left:0;top:50%;height:3px;width:0;background:linear-gradient(90deg,#ffd21f,#ff7a1a);border-radius:3px;box-shadow:0 0 12px #ffd21f;transition:width 1.4s cubic-bezier(.6,0,.2,1)}
+#tl .tk{position:absolute;top:50%;transform:translate(-50%,-50%);font:700 clamp(9px,.62vw,15px) system-ui;color:rgba(255,255,255,.45);padding-top:2.6vh;transition:color .6s}
+#tl .tk:before{content:'';position:absolute;left:50%;top:calc(50% - 1.3vh);width:5px;height:5px;margin-left:-2.5px;border-radius:50%;background:rgba(255,255,255,.4)}
+#tl .tk.past{color:#ffd21f}#tl .tk.past:before{background:#ffd21f}
+#tldot.end b{transform:translate(calc(-100% - 22px),-50%)}
+#tl .tk.you{color:#fff;font-weight:900}
+#tldot{position:absolute;top:50%;left:0;transition:left 1.4s cubic-bezier(.6,0,.2,1)}
+#tldot img{position:absolute;left:0;top:0;width:1.7vw;transform:translate(-50%,-62%) scale(var(--s,1));transition:transform 1.4s cubic-bezier(.3,1.6,.4,1);filter:drop-shadow(0 0 8px #ffd21f)}
+#tldot b{position:absolute;left:0;top:0;transform:translate(14px,-50%);font:900 clamp(11px,.85vw,20px) system-ui;color:#ffd21f;white-space:nowrap;text-shadow:0 2px 8px #000}
+/* palavras que ficam na cabeca */
+.w.k{padding:0 .08em;background:linear-gradient(#ff7a1a,#ff7a1a) no-repeat 0 92%/0% 30%;border-radius:3px}
+.slide.on .w.k{animation:win .75s cubic-bezier(.2,.9,.25,1.2) both,mark .7s cubic-bezier(.6,0,.2,1) forwards,glow 2.6s ease-in-out infinite alternate;animation-delay:calc(var(--d)*85ms + .3s),calc(var(--d)*85ms + 1s),calc(var(--d)*85ms + 1.8s)}
+@keyframes mark{to{background-size:100% 30%}}
+@keyframes glow{from{text-shadow:0 0 0 rgba(255,210,31,0)}to{text-shadow:0 0 24px rgba(255,210,31,.75)}}
+/* fotos que revelam */
+.slide.on .mem img,.slide.on figure.gc img{animation:develop 2.2s ease-out both,memzoom 9s 2.2s ease-in-out infinite alternate}
+.slide.on figure.gc:nth-child(2) img{animation-delay:.35s,2.6s}.slide.on figure.gc:nth-child(3) img{animation-delay:.7s,3s}.slide.on figure.gc:nth-child(4) img{animation-delay:1.05s,3.4s}
+@keyframes develop{0%{filter:grayscale(1) sepia(.6) brightness(2.4) blur(8px);transform:scale(1.25)}35%{filter:grayscale(1) sepia(.5) brightness(1.3) blur(1px)}100%{filter:none;transform:scale(1)}}
+.slide.on figure.gc{animation:drop .9s cubic-bezier(.2,.9,.3,1.2) both}
+.slide.on figure.gc:nth-child(2){animation-delay:.35s}.slide.on figure.gc:nth-child(3){animation-delay:.7s}.slide.on figure.gc:nth-child(4){animation-delay:1.05s}
+@keyframes drop{from{opacity:0;transform:translateY(-40px) rotate(-8deg) scale(1.1)}to{opacity:1;transform:none}}
+.slide.on .eyebrow{animation:ebin 1.2s cubic-bezier(.2,.8,.2,1) both}
+@keyframes ebin{from{opacity:0;letter-spacing:1.2em;filter:blur(4px)}to{opacity:1}}
+.slide.on .lead{animation:leadin 1s .9s ease both}
+@keyframes leadin{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+/* multiplicar */
+.multc{position:absolute;inset:0;width:100%;height:100%}
+.antnum.word{font-size:3.4vw;letter-spacing:.02em}.antnum.word small{font-size:.6em;opacity:.7}
+.antnum.word i{font-style:normal;display:inline-block;animation:lpop .6s cubic-bezier(.2,1.6,.4,1) both;animation-delay:calc(var(--i)*70ms + .2s)}
+@keyframes lpop{from{opacity:0;transform:translateY(-1.2em) rotate(-25deg) scale(.3)}to{opacity:1;transform:none}}
+.mantra{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;background:radial-gradient(circle at 50% 50%,#0d2fa3,#030b2e 70%);overflow:hidden}
+.mantra .sm{font:700 clamp(22px,3vw,66px)/1.1 'Bricolage Grotesque',system-ui;color:#c9d4ff;animation:smin .5s ease both}
+.mantra .mbig{font:800 clamp(70px,13vw,300px)/1 'Bricolage Grotesque',system-ui;color:#ffd21f;text-shadow:0 0 60px rgba(255,210,31,.55);animation:slam .7s cubic-bezier(.2,1.4,.3,1) both}
+.mantra .mbig.w2{color:#fff;font-size:clamp(50px,9vw,210px)}
+.mantra.shake{animation:shake .45s}
+.mantra .flash{position:absolute;inset:0;background:#fff;animation:flash2 .5s ease-out forwards;pointer-events:none}
+.mantra .fin{font:800 clamp(30px,4.6vw,100px)/1.15 'Bricolage Grotesque',system-ui;color:#fff;opacity:0;animation:finin .9s cubic-bezier(.2,.9,.3,1.2) forwards}
+.mantra .fin b{color:#ffd21f}.mantra .fin u{text-decoration:none;background:linear-gradient(#ff7a1a,#ff7a1a) no-repeat 0 92%/0% 28%;animation:mark .8s 1s forwards}
+@keyframes smin{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@keyframes slam{0%{opacity:0;transform:scale(3.2);filter:blur(20px)}60%{opacity:1;filter:none}100%{transform:scale(1)}}
+@keyframes shake{0%,100%{transform:none}20%{transform:translate(-12px,6px)}40%{transform:translate(10px,-8px)}60%{transform:translate(-8px,4px)}80%{transform:translate(6px,-3px)}}
+@keyframes flash2{from{opacity:.75}to{opacity:0}}
+@keyframes finin{from{opacity:0;transform:translateY(40px) scale(.9)}to{opacity:1;transform:none}}
+.mtx{position:relative;z-index:2;max-width:42vw;justify-content:center}
+.mcount{font:900 clamp(60px,11vw,240px)/1 system-ui;color:#ffd21f;margin:.1em 0;text-shadow:0 0 40px rgba(255,210,31,.5);transition:transform .25s}
+.mcount.pop{transform:scale(1.15)}
+#actor{position:fixed;left:0;top:0;width:clamp(34px,3.2vw,72px);z-index:19;pointer-events:none;opacity:0}
+#actor img.a{width:100%;display:block;filter:drop-shadow(0 8px 14px rgba(0,0,0,.5))}
+#actor i{position:absolute;font-style:normal;pointer-events:none;white-space:nowrap}
+#actor .x2,#actor .x3,#actor .x4,#actor .x5{position:absolute;top:0;width:80%;filter:drop-shadow(0 6px 10px rgba(0,0,0,.4))}
+#actor .x4{left:-265%;animation:hopx .5s .4s ease-in-out infinite alternate}#actor .x5{left:-350%;animation:hopx .5s .55s ease-in-out infinite alternate}
+#actor .body{position:relative;display:block}
+/* construindo a casa */
+.act-build{opacity:1;transform:translate(84vw,82vh);animation:fadeIn .6s both}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.act-build .body{animation:trip 1.8s ease-in-out infinite alternate}
+.act-build .body img{animation:wob .3s ease-in-out infinite alternate}
+@keyframes trip{from{transform:translateX(-170%)}to{transform:translateX(30%)}}
+.brick{left:22%;top:-22%;width:52%;height:26%;background:#e0662b;border:2px solid #fff6;border-radius:2px;animation:brk 3.6s steps(1) infinite}
+@keyframes brk{0%,50%{opacity:1}50.01%,100%{opacity:0}}
+.house{left:115%;top:-40%;width:190%;height:140%;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,1fr);gap:2px;align-content:end}
+.house b{background:#e0662b;border-radius:2px;opacity:0;animation:put .4s cubic-bezier(.2,1.6,.4,1) forwards;animation-delay:calc(var(--i)*1.8s + 1.6s);box-shadow:inset 0 -3px 0 #0003}
+@keyframes put{from{opacity:0;transform:translateY(-120%)}to{opacity:1;transform:none}}
+.house .roof{position:absolute;left:-12%;top:-62%;width:0;height:0;border-left:calc(62% + 1px) solid transparent;border-right:calc(62% + 1px) solid transparent;border-bottom:64% solid #2b53ff;font-style:normal;opacity:0;animation:put .6s cubic-bezier(.2,1.6,.4,1) 17.8s forwards;border-left-width:1.25em;border-right-width:1.25em;border-bottom-width:1.1em;font-size:clamp(20px,2.4vw,56px)}
+.house .door{position:absolute;left:38%;bottom:0;width:24%;height:36%;background:#ffd21f;border-radius:3px 3px 0 0;opacity:0;animation:put .5s 18.4s forwards}
+/* fiscalizando */
+.act-fiscal{animation:aLupa 9s ease-in-out forwards}.act-fiscal .body img{animation:wob .5s ease-in-out infinite alternate}
+.clip{left:62%;top:5%;width:48%;height:62%;background:#fff;border:3px solid #8a5a2b;border-radius:3px;z-index:2;background-image:repeating-linear-gradient(#fff 0 22%,#9aa 22% 28%)}
+.ticks{left:-60%;top:-120%;display:flex;gap:.3em}
+.ticks b{color:#2ee66b;font:900 clamp(16px,1.8vw,40px) system-ui;opacity:0;animation:put .5s cubic-bezier(.2,1.6,.4,1) forwards}
+.ticks b:nth-child(1){animation-delay:2.4s}.ticks b:nth-child(2){animation-delay:4.6s}.ticks b:nth-child(3){animation-delay:6.8s}
+/* ajudando: duas carregando juntas */
+.act-help{animation:aWalk 14s linear forwards}.act-help .body img{animation:wob .35s ease-in-out infinite alternate}
+.act-help .body .x2{left:-110%;width:100%;animation:wob .35s .17s ease-in-out infinite alternate}
+.beam{left:-120%;top:-28%;width:250%;height:22%;background:linear-gradient(#c98a4a,#8a5a2b);border-radius:4px;box-shadow:0 3px 0 #0004}
+#actor .x2{left:-95%;animation:hopx .5s .1s ease-in-out infinite alternate}#actor .x3{left:-180%;animation:hopx .5s .25s ease-in-out infinite alternate}
+@keyframes hopx{to{transform:translateY(-14%) rotate(-6deg)}}
+.chute{left:-35%;top:-95%;width:170%;height:85%;border-radius:100% 100% 8% 8%/120% 120% 8% 8%;background:repeating-linear-gradient(90deg,#ffd400 0 18%,#2b53ff 18% 36%);box-shadow:0 6px 0 -3px rgba(0,0,0,.25)}
+.chute:after{content:'';position:absolute;left:12%;right:12%;top:96%;height:70%;border-left:2px solid #fff;border-right:2px solid #fff;border-radius:0 0 40% 40%}
+.ball{left:55%;top:-160%;width:70%;height:85%;border-radius:50% 50% 46% 46%;background:radial-gradient(circle at 35% 30%,#fff7,transparent 30%),#ff3b6b}
+.ball:after{content:'';position:absolute;left:50%;top:100%;width:2px;height:120%;background:#fff}
+.flag{left:60%;top:-110%;padding:.15em .5em;background:#ffd400;color:#06176b;font:900 clamp(14px,1.6vw,34px)/1 system-ui;border-radius:4px;border-left:3px solid #fff}
+.zz{left:70%;top:-60%;color:#fff;font:800 clamp(14px,1.6vw,34px) system-ui;animation:zz 2s ease-in-out infinite}
+@keyframes zz{0%{opacity:0;transform:translate(0,0) scale(.6)}50%{opacity:1}100%{opacity:0;transform:translate(60%,-120%) scale(1.3)}}
+.heart{left:30%;top:-55%;font-size:clamp(20px,2.4vw,52px);color:#ff3b6b;animation:beat .6s ease-in-out infinite alternate}
+@keyframes beat{to{transform:scale(1.25)}}
+.lupa{left:55%;top:-20%;font-size:clamp(26px,3vw,64px);transform:rotate(-20deg)}
+.hole{left:-30%;width:160%;height:28%;top:82%;border-radius:50%;background:radial-gradient(#000c,#0000 70%)}
+.star{left:40%;top:-70%;color:#ffd400;font-size:clamp(18px,2vw,44px);animation:spin 1.2s linear infinite}
+.qq{left:60%;top:-70%;color:#ffd400;font:900 clamp(20px,2.4vw,52px) system-ui}
+@keyframes spin{to{transform:rotate(360deg)}}
+/* each act moves #actor; .a gets the body motion */
+.act-walk{animation:aWalk 11s linear forwards}.act-walk .a{animation:wob .35s ease-in-out infinite alternate}
+@keyframes aWalk{0%{opacity:1;transform:translate(-10vw,86vh)}100%{opacity:1;transform:translate(105vw,86vh)}}
+@keyframes wob{from{transform:rotate(-7deg) translateY(0)}to{transform:rotate(7deg) translateY(-8%)}}
+.act-back{animation:aBack 10s linear forwards}.act-back .a{animation:wobf .35s ease-in-out infinite alternate}
+@keyframes aBack{0%{opacity:1;transform:translate(105vw,86vh)}100%{opacity:1;transform:translate(-12vw,86vh)}}
+@keyframes wobf{from{transform:scaleX(-1) rotate(-7deg)}to{transform:scaleX(-1) rotate(7deg) translateY(-8%)}}
+.act-peek{animation:aPeek 7s ease-in-out forwards}.act-peek .a{transform:rotate(-30deg)}
+@keyframes aPeek{0%{opacity:1;transform:translate(102vw,40vh)}15%,70%{opacity:1;transform:translate(93vw,40vh)}30%{transform:translate(94vw,39vh) rotate(-8deg)}45%{transform:translate(93vw,40vh) rotate(6deg)}100%{opacity:1;transform:translate(103vw,40vh)}}
+.act-para{animation:aPara 6s cubic-bezier(.3,.1,.4,1) forwards}.act-para .a{animation:sway 1.4s ease-in-out infinite alternate;transform-origin:50% -60%}
+@keyframes aPara{0%{opacity:1;transform:translate(80vw,-25vh)}100%{opacity:1;transform:translate(88vw,80vh)}}
+@keyframes sway{from{transform:rotate(-14deg)}to{transform:rotate(14deg)}}
+.act-hop{animation:aHop 8s linear forwards}.act-hop .a{animation:hop .55s cubic-bezier(.3,0,.7,1) infinite alternate}
+@keyframes aHop{0%{opacity:1;transform:translate(-10vw,84vh)}100%{opacity:1;transform:translate(105vw,84vh)}}
+@keyframes hop{from{transform:translateY(0) scaleY(.85)}to{transform:translateY(-120%) rotate(-12deg)}}
+.act-climb{animation:aClimb 9s ease-in-out forwards}.act-climb .a{transform:rotate(-90deg);animation:wobc .3s ease-in-out infinite alternate}
+@keyframes aClimb{0%{opacity:1;transform:translate(.3vw,105vh)}60%{opacity:1;transform:translate(.3vw,25vh)}75%{transform:translate(.3vw,28vh)}100%{opacity:1;transform:translate(.3vw,26vh)}}
+@keyframes wobc{from{transform:rotate(-96deg)}to{transform:rotate(-84deg)}}
+.act-roll{animation:aRoll 3.2s cubic-bezier(.2,.7,.3,1) forwards}.act-roll .a{animation:roll 3.2s cubic-bezier(.2,.7,.3,1) forwards}
+@keyframes aRoll{0%{opacity:1;transform:translate(-12vw,85vh)}100%{opacity:1;transform:translate(6vw,85vh)}}
+@keyframes roll{0%{transform:rotate(0)}85%{transform:rotate(1080deg)}92%{transform:rotate(1080deg) scale(1.15,.8)}100%{transform:rotate(1080deg)}}
+.act-carry{animation:aWalk 13s linear forwards}.act-carry .a{animation:wob .4s ease-in-out infinite alternate}
+.act-wave{animation:aWave 1.4s cubic-bezier(.2,.9,.3,1.4) forwards}.act-wave .a{animation:wave .5s ease-in-out infinite alternate;transform-origin:50% 100%}
+@keyframes aWave{0%{opacity:1;transform:translate(3vw,105vh)}100%{opacity:1;transform:translate(3vw,80vh)}}
+@keyframes wave{from{transform:rotate(-18deg)}to{transform:rotate(18deg)}}
+.act-zoom{animation:aZoom 4s cubic-bezier(.5,0,.2,1) forwards}
+@keyframes aZoom{0%{opacity:0;transform:translate(47vw,45vh) scale(.1) rotate(-200deg)}40%{opacity:1;transform:translate(40vw,30vh) scale(4) rotate(10deg)}60%{opacity:.9;transform:translate(42vw,32vh) scale(3.6) rotate(-6deg)}100%{opacity:1;transform:translate(90vw,82vh) scale(1) rotate(0)}}
+.act-orbit{animation:aOrbit 9s linear infinite}
+@keyframes aOrbit{0%{opacity:1;transform:translate(46vw,8vh) rotate(90deg)}25%{transform:translate(90vw,44vh) rotate(180deg)}50%{transform:translate(46vw,82vh) rotate(270deg)}75%{transform:translate(2vw,44vh) rotate(360deg)}100%{opacity:1;transform:translate(46vw,8vh) rotate(450deg)}}
+.act-dance{animation:aDance 1s ease-out forwards}.act-dance .a{animation:dance .8s ease-in-out infinite}
+@keyframes aDance{0%{opacity:0;transform:translate(88vw,95vh)}100%{opacity:1;transform:translate(88vw,80vh)}}
+@keyframes dance{0%,100%{transform:scale(1,1) rotate(0)}25%{transform:scale(1.15,.85) rotate(-12deg)}50%{transform:translateY(-30%) scale(.9,1.1) rotate(0)}75%{transform:scale(1.15,.85) rotate(12deg)}}
+.act-sleep{animation:aSleep 7s ease forwards}.act-sleep .a{animation:sleep 7s ease forwards}.act-sleep .zz{animation:zz 2s ease-in-out 3 forwards}
+@keyframes aSleep{0%{opacity:1;transform:translate(4vw,84vh)}70%{transform:translate(4vw,84vh)}80%{transform:translate(4vw,62vh)}100%{opacity:1;transform:translate(4vw,84vh)}}
+@keyframes sleep{0%,68%{transform:rotate(90deg) scale(.95)}75%{transform:rotate(-20deg) scale(1.2)}85%{transform:rotate(380deg)}100%{transform:rotate(360deg)}}
+.act-march{animation:aWalk 12s linear forwards}.act-march .a{animation:wob .3s ease-in-out infinite alternate}
+.act-tele{animation:aTele 6s steps(1) forwards}
+@keyframes aTele{0%{opacity:1;transform:translate(4vw,10vh)}20%{transform:translate(88vw,14vh)}40%{transform:translate(8vw,80vh)}60%{transform:translate(70vw,84vh)}80%,100%{opacity:1;transform:translate(90vw,80vh)}}
+.act-tele .a{animation:flash 1.2s ease-out infinite}
+@keyframes flash{0%{transform:scale(0) rotate(-90deg);filter:brightness(4)}25%{transform:scale(1.2)}40%,100%{transform:scale(1);filter:none}}
+.act-pop{animation:none;opacity:1;transform:translate(86vw,82vh)}.act-pop .a{animation:pop 3s ease-in-out infinite}
+@keyframes pop{0%,100%{transform:translateY(60%) scaleY(.2);opacity:0}20%,60%{transform:translateY(-10%);opacity:1}30%{transform:translateY(-10%) rotate(-12deg)}45%{transform:translateY(-10%) rotate(12deg)}75%{transform:translateY(60%) scaleY(.2);opacity:0}}
+.act-rope{animation:aRope 12s linear forwards}.act-rope .a{animation:wobr .35s ease-in-out infinite alternate}
+@keyframes aRope{0%{opacity:1;transform:translate(105vw,.5vh)}100%{opacity:1;transform:translate(-12vw,.5vh)}}
+@keyframes wobr{from{transform:scaleY(-1) rotate(-6deg)}to{transform:scaleY(-1) rotate(6deg)}}
+.act-flip{animation:aFlip 1.2s ease-out forwards}.act-flip .a{animation:flip 1.6s cubic-bezier(.3,0,.3,1) .6s infinite}
+@keyframes aFlip{0%{opacity:0;transform:translate(90vw,105vh)}100%{opacity:1;transform:translate(90vw,80vh)}}
+@keyframes flip{0%{transform:none}15%{transform:scale(1.2,.75)}50%{transform:translateY(-160%) rotate(-360deg)}80%{transform:scale(1.2,.8)}100%{transform:none}}
+.act-balloon{animation:aBall 10s ease-in forwards}.act-balloon .a{animation:sway 1.6s ease-in-out infinite alternate;transform-origin:50% -80%}
+@keyframes aBall{0%{opacity:1;transform:translate(6vw,88vh)}15%{transform:translate(6vw,86vh)}100%{opacity:1;transform:translate(30vw,-30vh)}}
+.act-lupa{animation:aLupa 9s ease-in-out forwards}.act-lupa .a{animation:wob .5s ease-in-out infinite alternate}
+@keyframes aLupa{0%{opacity:1;transform:translate(102vw,80vh)}20%{transform:translate(82vw,80vh)}40%{transform:translate(86vw,62vh)}60%{transform:translate(78vw,74vh)}80%{transform:translate(84vw,80vh)}100%{opacity:1;transform:translate(88vw,80vh)}}
+.act-run{animation:aRun 4s cubic-bezier(.6,0,.4,1) forwards}.act-run .a{animation:wob .18s linear infinite alternate}
+@keyframes aRun{0%{opacity:1;transform:translate(-10vw,85vh)}45%{transform:translate(70vw,85vh)}55%{transform:translate(70vw,85vh) rotate(-10deg)}100%{opacity:1;transform:translate(88vw,82vh)}}
+.act-think{animation:aWave 1.4s cubic-bezier(.2,.9,.3,1.4) forwards}.act-think .a{animation:bob 2s ease-in-out infinite}
+.act-spin{animation:aSpinIn 1.5s cubic-bezier(.2,.9,.3,1.2) forwards}.act-spin .a{animation:spin 2.5s linear infinite}
+@keyframes aSpinIn{0%{opacity:0;transform:translate(50vw,110vh) scale(.3)}100%{opacity:1;transform:translate(89vw,80vh) scale(1)}}
+
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.on .kb{animation:kb 20s ease-out both}
+@keyframes kb{from{transform:scale(1.02)}to{transform:scale(1.15) translate(-1.5%,-1%)}}
+.shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,15,58,.95) 0%,rgba(4,15,58,.78) 42%,rgba(4,15,58,.1) 76%)}
+.shade.full{background:rgba(4,15,58,.72)}
+.shade.bottom{background:linear-gradient(0deg,rgba(4,15,58,.96) 0%,rgba(4,15,58,.5) 42%,rgba(4,15,58,0) 72%)}
+.wrap{position:absolute;inset:0;padding:10vh 6vw 12vh;display:flex;flex-direction:column;justify-content:center;gap:2.2vh}
+.left{max-width:52vw}
+.center{align-items:center;text-align:center}
+.eyebrow{font-weight:800;letter-spacing:.3em;text-transform:uppercase;color:var(--y);font-size:clamp(14px,1.5vw,30px)}
+h1{font-size:clamp(40px,7.2vw,156px)}
+h2{font-size:clamp(30px,4.6vw,100px)}
+h3{font-size:clamp(18px,1.9vw,38px)}
+p.lead{font-size:clamp(18px,1.9vw,40px);line-height:1.38}
+.soft{color:var(--soft)}
+.y{color:var(--y)}
+.rise>*{opacity:0;transform:translateY(24px)}
+.on .rise>*{animation:rise .9s cubic-bezier(.2,.7,.2,1) forwards}
+.on .rise>*:nth-child(2){animation-delay:.35s}.on .rise>*:nth-child(3){animation-delay:.7s}.on .rise>*:nth-child(4){animation-delay:1.05s}.on .rise>*:nth-child(5){animation-delay:1.4s}.on .rise>*:nth-child(6){animation-delay:1.75s}.on .rise>*:nth-child(7){animation-delay:2.1s}
+.slow>*:nth-child(2){animation-delay:1.6s!important}.slow>*:nth-child(3){animation-delay:3.4s!important}.slow>*:nth-child(4){animation-delay:5.2s!important}
+@keyframes rise{to{opacity:1;transform:none}}
+.chips{display:flex;flex-wrap:wrap;gap:12px;margin-top:1vh}
+.chip{display:inline-flex;align-items:center;gap:10px;background:var(--y);color:var(--deep);text-decoration:none;font-weight:800;border-radius:999px;padding:.7em 1.2em;font-size:clamp(14px,1.2vw,25px);cursor:pointer;border:0;font-family:inherit;transition:transform .15s}
+.chip:hover,.chip:focus-visible{transform:scale(1.05);outline:3px solid var(--ink);outline-offset:3px}
+.chip svg{width:1.1em;height:1.1em;flex:none}
+.quote{font-family:'Bricolage Grotesque';font-weight:700;font-size:clamp(28px,3.6vw,78px);line-height:1.15;max-width:76vw}
+.who{font-size:clamp(16px,1.5vw,32px);font-weight:700}
+.logo-s{position:fixed;top:1.5vh;right:1.5vw;width:clamp(56px,5vw,100px);z-index:15;filter:drop-shadow(0 4px 14px rgba(0,0,0,.5));pointer-events:none;transition:opacity .5s}
+.logo-b{width:clamp(220px,28vw,560px);filter:drop-shadow(0 10px 40px rgba(0,0,0,.6))}
+.on .logo-b{animation:logoin 1.6s cubic-bezier(.2,.7,.2,1) both}
+@keyframes logoin{from{opacity:0;transform:scale(.6) rotate(-6deg)}to{opacity:1;transform:none}}
+/* before after */
+.ba{position:absolute;inset:0}
+.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ba .after{clip-path:inset(0 0 0 var(--p,50%))}
+.ba .line{position:absolute;top:0;bottom:0;left:var(--p,50%);width:6px;margin-left:-3px;background:var(--y);box-shadow:0 0 30px rgba(0,0,0,.5)}
+.ba .knob{position:absolute;top:50%;left:var(--p,50%);width:74px;height:74px;margin:-37px 0 0 -37px;border-radius:50%;background:var(--y);color:var(--deep);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:30px;box-shadow:0 6px 24px rgba(0,0,0,.4)}
+.ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;z-index:3}
+.tag{position:absolute;top:9vh;font-weight:800;font-size:clamp(18px,1.8vw,38px);padding:.35em .9em;border-radius:10px;z-index:2}
+.tag.a{left:12vw;background:var(--red);color:var(--deep)}.tag.d{right:4vw;background:var(--green);color:var(--deep)}
+.bapanel{position:absolute;left:4vw;bottom:13vh;max-width:46vw;background:var(--card);backdrop-filter:blur(6px);padding:3vh 2.4vw;border-radius:20px;z-index:4;display:flex;flex-direction:column;gap:1.4vh}
+/* gallery */
+.gal{position:absolute;right:4vw;top:12vh;bottom:14vh;width:42vw;display:grid;gap:12px}
+.gal img{width:100%;height:100%;object-fit:cover;border-radius:16px;cursor:zoom-in;box-shadow:0 10px 40px rgba(0,0,0,.4);transition:transform .2s;min-height:0}
+.gal img:hover{transform:scale(1.02)}
+.mem{position:absolute;right:5vw;bottom:9vh;width:24vw;background:#fffdf5;padding:.7vw .7vw 1vw;border-radius:6px;transform:rotate(2.5deg);box-shadow:0 24px 60px rgba(0,0,0,.6);color:#0a1b4f;opacity:0;z-index:3}
+.mem.sm{width:19vw;bottom:6vh}
+.mem.top{top:8vh;bottom:auto;right:6vw;transform:rotate(-2.5deg)}
+.mem.top.sm{top:6vh;right:9vw}
+.on .mem{animation:memin 1.1s 1.4s cubic-bezier(.2,.7,.2,1) both}.on .mem.top{animation-name:memin2}
+@keyframes memin{from{opacity:0;transform:rotate(9deg) translateY(50px) scale(.9)}to{opacity:1;transform:rotate(2.5deg)}}
+@keyframes memin2{from{opacity:0;transform:rotate(-9deg) translateY(-40px) scale(.9)}to{opacity:1;transform:rotate(-2.5deg)}}
+.mem img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;cursor:zoom-in;border-radius:2px}
+.mem b{display:block;font-size:clamp(11px,1vw,20px);margin-top:.7vw;color:#c2410c;letter-spacing:.02em}
+.mem p{margin:.35vw 0 0;font-size:clamp(12px,1.15vw,24px);line-height:1.3;font-weight:600}
+.gal figure{margin:0;position:relative;border-radius:16px;overflow:hidden;min-height:0;box-shadow:0 10px 40px rgba(0,0,0,.4)}
+.gal figure img{border-radius:0;box-shadow:none}
+.gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:1.6em .8em .6em;font-size:clamp(11px,1.05vw,22px);font-weight:700;line-height:1.25;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.82))}
+.g3>figure:first-child{grid-column:span 2}
+.topnames{display:flex;flex-wrap:wrap;gap:.8vw;margin-top:1vh}.topnames span{background:var(--y);color:var(--deep);font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(16px,2vw,44px);padding:.25em .7em;border-radius:999px;box-shadow:0 8px 24px rgba(0,0,0,.35);opacity:0;transform:scale(.6)}
+.on .topnames span{animation:pop .6s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i)*110ms + .4s)}
+.morenames{display:flex;flex-wrap:wrap;gap:.5vw;margin-top:2vh}.morenames span{border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:.2em .7em;font-size:clamp(12px,1.15vw,24px);font-weight:600;opacity:.9}
+.bigc .card h3{font-size:clamp(16px,1.9vw,40px)}.bigc .card p{font-size:clamp(13px,1.45vw,30px);line-height:1.35}
+.prop{display:grid;grid-template-columns:1fr auto 1fr;gap:.7vh 1.2vw;align-items:center;margin-top:1.5vh}
+.prop>div{padding:.8vh 1vw;border-radius:12px;font-size:clamp(12px,1.4vw,30px);line-height:1.25;opacity:0;transform:translateY(14px)}
+.prop .pa{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18)}
+.prop .pb{background:var(--y);color:var(--deep);font-weight:700}
+.prop .ar{background:none;color:var(--y);font-size:clamp(16px,2vw,40px);padding:0}
+.prop b{display:inline-block;min-width:3.2em;color:var(--y)}.prop .pb b{color:#c2410c}
+.on .prop>div{animation:pop .6s both;animation-delay:calc(var(--r)*260ms + .5s)}
+.fgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2vw;margin-top:2.5vh;flex:1;max-height:72vh}
+.fcol{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:18px;padding:1.6vh 1.2vw}
+.fcol h3{color:var(--y);font-size:clamp(18px,2.3vw,48px);margin:0 0 1.6vh}
+.fcol ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:1.8vh}
+.fcol li{font-size:clamp(15px,1.75vw,36px);line-height:1.28;padding-left:1.1em;position:relative;opacity:0;transform:translateX(-12px)}
+.fcol li:before{content:'';position:absolute;left:0;top:.45em;width:.55em;height:.55em;border-radius:50%;background:var(--y)}
+.on .fcol li{animation:pop .6s both;animation-delay:calc(var(--k)*420ms + .6s)}
+.citychips{display:flex;flex-wrap:wrap;gap:.7vw;margin-top:1.5vh}
+.citychips{max-width:84vw}.citychips span{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:.35em .9em;font-weight:700;font-size:clamp(13px,1.5vw,30px);opacity:0;transform:scale(.7)}
+.on .citychips span{animation:pop .6s both;animation-delay:calc(var(--k)*300ms + .6s)}
+.rodaw{position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,#0b2a8f,#040f3a 70%)}
+.rodac{position:absolute;left:50%;top:50%;width:62vw;height:62vh;transform:translate(-50%,-50%);border:3px dashed rgba(255,210,31,.45);border-radius:50%;opacity:0}
+.on .rodac{animation:fade 1.5s .3s both}
+.rodaw>span{position:absolute;transform:translate(-50%,-50%) scale(.6);background:var(--y);color:var(--deep);font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(14px,1.6vw,34px);padding:.25em .8em;border-radius:999px;white-space:nowrap;opacity:0}
+.on .rodaw>span{animation:rodain .7s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--k)*380ms + .8s)}
+@keyframes rodain{to{opacity:1;transform:translate(-50%,-50%) scale(1)}}
+.rodamid{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:44vw;text-align:center;opacity:0}
+.on .rodamid{animation:fade 1.4s 5.6s both}
+.rodamid h2{font-size:3.4vw}
+.verse{opacity:0;transform:translateY(20px);margin:2vh auto;max-width:72vw}
+.on .verse{animation:pop 1s both;animation-delay:calc(var(--k)*2.6s + .6s)}
+.lines p{font-family:'Bricolage Grotesque';font-weight:700;font-size:clamp(20px,3vw,64px);line-height:1.25;margin:2.2vh auto;max-width:78vw;opacity:0;transform:translateY(16px)}
+.lines p:last-child{color:var(--y)}
+.on .lines p{animation:pop 1.2s both;animation-delay:calc(var(--k)*3s + .8s)}
+.mgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4vw;margin-top:2.5vh;max-width:78vw}
+.mcard{position:relative;background:linear-gradient(160deg,rgba(255,210,31,.16),rgba(255,255,255,.04));border:1px solid rgba(255,210,31,.45);border-radius:20px;padding:2.4vh 1.5vw 2.2vh 1.5vw;opacity:0;transform:translateY(30px) rotateX(25deg)}
+.on .mcard{animation:mcin .8s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--k)*600ms + .6s)}
+@keyframes mcin{to{opacity:1;transform:none}}
+.mcard h3{color:var(--y);font-size:clamp(18px,2.4vw,50px);margin:.4vh 0 1vh}
+.mcard p{font-size:clamp(14px,1.7vw,36px);line-height:1.3;margin:0}
+.mcard small{display:block;margin-top:1vh;font-size:clamp(11px,1vw,20px);opacity:.75;text-transform:uppercase;letter-spacing:.08em}
+.mnum{position:absolute;right:1vw;bottom:.4vh;font-family:'Bricolage Grotesque';font-weight:800;font-size:4vw;color:rgba(255,210,31,.25)}
+.mend{opacity:0}.on .mend{animation:fade 1s 4.6s both}
+.bchip.w4{background:#ff8a00!important;color:#fff!important}
+#mascot{position:fixed;right:1.5vw;bottom:9vh;width:clamp(60px,5.5vw,120px);z-index:20;pointer-events:none;opacity:0;transform:translateX(140%) rotate(8deg);transition:opacity .6s,transform .9s cubic-bezier(.2,.8,.2,1)}
+#mascot.show{opacity:1;transform:none}
+#mascot img{width:100%;display:block;animation:bob 2.4s ease-in-out infinite;transform-origin:50% 100%;filter:drop-shadow(0 10px 18px rgba(0,0,0,.45))}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-8%) rotate(3deg)}}
+#mbub{position:absolute;right:0;bottom:98%;width:max-content;max-width:12.5vw;background:#fff;color:#0a1b4f;font-weight:800;font-size:clamp(12px,1.25vw,26px);line-height:1.25;padding:.7em 1em;border-radius:18px 18px 4px 18px;box-shadow:0 10px 30px rgba(0,0,0,.4);transform:scale(0);transform-origin:100% 100%;transition:transform .45s cubic-bezier(.3,1.6,.5,1) .5s}
+#mascot.show #mbub.on{transform:scale(1)}
+#fx{position:fixed;inset:0;z-index:2;pointer-events:none}
+#antc{position:absolute;inset:0;width:100%;height:100%;background:radial-gradient(circle at 50% 55%,#123a9e,#040f3a 72%)}
+.antcap{position:absolute;left:0;right:0;top:7vh;text-align:center;pointer-events:none;z-index:2}
+.antcap h2{font-size:3.4vw;transition:opacity .6s;text-shadow:0 4px 20px rgba(0,0,0,.5)}
+.antnum{font-family:'Bricolage Grotesque';font-weight:800;color:var(--y);font-size:5vw;line-height:1;text-shadow:0 4px 20px rgba(0,0,0,.5)}
+.on .bg.kb:nth-of-type(odd){animation:kb2 22s ease-in-out both}
+@keyframes kb2{from{transform:scale(1.18) translate(2%,1.5%)}to{transform:scale(1.04) translate(-1.5%,-1%)}}
+.slide.on .bg.kb{filter:saturate(1.08)}
+.slide .gal figure,.slide .gal>img{animation:floaty 7s ease-in-out infinite}
+.slide .gal>:nth-child(2){animation-delay:-2.3s}.slide .gal>:nth-child(3){animation-delay:-4.6s}.slide .gal>:nth-child(4){animation-delay:-1.2s}
+@keyframes floaty{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-1.2%) rotate(.4deg)}}
+.gal figure:after,.mem:after{content:'';position:absolute;inset:0;background:linear-gradient(110deg,transparent 35%,rgba(255,255,255,.28) 50%,transparent 65%);transform:translateX(-120%);pointer-events:none}
+.on .gal figure:after,.on .mem:after{animation:shine 1.6s 1.2s ease-out both}
+@keyframes shine{to{transform:translateX(120%)}}
+.on .mem img{animation:memzoom 9s ease-in-out infinite alternate}
+@keyframes memzoom{from{transform:scale(1)}to{transform:scale(1.08)}}
+.mem{overflow:hidden}
+.walltit{position:absolute;left:3vw;top:2.5vh;right:12vw;z-index:2}.walltit h2{font-size:3.4vw;margin:.2em 0 0}
+.wall{position:absolute;left:2vw;right:2vw;top:17vh;bottom:3vh;display:grid;gap:.6vw;grid-template-columns:repeat(var(--c),1fr);grid-auto-rows:1fr}
+.wall figure{margin:0;position:relative;border-radius:14px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.45);opacity:0;transform:scale(.85) translateY(20px);min-height:0}
+.on .wall figure{animation:pop .7s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i)*160ms + .3s)}
+.wall img{width:100%;height:100%;object-fit:cover;cursor:zoom-in;display:block}
+.wall figcaption{position:absolute;left:0;right:0;bottom:0;padding:1.4em .7em .5em;font-size:clamp(11px,1.05vw,22px);font-weight:700;line-height:1.2;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.8))}
+.g2{grid-template-rows:1fr 1fr}.g3{grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr}.g3 img:first-child{grid-column:span 2}.g4{grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr}
+.steps{display:flex;flex-direction:column;gap:1.2vh}
+.steps div{display:flex;gap:1vw;align-items:baseline;font-size:clamp(16px,1.55vw,33px)}
+.steps b{color:var(--y);min-width:5.5ch;font-family:'Bricolage Grotesque'}
+.cards{display:grid;gap:14px}
+.card{background:var(--card);border:2px solid rgba(201,212,255,.25);border-radius:18px;padding:2.2vh 1.4vw}
+.card h3{color:var(--y)}
+.card p{font-size:clamp(14px,1.15vw,24px);color:var(--soft);margin-top:.6vh}
+.c3{grid-template-columns:repeat(3,1fr)}.c4{grid-template-columns:repeat(4,1fr)}
+.count{font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(60px,12vw,260px);line-height:.9;color:var(--y)}
+/* conquistas */
+.filters{display:flex;flex-wrap:wrap;gap:8px}
+.fbtn{font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(13px,1.15vw,24px);background:rgba(255,251,234,.08);color:var(--ink);border:2px solid var(--y);border-radius:999px;padding:.35em .9em;cursor:pointer}
+.fbtn.sel,.fbtn:hover{background:var(--y);color:var(--deep)}
+.tiles{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;overflow:auto;max-height:58vh;padding:2px 6px 2px 2px;align-content:start}
+.tile{background:rgba(255,251,234,.07);border:2px solid rgba(255,210,31,.3);border-radius:12px;padding:.9vh .7vw;font-size:clamp(11px,.92vw,19px);font-weight:600;line-height:1.2;display:flex;gap:.5em;align-items:flex-start;text-decoration:none;color:var(--ink);opacity:0;transform:scale(.92);animation:pop .35s ease forwards}
+.tile b{color:var(--y);font-family:'Bricolage Grotesque';min-width:1.8em}
+.tile em{display:block;font-style:normal;color:var(--soft);font-size:.82em;margin-top:.3em}
+.tile.go{cursor:pointer;border-color:var(--y)}
+.tile.go:hover,.tile.go:focus-visible{background:var(--y);color:var(--deep);outline:none}.tile.go:hover b,.tile.go:hover em{color:var(--deep)}
+@keyframes pop{to{opacity:1;transform:none}}
+.legend{font-size:clamp(12px,1vw,20px);color:var(--soft)}
+/* press */
+.press{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:1vh;overflow:auto;max-height:64vh;padding-right:6px}
+.pcard{display:flex;flex-direction:column;gap:.6vh;background:var(--ink);color:var(--deep);text-decoration:none;border-radius:14px;padding:1.6vh 1.1vw;transition:transform .15s;border-left:10px solid var(--y)}
+.pcard:hover,.pcard:focus-visible{transform:translateY(-4px) scale(1.02);outline:3px solid var(--y)}
+.pcard small{font-weight:800;color:var(--blue);font-size:clamp(11px,.9vw,18px);letter-spacing:.08em;text-transform:uppercase}
+.pcard span{font-family:'Bricolage Grotesque';font-weight:700;font-size:clamp(14px,1.2vw,25px);line-height:1.15}
+/* growth mosaic */
+#grid{position:absolute;inset:0;display:grid;gap:3px;padding:3px;align-content:center;justify-content:center}
+#grid .sp{position:relative;overflow:hidden;border-radius:4px;animation:tin .5s ease both}#grid .sp i{position:absolute;left:0;top:50%;width:100%;aspect-ratio:1;transform:translateY(-50%);background-size:1000% 1000%;background-repeat:no-repeat}
+#grid img{width:100%;height:100%;object-fit:cover;border-radius:4px;animation:tin .5s ease both}
+@keyframes tin{from{opacity:0;transform:scale(.3)}to{opacity:1;transform:none}}
+.gcount{position:absolute;left:50%;top:84%;transform:translate(-50%,-50%);text-align:center;background:rgba(4,15,58,.9);padding:1.6vh 3vw;border-radius:28px;z-index:3;transition:all .8s;min-width:38vw}
+#gnum{font-size:7vw!important;line-height:1}
+.gcount .count{font-size:clamp(70px,11vw,230px)}
+.gcount p{font-size:clamp(18px,2vw,42px);font-weight:700}
+#gname{color:var(--y);font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(20px,2.4vw,52px);min-height:1.3em}
+.gfinal{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:4;opacity:0;transition:opacity 1.2s;pointer-events:none}
+.gfinal.show{opacity:1}
+.gfinal h1{background:var(--y);color:var(--deep);padding:.25em .6em;border-radius:24px;text-align:center}
+/* city rings */
+.rings{position:absolute;left:62%;top:52%;transform:translate(-50%,-50%);width:min(80vh,58vw);aspect-ratio:1}
+.ring{position:absolute;left:50%;top:50%;border-radius:50%;border:3px dashed rgba(255,210,31,.55);transform:translate(-50%,-50%) scale(.2);opacity:0;transition:all 1.4s cubic-bezier(.2,.7,.2,1)}
+.ring.show{transform:translate(-50%,-50%) scale(1);opacity:1}
+.ring span{position:absolute;left:50%;top:-1.1em;transform:translateX(-50%);background:var(--y);color:var(--deep);font-weight:800;border-radius:999px;padding:.15em .8em;font-size:clamp(13px,1.3vw,26px);letter-spacing:.15em;text-transform:uppercase;white-space:nowrap}
+.bchip{position:absolute;transform:translate(-50%,-50%) scale(0);font-family:'Bricolage Grotesque';font-weight:800;white-space:nowrap;padding:.2em .7em;border-radius:999px;transition:transform .6s cubic-bezier(.3,1.6,.5,1);font-size:clamp(11px,1.05vw,22px)}
+.bchip.show{transform:translate(-50%,-50%) scale(1)}
+.bchip.w1{background:var(--y);color:var(--deep)}
+.bchip.w2{background:var(--ink);color:var(--deep)}
+.bchip.w3{background:rgba(255,251,234,.15);color:var(--ink);border:2px solid var(--ink)}
+.citytxt{position:absolute;left:4vw;top:8vh;max-width:30vw;z-index:2}
+.citycount{position:absolute;left:4vw;bottom:14vh;z-index:2;max-width:26vw}
+.pill{display:inline-block;background:var(--y);color:var(--deep);font-weight:800;border-radius:999px;padding:.35em .9em;margin:0 .4vw .9vh 0;font-size:clamp(16px,1.75vw,37px)}
+.pill.l{background:var(--deep);color:var(--ink);border:2px solid var(--y)}
+video.full{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#000}
+/* UI */
+#bar{position:fixed;left:0;right:0;bottom:0;height:9vh;min-height:56px;display:flex;align-items:center;gap:12px;padding:0 2vw;background:linear-gradient(0deg,rgba(4,15,58,.95),rgba(4,15,58,0));z-index:20;transition:opacity .4s}
+#bar.hide{opacity:0}
+#bar button{font-family:inherit;font-weight:800;background:rgba(255,251,234,.14);color:var(--ink);border:0;border-radius:12px;height:48px;min-width:48px;padding:0 14px;font-size:18px;cursor:pointer}
+#bar button:hover,#bar button.on{background:var(--y);color:var(--deep)}
+#prog{flex:1;display:flex;gap:4px;align-items:center}
+#prog i{flex:1;height:8px;border-radius:4px;background:rgba(255,251,234,.22);cursor:pointer;position:relative}
+#prog i.done{background:var(--y)}#prog i.cur{background:var(--ink)}
+#prog i.chap::before{content:'';position:absolute;left:-3px;top:-6px;bottom:-6px;width:2px;background:rgba(255,251,234,.6)}
+#cap{font-weight:700;font-size:16px;color:var(--soft);white-space:nowrap;max-width:22vw;overflow:hidden;text-overflow:ellipsis}
+#menu{position:fixed;inset:0;background:rgba(4,15,58,.97);z-index:30;display:none;padding:6vh 6vw;overflow:auto}
+#menu.open{display:block}
+#menu h2{margin-bottom:3vh}
+#menu .mgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+#menu button{text-align:left;font-family:inherit;background:rgba(255,251,234,.08);color:var(--ink);border:2px solid rgba(255,210,31,.4);border-radius:14px;padding:16px 18px;font-size:clamp(14px,1.2vw,22px);cursor:pointer}
+#menu button b{color:var(--y);display:block;font-size:.8em;letter-spacing:.15em;text-transform:uppercase}
+#menu button:hover{background:var(--y);color:var(--deep)}#menu button:hover b{color:var(--deep)}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:40;display:none;align-items:center;justify-content:center;cursor:zoom-out}
+#lb.open{display:flex}
+#lb img{max-width:94vw;max-height:90vh;border-radius:10px}
+#start{position:fixed;inset:0;z-index:50;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4vh;cursor:pointer;text-align:center;padding:16px}
+#start.gone{opacity:0;pointer-events:none;transition:opacity 1s}
+#start button{font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(20px,2.4vw,48px);background:var(--y);color:var(--deep);border:0;border-radius:999px;padding:.6em 1.6em;cursor:pointer}
+@media (max-width:820px){.left,.bapanel{max-width:none}.gal{position:relative;inset:auto;width:auto;height:34vh;right:auto;top:auto}.tiles{grid-template-columns:repeat(2,1fr)}.press{grid-template-columns:1fr 1fr}.c3,.c4,#menu .mgrid{grid-template-columns:1fr 1fr}.wrap{padding:6vh 16px 12vh;overflow:auto;justify-content:flex-start}.shade{background:rgba(4,15,58,.8)}.citytxt{max-width:none;right:16px}}
+</style>
+<div id="stage"></div>
+<img class="logo-s" id="logoS" src="img_logo.png" alt="Coletivo Vetor Oeste"><canvas id="fx"></canvas><div id="tl"><div class="bar"></div><i id="tlfill"></i><div id="tlticks"></div><div id="tldot"><img src="img_formiga.png" alt=""><b id="tly"></b></div></div><div id="actor"></div><div id="mascot"><div id="mbub"></div><img src="img_formiga.png" alt="Formiguinha do Coletivo"></div>
+<audio id="m1" src="m1_memoria.mp3" loop preload="auto"></audio><audio id="m2" src="m2_luta.mp3" loop preload="auto"></audio><audio id="m3" src="m3_conquista.mp3" loop preload="auto"></audio><audio id="m4" src="m4_emocao.mp3" loop preload="auto"></audio>
+<div id="bar">
+<button id="bPrev" aria-label="Voltar">‹</button>
+<button id="bNext" aria-label="Avançar">›</button>
+<span id="cap"></span>
+<div id="prog"></div>
+<button id="bMusic" aria-label="Música">♪ Música</button>
+<button id="bMenu">Capítulos</button>
+<button id="bFull" aria-label="Tela cheia">⛶</button>
+</div>
+<div id="menu" role="dialog" aria-label="Capítulos"><h2 class="y">Ir para</h2><div class="mgrid" id="mgrid"></div></div>
+<div id="lb"></div>
+<div id="start"><img class="logo-b" src="img_logo.png" alt="Coletivo Vetor Oeste" style="animation:none"><h2>14 anos do Coletivo Vetor Oeste</h2><button id="bStart">Começar ♪</button><p class="soft">Setas do teclado ou toque nas laterais para passar. Botões amarelos abrem as matérias.</p></div>
+<script>
+const FACES=["r0000.jpg", "r0001.jpg", "r0002.jpg", "r0003.jpg", "r0004.jpg", "r0005.jpg", "r0006.jpg", "r0007.jpg", "r0008.jpg", "r0009.jpg", "r0012.jpg", "r0015.jpg", "r0016.jpg", "r0017.jpg", "r0018.jpg", "r0019.jpg", "r0024.jpg", "r0025.jpg", "r0026.jpg", "r0027.jpg", "r0028.jpg", "r0029.jpg", "r0030.jpg", "r0031.jpg", "r0032.jpg", "r0033.jpg", "r0034.jpg", "r0037.jpg", "r0038.jpg", "r0040.jpg", "r0041.jpg", "r0042.jpg", "r0043.jpg", "r0044.jpg", "r0045.jpg", "r0046.jpg", "r0047.jpg", "r0048.jpg", "r0049.jpg", "r0050.jpg", "r0051.jpg", "r0052.jpg", "r0053.jpg", "r0054.jpg", "r0055.jpg", "r0056.jpg", "r0057.jpg", "r0058.jpg", "r0059.jpg", "r0060.jpg", "r0061.jpg", "r0062.jpg", "r0063.jpg", "r0064.jpg", "r0067.jpg", "r0070.jpg", "r0071.jpg", "r0072.jpg", "r0073.jpg", "r0074.jpg", "r0075.jpg", "r0076.jpg", "r0077.jpg", "r0078.jpg", "r0079.jpg", "r0080.jpg", "r0081.jpg", "r0082.jpg", "r0084.jpg", "r0085.jpg", "r0090.jpg", "r0091.jpg", "r0092.jpg", "r0093.jpg", "r0094.jpg", "r0098.jpg", "r0099.jpg", "r0100.jpg", "r0101.jpg", "r0102.jpg", "r0103.jpg", "r0104.jpg", "r0105.jpg", "r0106.jpg", "r0107.jpg", "r0108.jpg", "r0111.jpg", "r0112.jpg", "r0113.jpg", "r0114.jpg", "r0115.jpg", "r0116.jpg", "r0117.jpg", "r0118.jpg", "r0119.jpg", "r0120.jpg", "r0121.jpg", "r0125.jpg", "r0127.jpg", "r0128.jpg", "r0129.jpg", "r0139.jpg", "r0140.jpg", "r0141.jpg", "r0142.jpg", "r0143.jpg", "r0144.jpg", "r0145.jpg", "r0146.jpg", "r0147.jpg", "r0148.jpg", "r0149.jpg", "r0150.jpg", "r0151.jpg", "r0153.jpg", "r0155.jpg", "r0156.jpg", "r0157.jpg", "r0158.jpg", "r0159.jpg", "r0160.jpg", "r0161.jpg", "r0165.jpg", "r0166.jpg", "r0167.jpg", "r0168.jpg", "r0169.jpg", "r0170.jpg", "r0171.jpg", "r0172.jpg", "r0173.jpg", "r0174.jpg", "r0175.jpg", "r0176.jpg", "r0177.jpg", "r0178.jpg", "r0179.jpg", "r0180.jpg", "r0181.jpg", "r0182.jpg", "r0183.jpg", "r0184.jpg", "r0185.jpg", "r0186.jpg", "r0187.jpg", "r0188.jpg", "r0189.jpg", "r0190.jpg", "r0191.jpg", "r0192.jpg", "r0193.jpg", "r0194.jpg", "r0195.jpg", "r0196.jpg"];
+const THUMBS=["f000.jpg", "f001.jpg", "f002.jpg", "f003.jpg", "f004.jpg", "f005.jpg", "f006.jpg", "f007.jpg", "f008.jpg", "f009.jpg", "f010.jpg", "f011.jpg", "f012.jpg", "f013.jpg", "f014.jpg", "f015.jpg", "f016.jpg", "f017.jpg", "f018.jpg", "f019.jpg", "f020.jpg", "f021.jpg", "f022.jpg", "f023.jpg", "f024.jpg", "f025.jpg", "f026.jpg", "f027.jpg", "f028.jpg", "f029.jpg", "f030.jpg", "f031.jpg", "f032.jpg", "f033.jpg", "f034.jpg", "f035.jpg", "f036.jpg", "f037.jpg", "f038.jpg", "f039.jpg", "f040.jpg", "f041.jpg", "f042.jpg", "f043.jpg", "f044.jpg", "f045.jpg", "f046.jpg", "f047.jpg", "f048.jpg", "f049.jpg", "f050.jpg", "f051.jpg", "f052.jpg", "f053.jpg", "f054.jpg", "f055.jpg", "f056.jpg", "f057.jpg", "f058.jpg", "f059.jpg", "f060.jpg", "f061.jpg", "f062.jpg", "f063.jpg", "f064.jpg", "f065.jpg", "f066.jpg", "f067.jpg", "f068.jpg", "f069.jpg", "f070.jpg", "f071.jpg", "f072.jpg", "f073.jpg", "f074.jpg", "f075.jpg", "f076.jpg", "f077.jpg", "f078.jpg", "f079.jpg", "f080.jpg", "f081.jpg", "f082.jpg", "f083.jpg", "f084.jpg", "f085.jpg", "f086.jpg", "f087.jpg", "f088.jpg", "f089.jpg", "f090.jpg", "f091.jpg", "f092.jpg", "f093.jpg", "f094.jpg", "f095.jpg", "f096.jpg", "f097.jpg", "f098.jpg", "f099.jpg", "f100.jpg", "f101.jpg", "f102.jpg", "f103.jpg", "f104.jpg", "f105.jpg", "f106.jpg", "f107.jpg", "f108.jpg", "f109.jpg", "f110.jpg", "f111.jpg", "f112.jpg", "f113.jpg", "f114.jpg", "f115.jpg", "f116.jpg", "f117.jpg", "f118.jpg", "f119.jpg", "f120.jpg", "f121.jpg", "f122.jpg", "f123.jpg", "f124.jpg", "f125.jpg", "f126.jpg", "f127.jpg", "f128.jpg", "f129.jpg", "f130.jpg", "f131.jpg", "f132.jpg", "f133.jpg", "f134.jpg", "f135.jpg", "f136.jpg", "f137.jpg", "f138.jpg", "f139.jpg", "f140.jpg", "f141.jpg", "f142.jpg", "f143.jpg", "f144.jpg", "f145.jpg", "f146.jpg", "f147.jpg", "f148.jpg", "f149.jpg", "f150.jpg", "f151.jpg", "f152.jpg", "f153.jpg", "f154.jpg", "f155.jpg", "f156.jpg", "f157.jpg", "f158.jpg", "f159.jpg", "f160.jpg", "f161.jpg", "f162.jpg", "f163.jpg", "f164.jpg", "f165.jpg", "f166.jpg", "f167.jpg", "f168.jpg", "f169.jpg", "f170.jpg"];const FSN=708;
+const EXT='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>';
+const G='https://jundiai.sp.gov.br/noticias/';
+const L={
+ mulher13:[G+'2013/03/08/atividades-gratuitas-em-homenagem-a-mulher-na-regiao-oeste/','Atividades pela mulher na região oeste','Site oficial · 2013'],
+ reuniao80:[G+'2013/04/29/prefeito-participa-de-reuniao-do-coletivo-vetor-oeste/','10ª reunião, mais de 80 pessoas','Site oficial · 2013'],
+ viela:[G+'2013/06/10/jovens-transformam-vielas-no-residencial-jundiai-1/','Jovens transformam vielas no Residencial','Site oficial · 2013'],
+ lazer13:[G+'2013/06/10/almerinda-chaves-vai-receber-a-primeira-area-de-lazer/','Almerinda Chaves vai receber a primeira área de lazer','Site oficial · 2013'],
+ bosque:[G+'2013/07/12/no-almerinda-de-campinho-a-bosque-para-toda-a-familia/','No Almerinda, de campinho a bosque','Site oficial · 2013'],
+ cil:[G+'2013/07/26/centro-integrado-de-lazer-ja-esta-quase-pronto','Centro Integrado de Lazer quase pronto','Site oficial · 2013'],
+ onofre:[G+'2013/10/obra-homenageia-fundador-da-associacao-dos-aposentados/','Área de Lazer Onofre Canedo','Site oficial · 2013'],
+ upaobra:[G+'?p=71856','Começa a obra do mini-hospital 24h','Site oficial · 2013'],
+ rua8a:[G+'2014/09/23/rua-8-no-novo-horizonte-ganha-novo-trecho-de-asfalto','Rua 8 ganha novo trecho de asfalto','Site oficial · 2014'],
+ campo:[G+'2014/11/30/prefeito-entrega-campo-de-futebol-no-almerinda/','Campo de futebol no Almerinda','Site oficial · 2014'],
+ canil14:[G+'2014/06/17/prefeito-anuncia-nova-sede-para-canil-da-gm-no-medeiros/','Nova sede do Canil da Guarda no Medeiros','Site oficial · 2014'],
+ inv15:[G+'2015/01/19/vetor-oeste-recebe-investimentos-que-passam-dos-r-6-mi/','Vetor Oeste recebe mais de R$ 6 milhões','Site oficial · 2015'],
+ poste:[G+'2015/02/27/prefeitura-em-acao-prefeito-entrega-pavimentacao-da-daniel-pellizari/','Asfalto na Daniel Pellizzari, Bairro do Poste','Site oficial · 2015'],
+ cee:[G+'?p=120478','Centro Esportivo do Novo Horizonte renovado','Site oficial · 2015'],
+ arraia3:[G+'?p=143165','3º Arraiá Nordestino do Vetor Oeste','Site oficial · 2015'],
+ ponte:[G+'2015/11/22/prefeito-inaugura-ponte-que-liga-novo-horizonte-ao-tulipas/','Ponte liga Novo Horizonte ao Tulipas','Site oficial · 2015'],
+ ifarea:[G+'2015/12/19/jundiai-doa-area-de-24-mil-m%C2%B2-no-residencial-anchieta-para-o-instituto-federal/','24 mil m² para o Instituto Federal','Site oficial · 2015'],
+ escola:[G+'2016/03/17/prefeito-inaugura-mais-uma-escola-no-vetor-oeste/','Mais uma escola no Vetor Oeste','Site oficial · 2016'],
+ pev:[G+'2016/05/14/prefeitura-lanca-ponto-de-entrega-voluntaria-no-vetor-oeste/','Ponto de Entrega Voluntária de entulho','Site oficial · 2016'],
+ pev2:[G+'2016/07/02/novo-horizonte-tem-segundo-ponto-de-entrega-de-entulho/','Segundo Ponto de Entrega no Novo Horizonte','Site oficial · 2016'],
+ wady:[G+'2016/11/30/ponte-da-wady-badra-melhora-mobilidade-no-vetor-oeste/','Ponte da Wady Badra melhora a mobilidade','Site oficial · 2016'],
+ ggim:[G+'2017/05/04/ggim-prestigia-atividades-no-vetor-oeste/','Eu Moro, Eu Cuido 2017','Site oficial · 2017'],
+ praca:[G+'2018/11/14/praca-do-residencial-jundiai-passa-por-revitalizacao-completa/','Praça do Residencial revitalizada','Site oficial · 2018'],
+ upa:[G+'2018/11/27/upa-vetor-oeste-e-clinica-da-familia-ajustes-finais-para-a-inauguracao/','UPA Vetor Oeste e Clínica da Família','Site oficial · 2018'],
+ rua8b:[G+'2020/05/13/rua-8-no-novo-horizonte-ja-tem-asfalto-guias-calcadas-e-bocas-de-lobo/','Rua 8, segunda fase da obra','Site oficial · 2020'],
+ obras20:[G+'2020/07/21/vetor-oeste-tem-r-765-milhoes-em-obras-concluidas-desde-2017/','Viaduto, polder, novas UBS e asfalto','Site oficial · 2020'],
+ creche:[G+'2020/08/11/com-120-vagas-emeb-fernanda-de-favre-esta-pronta-no-residencial-jundiai','Creche Fernanda de Favre, 120 vagas','Site oficial · 2020'],
+ cafe21:[G+'2021/05/16/moradores-discutem-investimentos-para-o-vetor-oeste-com-prefeito/','Café Coletivo discute investimentos','Site oficial · 2021'],
+ bj21:[G+'2021/12/14/rua-do-bom-jardim-recebe-obras-de-pavimentacao-e-drenagem','Rua do Bom Jardim recebe asfalto e drenagem','Site oficial · 2021'],
+ mudas:[G+'2021/06/05/vetor-oeste-faz-plantio-simultaneo-de-1-mil-mudas-de-arvores/','Plantio de 1 mil mudas de árvores','Site oficial · 2021'],
+ canil21:[G+'2021/06/09/seguranca-canil-da-gm-comeca-a-ser-construido-no-medeiros/','Canil da Guarda começa a ser construído no Medeiros','Site oficial · 2021'],
+ quadra:[G+'2021/08/23/quadra-coberta-do-cras-novo-horizonte-vira-novo-espaco-de-lazer-e-convivencia/','Quadra coberta do CRAS Novo Horizonte','Site oficial · 2021'],
+ plano22:[G+'2022/01/24/plano-de-bairro-do-jardim-novo-horizonte-vai-virar-projeto-de-lei/','Plano de Bairro vira projeto de lei','Site oficial · 2022'],
+ naa:[G+'2022/04/30/novo-horizonte-ganha-nucleo-de-apoio-a-aprendizagem/','Núcleo de Apoio à Aprendizagem no Novo Horizonte','Site oficial · 2022'],
+ cdhu22:[G+'2022/07/01/cdhu-inicia-qualificacao-e-vistoria-de-casas-que-serao-reformadas-no-novo-horizonte','CDHU vistoria casas para reforma','Site oficial · 2022'],
+ upa2x:[G+'2022/07/17/upa-vetor-oeste-dobra-numero-de-atendimentos/','UPA dobra o número de atendimentos','Site oficial · 2022'],
+ cerrado:[G+'2022/08/15/jardim-novo-horizonte-recebe-a-primeira-fase-do-parque-do-cerrado/','Primeira fase do Parque do Cerrado','Site oficial · 2022'],
+ brincar:[G+'2022/08/21/ruas-de-brincar-agita-a-criancada-do-bairro-novo-horizonte/','Ruas de Brincar no Novo Horizonte','Site oficial · 2022'],
+ infancia22:[G+'2022/10/01/jundiai-inova-e-tera-primeiro-bairro-amigavel-a-primeira-infancia/','Primeiro bairro amigo da primeira infância','Site oficial · 2022'],
+ arvore:[G+'2022/11/07/programa-pe-de-arvore-chega-ao-jardim-novo-horizonte/','Pé de Árvore chega ao Novo Horizonte','Site oficial · 2022'],
+ reg171:[G+'2023/04/12/prefeitura-regulariza-mais-171-imoveis-no-jardim-novo-horizonte/','Mais 171 imóveis regularizados','Site oficial · 2023'],
+ linhas:[G+'2023/07/23/novas-linhas-do-vetor-oeste-comecam-a-operar-nesta-segunda-24/','Novas linhas de ônibus do Vetor Oeste','Site oficial · 2023'],
+ agua8:[G+'2023/09/29/rua-8-no-novo-horizonte-recebe-rede-de-agua-da-dae/','Rede de água na Rua 8','Site oficial · 2023'],
+ idosos:[G+'2023/12/11/prefeitura-entrega-reforma-total-do-condominio-dos-idosos-no-fazenda-grande','Condomínio dos Idosos reformado','Site oficial · 2023'],
+ vm123:[G+'2024/03/17/programa-viver-melhor-chega-a-123-casas-reformadas-no-jardim-novo-horizonte','Viver Melhor chega a 123 casas','Site oficial · 2024'],
+ parquenat:[G+'2024/03/25/criancas-e-familias-do-jardim-novo-horizonte-ganham-parque-naturalizado/','Parque naturalizado para as crianças','Site oficial · 2024'],
+ areainf:[G+'2024/04/13/novo-horizonte-recebe-primeiras-obras-para-implantacao-da-nova-area-da-infancia/','Nova Área da Infância','Site oficial · 2024'],
+ canil24:[G+'2024/05/13/canil-da-gmj-esta-com-98-das-obras-concluidas/','Canil da Guarda com 98% da obra pronta','Site oficial · 2024'],
+ cesp:[G+'2024/05/19/jundiai-ganha-novos-pontos-de-iluminacao-de-led-e-reforca-seguranca-para-populacao/','Luz de LED na Alameda CESP','Site oficial · 2024'],
+ escrituras:[G+'2024/06/08/emocao-marca-a-entrega-de-340-escrituras-no-jardim-novo-horizonte/','340 escrituras no Novo Horizonte','Site oficial · 2024'],
+ almerinda25:[G+'2025/01/27/reuniao-no-almerinda-chaves-reune-moradores-e-equipe-do-governo-para-discutir-melhorias-na-regiao/','Roda no Almerinda Chaves','Site oficial · 2025'],
+ revit25:[G+'2025/03/02/prefeitura-de-jundiai-dara-inicio-as-acoes-de-revitalizacao-em-bairros-do-vetor-oeste/','Revitalização nos bairros do Vetor Oeste','Site oficial · 2025'],
+ mat258:[G+'2025/04/08/prefeitura-de-jundiai-entrega-matriculas-a-258-familias-do-jardim-novo-horizonte-e-avanca-na-regularizacao-fundiaria-do-bairro/','258 matrículas entregues','Site oficial · 2025'],
+ medeiros:['https://jundiagora.com.br/medeiros-2/','Café Coletivo no Medeiros','Jundiaí Agora · 2025'],
+ arraia25:['https://jr.jor.br/2025/08/01/comeca-o-arraia-nordestino-no-residencial-jundiai/','Começa o Arraiá Nordestino','Jornal da Região · 2025'],
+ eumoro10:['https://tribunadejundiai.com.br/cidades/jundiai/eu-moro-eu-cuido-vetor-oeste-jundiai/','Eu Moro, Eu Cuido faz 10 anos','Tribuna de Jundiaí · 2025'],
+ ifamp:[G+'2025/10/04/prefeitura-de-jundiai-acompanha-obras-de-ampliacao-do-ifsp-e-reforca-integracao-com-setor-produtivo/','Ampliação do Instituto Federal','Site oficial · 2025'],
+ anos13:['https://jr.jor.br/2025/11/20/coletivo-do-vetor-oeste-celebra-13-anos/','Coletivo do Vetor Oeste celebra 13 anos','Jornal da Região · 2025'],
+ canil26:[G+'2026/01/30/canil-da-guarda-municipal-de-jundiai-integra-acoes-estrategicas-de-seguranca-educacao-e-apoio-a-comunidade/','Canil da Guarda no Medeiros em ação','Site oficial · 2026'],
+ mat26:[G+'2026/03/01/familias-do-jardim-novo-horizonte-recebem-matricula-definitiva-de-seus-imoveis/','Matrícula definitiva das casas','Site oficial · 2026'],
+ naa2:[G+'2026/04/21/praca-ao-lado-do-naa-ii-no-jardim-novo-horizonte-e-revitalizada-e-volta-a-ser-opcao-de-lazer-e-convivio/','Praça ao lado do NAA II revitalizada','Site oficial · 2026'],
+ reg26:[G+'2026/08/20/regularizacao-fundiaria-transforma-espera-de-anos-em-seguranca-para-familias-do-jardim-novo-horizonte/','Regularização fundiária no Novo Horizonte','Site oficial · 2026'],
+ oeste26:[G+'?p=387305','Região Oeste recebe investimentos','Site oficial · 2026'],
+ blog:['https://www.vetoroeste.com.br/','Blog Vetor Oeste Notícias','Blog do Coletivo']
+};
+const link=k=>`<a class="chip" href="${L[k][0]}" target="_blank" rel="noopener">${EXT}${L[k][1]}</a>`;
+const links=(...ks)=>`<div class="chips">${ks.map(link).join('')}</div>`;
+const img=(f,a)=>`<img src="img_${f}" alt="${a}" data-zoom>`;
+const mem=(src,place,why,cls='')=>`<div class="mem ${cls}"><img src="img_${src}" alt="${place}" data-zoom><b>${place}</b><p>${why}</p></div>`;
+const imgc=(f,a,c)=>`<figure class="gc"><img src="img_${f}" alt="${a}" data-zoom><figcaption>${c}</figcaption></figure>`;
+const SELCAP={"H1101": "2011 · moradores do Novo Horizonte pedem lazer", "H1203": "2012 · as primeiras rodas", "H1204": "2012 · roda no bairro", "H1205": "2012 · o terreno que a comunidade escolheu para a UPA", "H1207": "2012 · a roda começa a crescer", "H1208": "Novembro de 2012 · lideranças fundam o Coletivo", "H1301": "2013 · slackline antes da praça", "H1304": "2013 · a molecada na rua", "H1305": "2013 · Semeando um novo horizonte", "H1306": "2013 · grafite e cor", "H1307": "2013 · crianças com seus cartazes", "H1308": "2013 · oficina de rolimã", "H1312": "2013 · roda de moradores", "H1313": "2013 · viela ganhando cor", "H1314": "2013 · Ouvidoria da Comunidade", "H1317": "2013 · meninas pintando a viela", "H1318": "2013 · Fale com o Conselho Gestor", "H1322": "Agosto de 2013 · o terreno antes da Praça Onofre Canedo", "H1326": "Janeiro de 2013 · primeira reunião do ano, com 60 moradores", "H1327": "Junho de 2013 · começa a obra da praça", "H1331": "Novembro de 2013 · obra da UPA a todo vapor", "H1332": "Outubro de 2013 · praça quase pronta", "H1334": "Novembro de 2013 · a roda cheia", "H1402": "2014 · festa na rua", "H1406": "2014 · Arraiá Nordestino lotado", "H1408": "2014 · a criançada na festa", "H1411": "2014 · a comunidade em primeiro lugar", "H1412": "Fevereiro de 2014 · Bloco Basta vir e se divertir", "H1414": "2014 · zumba na praça", "H1416": "2014 · os prédios subindo", "H1417": "2014 · acompanhando a obra", "H1418": "2014 · reunião na rua", "H1419": "2014 · obras dos apartamentos", "H1420": "2014 · o que precisava mudar", "H1422": "2014 · 1º Carnaval de Rua da Região Oeste", "H1423": "2014 · capoeira na rua", "H1427": "Fevereiro de 2014 · o bloco na rua", "H1429": "Fevereiro de 2014 · primeiro bloco de carnaval", "H1431": "Janeiro de 2014 · primeiro Sarau do Novo Horizonte", "H1432": "Janeiro de 2014 · Rua 8, o asfalto virando realidade", "H1433": "Rua 8 antes e depois", "H1438": "Maio de 2014 · reunião com moradores da Rua 8", "H1439": "Março de 2014 · antes da ponte para o Tulipas", "H1442": "Março de 2014 · 1000 rosas no Dia da Mulher", "H1444": "Novembro de 2014 · obra da ponte para o Tulipas", "H1445": "Novembro de 2014 · campo de futebol da Praça Onofre Canedo", "H1502": "Agosto de 2015 · começa a obra da creche", "H1511": "Junho de 2015 · rampa de skate conquistada", "H1516": "Setembro de 2015 · acompanhando a obra da UPA", "H1602": "Agosto de 2016 · UPA quase pronta", "CQ01": "Câmeras de segurança", "CQ02": "Base da Guarda Municipal", "CQ03": "Creche e Centro Comunitário", "CQ07": "Asfalto chegando", "CQ08": "Campo sintético e área de lazer", "CQ09": "UPA 24h e Clínica da Família", "C2105": "Café de 9 anos · 2021", "C2114": "Café de 9 anos · 2021", "IF17": "Café no Instituto Federal · 2024", "AN14": "Aniversário no Instituto Federal · 2025", "C1311": "Café de 13 anos · 2025", "EM01": "Eu Moro, Eu Cuido 10 anos · 2025", "ME10": "Café no Medeiros · 2025"};
+const wall=(eb,t,codes,cols)=>`<div class="walltit rise"><p class="eyebrow">${eb}</p><h2>${t}</h2></div><div class="wall" style="--c:${cols}">${codes.map((c,i)=>`<figure style="--i:${i}"><img src="img_sel_${c}.jpg" alt="${SELCAP[c]}" data-zoom><figcaption>${SELCAP[c]}</figcaption></figure>`).join('')}</div>`;
+// conquistas: [titulo, ano, bairro, link, slide]
+const NH='Novo Horizonte',AL='Almerinda Chaves',RJ='Residencial Jundiaí',FG='Fazenda Grande',TU='Tulipas',PT='Poste, Traviú e Retentem',ME='Medeiros',CD='CDHU Novo Horizonte',BJ='Bom Jardim',RG='Toda a região';
+const CONQ=[
+['O nome Vetor Oeste, hoje usado pela cidade inteira','2012',RG,null,'nome'],
+['Ouvidoria da Comunidade na UBS','2013',NH,null,'ouvidoria'],
+['Moradores no Conselho Gestor da UBS','2013',NH,null,'ouvidoria'],
+['Mil rosas e a Lei Maria da Penha','2013',RG,'mulher13','mulheres'],
+['Viela grafitada por 20 artistas','2013',RJ,'viela','viela'],
+['Limpeza e pavimentação de todas as vielas','2013 em diante',RJ,null,'viela'],
+['Iluminação na maioria das vielas','2013 em diante',RJ,null,'viela'],
+['Primeira área de lazer do Almerinda','2013',AL,'lazer13','onofre'],
+['De campinho a bosque para a família','2013',AL,'bosque','onofre'],
+['Centro Integrado de Lazer','2013',AL,'cil','onofre'],
+['Praça Onofre Canedo, 30 mil m²','2013',AL,'onofre','onofre'],
+['Arraiá Nordestino no calendário oficial','2013 e 2015',AL,'arraia3','arraia'],
+['UPA no terreno entre os bairros','2013',NH,'upaobra','upa'],
+['Rua 8 asfaltada','2014',NH,'rua8a','rua8'],
+['Primeiro bloco de carnaval da região','2014',AL,null,'bloco'],
+['1.088 apartamentos novos','2014',NH,null,'moradia'],
+['UBS Novo Horizonte ampliada','2014',NH,null,'upa'],
+['Campo de futebol na Onofre Canedo','2014',AL,'campo','criancas'],
+['500 alunos no Brasil Alfabetizado','2014',RG,null,null],
+['Avenida Luiz Latorre pavimentada','2015',FG,'inv15',null],
+['Asfalto na Daniel Pellizzari','2015',PT,'poste','asfalto'],
+['Centro Esportivo José de Marchi renovado','2015',NH,'cee','criancas'],
+['Capoeira gratuita para as crianças','2015',NH,null,'criancas'],
+['Rampa de skate','2015',NH,null,'criancas'],
+['Praças e espaços de convivência','2015',RG,null,'criancas'],
+['Jornal Vetor Oeste','2015',RG,null,null],
+['Ponte Novo Horizonte e Tulipas','2015',TU,'ponte','ponte'],
+['Café Coletivo','2015',RG,'cafe21','cafes'],
+['24 mil m² para o Instituto Federal','2015',RJ,'ifarea','if'],
+['EMEB Marly de Marco, 400 vagas','2016',NH,null,'escolas'],
+['EMEB Fátima Pandolpho, 350 vagas','2016',FG,'escola','escolas'],
+['Eu Moro, Eu Cuido','2016',RG,'eumoro10','eumoro'],
+['Ponto de Entrega de entulho','2016',NH,'pev','eumoro'],
+['Segundo Ponto de Entrega de entulho','2016',NH,'pev2','eumoro'],
+['Ponte da Wady Badra','2016',TU,'wady',null],
+['Polder contra enchentes','2018',TU,'obras20',null],
+['Praça do Residencial revitalizada','2018',RJ,'praca','escolas'],
+['UPA Vetor Oeste 24 horas','2018',NH,'upa','upa'],
+['Clínica da Família Novo Horizonte','2018',NH,'upa','upa'],
+['Clínica da Família 2','',AL,'oeste26',null],
+['Nova UBS no Traviú','2020',PT,'obras20',null],
+['Nova UBS no Tulipas','2020',TU,'obras20',null],
+['Asfalto no Jardim Pellizzari e Água Doce','2020',PT,'obras20','asfalto'],
+['Rua 8, segunda fase da obra','2020',NH,'rua8b','rua8'],
+['Creche Fernanda de Favre, 120 vagas','2020',RJ,'creche','escolas'],
+['Plantio de 1 mil mudas','2021',RG,'mudas','eumoro'],
+['Canil da Guarda Municipal','2021 a 2026',ME,'canil21',null],
+['Quadra coberta do CRAS','2021',NH,'quadra',null],
+['Plano de Bairro vira projeto de lei','2022',NH,'plano22',null],
+['Núcleo de Apoio à Aprendizagem','2022',NH,'naa',null],
+['Reforma de casas pela CDHU','2022',CD,'cdhu22','moradia'],
+['UPA dobra os atendimentos','2022',NH,'upa2x','upa'],
+['Parque do Cerrado','2022',NH,'cerrado','moradia'],
+['Ruas de Brincar','2022',NH,'brincar',null],
+['Primeiro bairro amigo da primeira infância','2022',NH,'infancia22',null],
+['Pé de Árvore no bairro','2022',NH,'arvore',null],
+['Mais 171 imóveis regularizados','2023',NH,'reg171','moradia'],
+['Novas linhas de ônibus e Diretão','2023',RG,'linhas','asfalto'],
+['Rede de água na Rua 8','2023',NH,'agua8','rua8'],
+['Condomínio dos Idosos reformado','2023',FG,'idosos',null],
+['Varejão Noturno','2023',RJ,null,null],
+['Café Coletivo no canteiro do Instituto Federal','2023',RJ,null,'if'],
+['Asfalto, drenagem, guias e sarjetas na Rua Nicola Lourençon','2021',BJ,'bj21',null],
+['Lideranças do Bom Jardim no Plano de Bairros','2021',BJ,null,'propomos'],
+['123 casas reformadas pelo Viver Melhor','2024',NH,'vm123','moradia'],
+['Parque naturalizado para as crianças','2024',NH,'parquenat',null],
+['Nova Área da Infância','2024',NH,'areainf',null],
+['Luz de LED na Alameda CESP','2024',RG,'cesp','asfalto'],
+['340 escrituras num só dia','2024',NH,'escrituras','moradia'],
+['Carta Compromisso com 15 propostas','2025',RG,'almerinda25','cafes'],
+['Revitalização nos bairros do Vetor Oeste','2025',RG,'revit25',null],
+['258 matrículas entregues','2025',NH,'mat258','moradia'],
+['Café Coletivo no Medeiros','2025',ME,'medeiros','cafes'],
+['Instituto Federal ampliado','2025',RJ,'ifamp','if'],
+['Eu Moro, Eu Cuido, 10 anos','2025',RG,'eumoro10','eumoro'],
+['Matrícula definitiva das casas','2026',NH,'mat26','moradia'],
+['Praça ao lado do NAA II revitalizada','2026',NH,'naa2',null],
+['Regularização fundiária','2026',NH,'reg26','moradia'],
+['Residenciais Cravos III e IV, 132 famílias','2026',FG,'oeste26',null],
+['Parque Botânico do Tulipas revitalizado','2026',TU,'oeste26',null],
+['Jardim Sensorial no Parque do Cerrado','2026',RJ,'oeste26',null],
+['Torre do Projeto Sentinela','2026',RG,'oeste26',null],
+['LED na Avenida José Benassi','2026',RG,'oeste26',null],
+['Esgoto no Poste e no Traviú, 14 km','2026',PT,'oeste26','desafios'],
+['Terminal de ônibus no Novo Horizonte','2026',NH,'oeste26','desafios'],
+['Centros comunitários reformados','',NH,null,null],
+['Centros comunitários do CDHU reformados','',CD,null,null],
+['Asfalto no Retentem','',PT,null,'asfalto'],
+['Patrulha Maria da Penha e botão do pânico','',RG,null,'mulheres']
+];
+const NOMES=["Severino Andrade", "Dona Augusta", "Adelino", "Padre Norberto Savieto", "José Bessa", "Fátima Bessa", "Glória", "Janaína Valéria da Silva Araújo", "José Paulo de Assis", "Dagmar Messias", "Wallace Passione", "Natália Ferreira", "Natália Pereira de Oliveira", "Ruth Rocha", "Karla Andrilli", "Nilma", "Pâmela Rodrigues", "Professor Ricardo", "Biel", "Jhennifer", "Mariana", "Thiago", "Eliana", "Alexandre", "William", "Ailton", "Alessandro", "Alessandro Peixoto", "Ana Lúcia Merenciano", "Ana Paula Manhani", "Antônio Barros", "Aparecida Jesus", "Ana Lúcia Corsini", "José Arantes", "Avelino", "Cecília", "Cícera Maria", "Cida Pretti", "Cido", "Claudemir", "Cláudia Silveira", "Cláudio", "Cláudio David", "Cristiano", "Cynthia Costa", "Delma", "Denise Soares", "Denise Cordeiro", "Divaneti Santos", "Ederlânio", "Edgar", "Edilene Teixeira", "Eliete Rodrigues", "Eliezer Lourenzon", "Eric", "Fabrício Melo", "Fátima", "Felipe", "Gilvânio Matos", "Gislaine", "Isabel Franco", "Jandira Lima", "Jânio", "Jeferson", "José Armando", "Leandro", "Lia Cayres", "Lindamar", "Lucas", "Lúcia Michelin", "Marcelo Moré", "Márcia", "Maria", "Maria Ju", "Maria Antônia Ramos de Siqueira", "Maria Eunice Carrilho", "Marina", "Marisa", "Marlom", "Odilon Brito", "Pabola", "Patrícia Hemel", "Paulista", "Ray", "Ricardo Andrade", "Ricardo Paulino", "Robério", "Rose João Muniz", "Sílvia", "Osmar", "Sueli Michelin", "Talita", "Tatiane", "Tenório", "Thaís", "Thiago da Silva", "Tia Graça", "Toby", "Vanderleia", "Viviane", "Zé Francisco", "Sara", "Edna", "Francine", "Charmosa", "Pastora Ângela", "Rhuan Pablo", "Rosana", "Rosemara", "Gabriel", "Marcelo", "Jason", "Eduardo Lino", "Dona Mariza", "Semira", "Adriana", "Aislan", "Ana Maria", "Ana Paula", "André", "Andrea", "Anieli", "Auzeni", "Bruno", "Camila", "Cassiano", "Dalva", "Daniele", "Débora Souza", "Diego", "Eliane Vale", "Emerson", "Fábio", "Flávia", "Gaspar", "Gileuza", "Gilvânia", "Graziela", "Jaciara", "Janaína", "Junior", "Kátia", "Kiko", "Laura", "Lázara", "Letícia", "Liliane", "Luís Gustavo", "Maria Delma", "Maria Rosa", "Marquinhos", "Michel Estevão", "Patrícia", "Reinaldo", "Renata Solera", "Rivaldo", "Rodrigo", "Ronaldo", "Roseli", "Sidnei", "Gorete", "Silvinha", "Sônia", "Tamara", "Tamires", "Tatiana", "Tatiane Malta", "Thalita", "Tica", "Valquíria", "Vanessa", "Vinícius", "Wagner", "Willian", "Marcos", "Patrícia da Associação Fazenda Grande", "Cleusa", "Ricardo do Bom Jardim", "Rosmeire Paixão", "Elton", "James", "Paulo R. Santos", "Michelly Tarosso", "Célio", "Otoniel Gomides", "Inajá Silva", "Edson", "Odete Moraes", "João Vilela", "José Carlos", "Jamil", "Aparecida", "Jhonas Oliveira", "Cláudio Junior", "Paula Andressa", "Adriana Torres", "Cíntia Mayara", "Lucimar", "Fer", "Sônia de Lima", "Elaine", "Devanete", "Maria Socorro", "Marlene", "Gelvanei", "Juliana", "Bruna Rafaela", "Fernando", "Vandemilson", "Tio Mil", "Maria Eduarda", "Delma Nonato", "Agda Lucinda", "Roselene Dal Bello", "Cleusa de Oliveira Ferraz", "Léa", "Raquel", "Alexandre Piccolo", "Mirsso", "Giselle Marques", "Professor Willians", "Flávia Aparecida", "Sandra Catarina", "Sherg", "Renata", "Ester Amaral", "Fabrícia", "Simone Gonçalves", "Valdirene Leal", "Verinha", "Ivonete", "Daiane", "Maria Lopes", "Ana Perez", "Luzia Martins", "Lee", "Lucimara Borges", "Janete", "Maria Inês", "Shirley", "Maria do Carmo", "Vera Alice", "Maria Zélia", "Sandra", "João Carlos", "Maria Alice", "Alzira Leite", "Cidenir Moreira", "Denilson Tiago", "Jucélia Nepomuceno", "Everton", "Silvana Gomes Paes", "Carlino", "Maurício", "Armezinda", "Elismary", "Isabel", "Pablo", "Carla", "Adilson", "Fábio Magalhães", "Samara Brito", "Ana", "Cassi", "Francivalda Soares da Costa", "Jânio Soares da Costa", "Edinajara dos Santos Carvalho", "Junio Pereira de Carvalho", "Edicarlos Vieira", "Stephany", "Quezia", "Jannaina", "Wallace", "José Roberto Arantes", "José Francisco", "Dona Lindinalva", "Dona Elda"];
+const WAVES=[
+ ['Residencial Jundiaí','Novo Horizonte','Almerinda Chaves','CDHU Novo Horizonte','Bairro do Poste','Traviú','Retentem','Medeiros','Tulipas','Fazenda Grande','Bom Jardim'],
+ ['Eloy Chaves','Guanabara','Água Doce','Residencial Cravos','Parque Industrial','Jardim São Camilo','Vila Ana','Vila Comercial','Cidade Nova'],
+ ['Morada das Vinhas','Rio Acima','Vila Cidadania','Residencial dos Pássaros','Vila Hortolândia','Jardim Sorocabana','Jundiaí Mirim','Agapeama','Horto Santo Antônio','Portal do Medeiros','Vila Rui Barbosa','Parque Cidade Jardim','Continental','Santa Gertrudes','Jardim Tamoio','Vila Guarani','CECAP','Vila Rami','Vila Rio Branco','Retiro','Vila Campos Sales','Santa Giovana','Centro'],
+ ['Várzea Paulista','Campo Limpo Paulista','Itupeva','Louveira','Jarinu','Cabreúva','Itatiba']
+];
+const S=[
+{id:'abertura',cap:'Abertura',noLogo:1,h:`<img class="bg kb" src="img_maos.jpg" alt=""><div class="shade full"></div><div class="wrap rise center"><img class="logo-b" src="img_logo.png" alt="Coletivo Vetor Oeste"><h1>14 anos de roda.</h1><p class="lead">2012 a 2026</p></div>`},
+{id:'olhe',h:`<div class="wrap rise center slow" style="background:radial-gradient(circle at 50% 45%,#0b2a8f,#040f3a 70%)"><h2>Antes de começar,<br>olhe para quem está do seu lado.</h2><h2 class="y">Essa pessoa também faz parte desta história.</h2><p class="lead soft">E você também.</p></div>`},
+{id:'filosofia',h:`<img class="bg kb" src="img_roda_nov2013.jpg" alt=""><div class="shade full"></div><div class="wrap rise center"><h1>Olho no olho.</h1><h1 class="y">Em roda.</h1><h1>Ninguém é melhor que ninguém.</h1><p class="lead soft">Todo mundo na roda tem voz. E juntos a gente constrói um bairro melhor, uma região melhor, uma sociedade melhor.</p></div>`},
+{id:'invisiveis',cap:'De onde a gente veio',h:`<img class="bg kb" src="img_protesto2011.jpg" alt="" style="filter:grayscale(1)"><div class="shade full"></div><div class="wrap rise slow"><h1>Éramos a região<br>dos invisíveis.</h1><h1 class="y">Hoje a cidade<br>olha para cá.</h1></div>`},
+{id:'antes',h:`<div class="wrap rise"><p class="eyebrow">Respeitar quem veio antes</p><h2>Ninguém começa do zero.<br>A gente continua.</h2><div class="cards c4"><div class="card"><h3>Sr. Severino Andrade</h3></div><div class="card"><h3>Dona Augusta</h3></div><div class="card"><h3>Sr. Adelino</h3></div><div class="card"><h3>Padre Norberto Savieto</h3></div><div class="card"><h3>José Bessa</h3></div><div class="card"><h3>Glória e Jannaina</h3></div><div class="card"><h3>Wallace</h3></div><div class="card"><h3>José Roberto Arantes</h3></div><div class="card"><h3>José Francisco</h3></div><div class="card"><h3>Dagmar</h3></div><div class="card"><h3>Willian</h3></div><div class="card"><h3>Dona Lindinalva e Dona Elda</h3></div></div></div>`},
+{id:'fundacao',cap:'Nasce o Coletivo',h:`<img class="bg kb" src="img_roda2012.jpg" alt="A roda das primeiras reuniões"><div class="shade"></div><div class="wrap left rise"><p class="eyebrow">20 de novembro de 2012</p><h2>Na primeira reunião,<br>éramos <span class="y">8</span>.</h2><p class="lead">Oito pessoas sentadas em roda, com uma pergunta. O que a gente pode fazer junto pelo nosso bairro?</p><p class="lead soft">Guarde esse número. Ele vai crescer.</p></div>${mem('sel_H1208.jpg','Novembro de 2012 · Novo Horizonte','Lideranças dos bairros se juntam e fundam o Coletivo. Ali os bairros deixaram de lutar sozinhos.')}`},
+{id:'cartazes',h:`<img class="bg kb" src="img_cartazes.jpg" alt="Crianças com cartazes feitos por elas"><div class="shade bottom"></div><div class="wrap rise" style="justify-content:flex-end"><p class="eyebrow">O começo da luta pelo Vetor Oeste</p><h2>As crianças levantaram os primeiros cartazes.</h2><p class="lead" style="max-width:60vw">Elas pediam praça, escola, saúde e respeito. Muitas dessas crianças hoje são jovens e adultos.</p></div>${mem('sel_H1307.jpg','O começo da luta','Cada cartaz era um pedido escrito por uma criança. Vários desses pedidos viraram obra.','top')}`},
+{id:'cresce',cap:'2013 · a roda cresce',h:`<img class="bg kb" src="img_reuniao_jan2013.jpg" alt="Reunião de janeiro de 2013"><div class="shade"></div><div class="wrap left rise"><p class="eyebrow">2013 · em menos de seis meses</p><div style="display:flex;align-items:baseline;gap:2vw"><span class="count" data-to="8">0</span><span class="big" style="font-size:5vw">→</span><span class="count" data-to="80" data-plus="+">0</span></div><p class="lead">pessoas por reunião. Com regra, tarefa e Livro Ata. Cada pedido anotado virou meta.</p>${links('reuniao80')}</div>${mem('sel_H1326.jpg','Janeiro de 2013 · primeira reunião do ano','60 moradores frente a frente com os secretários de Saúde, Cultura e Serviços Públicos. O asfalto da Rua 8 foi o primeiro pedido da lista.')}`},
+{id:'ouvidoria',h:`<img class="bg kb" src="img_ouvidoria.jpg" alt="Urna da Ouvidoria da Comunidade"><div class="shade"></div><div class="wrap left rise"><p class="eyebrow">Fevereiro de 2013</p><h2>Voz para quem nunca tinha sido ouvido.</h2><p class="lead">Uma urna amarela na UBS. Qualquer morador escrevia a reclamação, a ideia ou o elogio. Os papéis eram lidos em roda e viravam pauta.</p></div>${mem('sel_H1318.jpg','Fale com o Conselho Gestor','A comunidade passou a ter assento e voz na saúde do bairro. Quem usa a UBS também ajuda a cuidar dela.')}`},
+{id:'mulheres',h:`<img class="bg kb" src="img_mulher2014.jpg" alt="Dia da Mulher na Praça Onofre Canedo"><div class="shade"></div><div class="wrap left rise"><p class="eyebrow">Em defesa das mulheres</p><h2>A rosa é o símbolo.<br>A luta é o que importa.</h2><p class="lead">Todo Dia da Mulher a rosa abre a conversa. Por trás dela, a defesa da vida das mulheres.</p><div class="steps"><div><b>♀</b>Lei Maria da Penha explicada de porta em porta</div><div><b>♀</b>Mulheres empreendedoras</div><div><b>♀</b>Botão do pânico</div><div><b>♀</b>Patrulha Maria da Penha</div><div><b>♀</b>Homens e Mulheres contra a Violência Doméstica</div></div>${links('mulher13')}</div>${mem('sel_H1442.jpg','Março de 2014 · Dia Internacional da Mulher','Mil rosas entregues de mão em mão. Cada rosa abria uma conversa sobre a vida e a segurança das mulheres.')}`},
+{id:'viela',h:`<div class="wrap left rise"><p class="eyebrow">Vielas</p><h2>Onde havia medo, nasceu cor.</h2><p class="lead">Em 2013, vinte grafiteiros e dezenas de moradores pintaram uma viela do Residencial Jundiaí I. Depois veio o resto. Conseguimos a limpeza e a pavimentação de todas as vielas, com acessibilidade, e iluminação na maioria delas.</p>${links('viela')}</div><div class="gal g3">${img('viela4.jpg','Moradores na viela pintada')}${img('viela1.jpg','Meninas pintando a viela')}${img('viela2.jpg','Viela colorida')}</div>`},
+{id:'arraia',h:`<img class="bg kb" src="img_show.jpg" alt="Multidão no Arraiá à noite"><div class="shade bottom"></div><div class="wrap rise" style="justify-content:flex-end"><p class="eyebrow">Desde 2013 · no calendário oficial da cidade</p><h1>Arraiá Nordestino</h1><p class="lead" style="max-width:60vw">A região tem raiz nordestina e decidiu celebrar. Quadrilha, forró e a rua cheia de família. Quem já dançou na quadrilha, levanta a mão.</p>${links('arraia3','arraia25')}</div>`},
+{id:'onofre',cap:'O bairro muda de cara',ba:['onofre_antes.jpg','onofre_2013.jpg','ago 2013','out 2013'],h:`<div class="bapanel rise"><p class="eyebrow">Outubro de 2013</p><h2>Praça Onofre Canedo</h2><p class="lead">Um matagal dividido por um córrego virou 30 mil m² de pista, parquinho, academia, quadra sintética e o coração da região.</p>${links('onofre','lazer13','cil')}</div>`},
+{id:'slack',h:`<div class="wrap left rise"><p class="eyebrow">2013 · antes da praça existir</p><h2>A molecada já ocupava aquele chão.</h2><p class="lead">Slackline no lugar onde hoje está a Praça Onofre Canedo, com espaço de lazer e quadra sintética. A gente ocupou primeiro e depois conquistou.</p>${links('bosque')}</div><div class="gal g2">${imgc('slack1.jpg','Slackline em 2013','2013 · antes da praça existir, a molecada já ocupava o terreno')}${imgc('sel_CQ08.jpg','A praça vista de cima','Hoje · área de lazer e campo sintético, vista de cima')}</div>`},
+{id:'upa',h:`<div class="wrap left rise"><p class="eyebrow">2012 → 2013 → 2018</p><h2>A UPA que a gente escolheu onde ia ficar.</h2><div class="steps"><div><b>2012</b>a comunidade luta para a UPA ser neste terreno, entre os bairros</div><div><b>2013</b>a obra começa</div><div><b>2018</b>UPA Vetor Oeste e Clínica da Família abertas</div><div><b>2022</b>os atendimentos dobram</div><div><b>Hoje</b>Clínica da Família 1, Clínica da Família 2 e novas UBS</div></div>${links('upaobra','upa','upa2x')}</div><div class="gal g3">${imgc('upa_terreno.jpg','Terreno escolhido para a UPA','2012 · o terreno entre os bairros que a comunidade lutou para ser da UPA')}${imgc('upa_2013.jpg','Obra da UPA em 2013','Novembro de 2013 · a obra da UPA a todo vapor')}${imgc('sel_CQ09.jpg','UPA 24h e Clínica da Família','Hoje · UPA 24h e Clínica da Família atendendo a região')}</div>`},
+{id:'rua8',ba:['rua8_antes.jpg','ruanova.jpg','2013','2014'],h:`<div class="bapanel rise"><p class="eyebrow">Pedido número um da primeira reunião</p><h2>Rua 8, do barro ao asfalto</h2><p class="lead">Sem poeira em casa, sem lama no ônibus. E as crianças correndo na rua nova.</p><div class="steps"><div><b>1ª fase</b>o asfalto chega em 2014</div><div><b>2ª fase</b>a obra é completada em 2020</div></div>${links('rua8a','rua8b','agua8')}</div>`},
+{id:'asfalto',h:`<img class="bg kb" src="img_rua8_conquista.jpg" alt="Rua Oito, uma conquista da comunidade"><div class="shade"></div><div class="wrap left rise"><p class="eyebrow">Asfalto, luz e caminho</p><h2>Cada rua tem uma luta.</h2><p class="lead">Daniel Pellizzari no Bairro do Poste. Jardim Pellizzari e Água Doce. Asfalto no Retentem com abaixo-assinado. Luz na Alameda CESP. Novas linhas de ônibus.</p>${links('poste','cesp','linhas')}</div>${mem('sel_H1438.jpg','Maio de 2014 · Rua 8, à noite','Moradores reunidos na rua para acompanhar a obra do asfalto. A conquista se fiscaliza junto, de perto.')}`},
+{id:'moradia',h:`<div class="wrap left rise"><p class="eyebrow">Moradia digna</p><h2>Casa, documento e dignidade.</h2><div class="steps"><div><b>1.088</b>apartamentos novos</div><div><b>340</b>escrituras num só dia, depois de mais de 40 anos</div><div><b>258</b>matrículas em 2025 e matrícula definitiva em 2026</div><div><b>123</b>casas reformadas pelo Viver Melhor</div></div><p class="quote" style="font-size:2vw">“Criamos nossos filhos aqui e esperamos muito por isso.”</p>${links('escrituras','mat26','vm123')}</div><div class="gal g2">${imgc('predios.jpg','Prédios subindo','Os prédios dos 1.088 apartamentos saindo do papel')}${imgc('fumas2015.jpg','Futuros moradores reunidos','2015 · futuros moradores dos apartamentos recebem orientação. O Coletivo acompanhou as famílias em todo o processo')}</div>`},
+{id:'ponte',ba:['ponte_antes.jpg','ponte_obra.jpg','2014','2015'],h:`<div class="bapanel rise"><p class="eyebrow">21 de novembro de 2015</p><h2>Ponte Novo Horizonte e Tulipas</h2><p class="lead">Da pinguela de madeira a 40 metros de ponte. Vizinhos que não se alcançavam passaram a se encontrar.</p>${links('ponte')}</div>`},
+{id:'criancas',cap:'Esporte, lazer e crianças',h:`<div class="wrap left rise"><p class="eyebrow">2015 · praças e espaços de convivência</p><h2>As crianças das fotos hoje são jovens.</h2><p class="lead">Rolimã, slackline, capoeira, skate, campo de futebol, Centro Esportivo renovado e quadra coberta. Se você se reconhecer, levanta a mão.</p>${links('cee','campo','quadra')}</div><div class="gal g4">${imgc('rolima1.jpg','Oficina de rolimã','2013 · oficina de carrinho de rolimã no Almerinda Chaves')}${imgc('capoeira.jpg','Roda de capoeira','Capoeira gratuita para as crianças')}${imgc('sel_H1511.jpg','Rampa de skate','2015 · rampa de skate entregue aos skatistas, conquista da comunidade')}${imgc('onofre_campo.jpg','Crianças no campo','Novembro de 2014 · campo de futebol da Praça Onofre Canedo')}</div>`},
+{id:'if',cap:'O Instituto Federal é nosso',h:`<img class="bg kb" src="img_cafeif4.jpg" alt="Café Coletivo no Instituto Federal"><div class="shade"></div><div class="wrap left rise"><p class="eyebrow">O Instituto Federal é nosso</p><h2>Um dos maiores equipamentos públicos da nossa história.</h2><div class="steps"><div><b>2015</b>24 mil m² garantidos</div><div><b>2017</b>abaixo-assinado para a obra começar</div><div><b>2023</b>Café Coletivo de capacete no canteiro</div><div><b>2025</b>campus ampliado</div><div><b>Hoje</b>a gente está aqui dentro, em parceria com a diretora Karina Maretti Strangueto e toda a equipe do campus</div></div>${links('ifarea','ifamp')}</div>${mem('sel_AN14.jpg','2025 · Instituto Federal, Campus Jundiaí','O Coletivo comemorou o aniversário dentro do campus que a comunidade ajudou a conquistar.')}`},
+{id:'cafes',cap:'Café Coletivo',h:`<img class="bg kb" src="img_cafeif1.jpg" alt="Café Coletivo lotado"><div class="shade"></div><div class="wrap left rise"><p class="eyebrow">Desde 2015</p><h2>Um café, uma roda, uma cidade nova.</h2><p class="lead">Cada pessoa traz um alimento para a mesa e uma ideia para um bairro, uma cidade e uma região melhores.</p><p class="lead soft">Mesa posta, todo mundo em roda, cada um fala. Várias cidades buscaram copiar essa ideia.</p>${links('cafe21','medeiros','almerinda25','anos13')}</div>${mem('sel_C2114.jpg','Café de 9 anos · 2021','Microfone na mão do morador. No Café, quem fala é a comunidade.','top sm')}${mem('sel_ME10.jpg','Café no Medeiros · 2025','A roda saiu do Vetor Oeste e chegou a outros bairros da cidade.','sm')}`},
+{id:'proposta',cap:'Proposta e resultado',h:`<div class="wrap rise" style="justify-content:flex-start;padding-top:4vh;padding-bottom:4vh"><p class="eyebrow">Proposta e resultado</p><h2 style="font-size:3.3vw">A comunidade pediu. A comunidade conquistou.</h2><div class="prop"><div class="pa" style="--r:0"><b>2012</b>Asfalto na Rua 8, o primeiro pedido da primeira reunião</div><div class="ar" style="--r:0">→</div><div class="pb" style="--r:0"><b>2014</b>asfalto chega, e em 2020 a obra é completada</div><div class="pa" style="--r:1"><b>2012</b>UPA no terreno entre os bairros</div><div class="ar" style="--r:1">→</div><div class="pb" style="--r:1"><b>2018</b>UPA 24h e Clínica da Família abertas</div><div class="pa" style="--r:2"><b>2013</b>Lazer no lugar do matagal do Almerinda</div><div class="ar" style="--r:2">→</div><div class="pb" style="--r:2"><b>2013</b>Praça Onofre Canedo, 30 mil m²</div><div class="pa" style="--r:3"><b>2014</b>Uma passagem de verdade até o Tulipas</div><div class="ar" style="--r:3">→</div><div class="pb" style="--r:3"><b>2015</b>ponte de 40 metros no lugar da pinguela</div><div class="pa" style="--r:4"><b>2014</b>Comunidade pede um Centro Esportivo</div><div class="ar" style="--r:4">→</div><div class="pb" style="--r:4"><b>2015</b>Centro Esportivo renovado, e hoje lutamos por um novo</div><div class="pa" style="--r:5"><b>2021</b>Plano de Bairros pede a sede do Instituto Federal</div><div class="ar" style="--r:5">→</div><div class="pb" style="--r:5"><b>2025</b>campus ampliado</div><div class="pa" style="--r:6"><b>2021</b>Plantio de árvores nos bairros</div><div class="ar" style="--r:6">→</div><div class="pb" style="--r:6"><b>2021</b>mil mudas plantadas no mesmo dia</div><div class="pa" style="--r:7"><b>2021</b>Mais médicos na UPA</div><div class="ar" style="--r:7">→</div><div class="pb" style="--r:7"><b>2022</b>atendimentos dobram</div><div class="pa" style="--r:8"><b>2025</b>Carta compromisso pede regularização fundiária</div><div class="ar" style="--r:8">→</div><div class="pb" style="--r:8"><b>2026</b>matrícula definitiva das casas do Novo Horizonte</div></div></div>`},
+{id:'bilhao',cap:'O resultado',h:`<img class="bg kb" src="img_cafeif2.jpg" alt=""><div class="shade full"></div><div class="wrap rise center"><p class="eyebrow">A região dos invisíveis virou a que mais recebeu</p><p class="count">+ de R$ <span data-to="1">0</span> bilhão</p><p class="lead">em conquistas para a nossa região em 14 anos.</p><p class="big" style="font-size:4.2vw"><span class="y" data-to="${CONQ.length}">0</span> conquistas registradas</p></div>`},
+{id:'crescimento',cap:'Somos centenas',h:`<div id="grid"></div><div class="gcount" id="gcount"><p class="eyebrow">Começou com 8</p><div class="count" id="gnum">8</div><p>rostos e fotos dos nossos encontros</p><div id="gname"></div></div><div class="gfinal" id="gfinal"><h1>Começou com 8.<br>Hoje somos centenas.</h1></div>`},
+{id:'formigas',cap:'Juntas somos muitas',noLogo:1,h:`<canvas id="antc"></canvas><div class="antcap"><p class="eyebrow" id="antEb">Começou com 8</p><h2 id="antT">Formiga sozinha não carrega folha grande.</h2><div class="antnum" id="antN">8</div></div>`},
+{id:'cidade',h:`<div class="citytxt rise"><p class="eyebrow">Da rua para a cidade</p><h2 id="ctitle">Começou na nossa rua.</h2></div><div class="rings" id="rings"></div><div class="citycount"><div class="count" id="cnum" style="font-size:9vw">0</div><p class="lead">bairros e cidades na nossa roda</p></div>`},
+{id:'desempre',cap:'Sempre na roda',h:`<div class="wrap rise" style="justify-content:center"><p class="eyebrow">Os nomes que mais aparecem nas nossas listas de presença, de 2013 a 2025</p><h2>Vocês nunca soltaram a mão.</h2><p class="big" style="font-size:2.6vw;margin:.1em 0 .3em"><span class="y">+ de <span data-to="300">0</span></span> conselheiros voluntários. Somos muito gratos.</p><div class="topnames">${["Jannaina", "José Roberto Arantes", "José Paulo de Assis", "Antonio Barros", "Maria Eunice", "Jefferson", "Dagmar", "Gislaine", "Nilma", "William", "Karla Andrilli", "Ruth Rocha", "José Bessa", "Fátima Bessa", "Claudemir", "Dona Elda", "Wallace", "Dona Mariza", "Pabola", "Letícia Silveira", "Lia Cayres", "Maria do Carmo", "José Francisco", "Dona Lindinalva", "Cynthia", "Cadu Vieira", "Melissa"].map((n,i)=>`<span style="--i:${i}">${n}</span>`).join('')}</div><div class="morenames">${["Avelino", "Eliezer", "Denise", "Patrícia Hemel", "Fabrício Melo", "Maria Delma", "Maria Ju", "Edna", "Mariana", "Eliete", "Ricardo Paulino", "Kiko Odilon", "Maria Rosa", "Cláudia Silveira", "Cláudio David", "Auzeni", "Diego Moreno", "Vinícius", "Valquíria", "Emerson", "Liliane", "Thiago", "Eliana", "Maciel", "Fernando", "Michelly", "Jessica", "Cristiano", "Marcelo", "Adriana", "Isabel", "Ivani", "Seu Paulo", "Alcides", "Edson", "Josiane Ferrari", "Jheniffer", "Tenório Palma", "Ederlânio", "Stephany", "Quezia"].map(n=>`<span>${n}</span>`).join('')}</div></div>`},
+{id:'falta',cap:'O que ainda falta',h:`<img class="bg kb" src="img_noite1.jpg" alt=""><div class="shade full" style="background:rgba(3,8,30,.84)"></div><div class="wrap rise" style="justify-content:flex-start;padding-top:6vh"><p class="eyebrow">O que a gente pediu e ainda não chegou</p><h2>O que ainda falta para a nossa região.</h2><div class="fgrid"><div class="fcol"><h3>Cuidar das pessoas</h3><ul><li style="--k:0">Acolhimento digno para quem vive na rua no nosso bairro</li><li style="--k:1">Mais moradia popular</li><li style="--k:2">Reforma das unidades de saúde</li></ul></div><div class="fcol"><h3>Segurança</h3><ul><li style="--k:3">Um grupo de trabalho de segurança pública com a comunidade</li><li style="--k:4">Câmeras nas entradas dos bairros</li><li style="--k:5">Iluminação LED em toda a região</li></ul></div><div class="fcol"><h3>Caminhos</h3><ul><li style="--k:6">Passarela na Rodovia Vice-Prefeito Hermenegildo Tonolli</li><li style="--k:7">Recapeamento das ruas da região</li><li style="--k:8">Duplicação da Estrada do Varjão. Luta antiga, já prometida, ainda no papel</li><li style="--k:9">Terminal de ônibus no Novo Horizonte</li></ul></div><div class="fcol"><h3>Futuro</h3><ul><li style="--k:10">Nova escola</li><li style="--k:11">Reforma e ampliação das escolas</li><li style="--k:12">Um novo Centro Esportivo de verdade</li><li style="--k:13">Esgoto no Poste e no Traviú</li></ul></div></div></div>`},
+{id:'multiplica',cap:'Multiplicadores',noLogo:1,h:`<div class="mantra" id="mantra"></div>`},
+{id:'missao',cap:'A sua missão',h:`<div class="wrap rise" style="justify-content:flex-start;padding-top:5vh"><p class="eyebrow">Ninguém sai daqui do mesmo jeito que chegou</p><h2>Qual é a sua missão a partir de hoje?</h2><div class="mgrid"><div class="mcard" style="--k:0"><span class="mnum">1</span><h3>Olhos na rua</h3><p>Viu lâmpada apagada, buraco ou mato alto? Fotografe e mande para o Coletivo.</p><small>iluminação, recapeamento, zeladoria</small></div><div class="mcard" style="--k:1"><span class="mnum">2</span><h3>Eu moro, eu cuido</h3><p>Adote um pedaço da sua rua. Plante uma muda, cuide da praça, chame o vizinho.</p><small>bairro limpo e cuidado</small></div><div class="mcard" style="--k:2"><span class="mnum">3</span><h3>Traga mais um</h3><p>No próximo Café, venha com alguém que nunca sentou na nossa roda.</p><small>mais força e mais voz</small></div><div class="mcard" style="--k:3"><span class="mnum">4</span><h3>Voz nos conselhos</h3><p>Participe do conselho da UBS, da escola ou de segurança do seu bairro.</p><small>saúde, escolas, segurança</small></div><div class="mcard" style="--k:4"><span class="mnum">5</span><h3>Mão estendida</h3><p>Conhece alguém vivendo na rua? Ajude essa pessoa a chegar ao acolhimento.</p><small>dignidade para todos</small></div><div class="mcard" style="--k:5"><span class="mnum">6</span><h3>Sua ideia no papel</h3><p>Escreva hoje a sua proposta para o bairro e deixe na mesa do café.</p><small>o próximo plano de bairros</small></div></div><p class="lead y mend">Escolha uma. Comece amanhã. E conte para a roda no próximo Café.</p></div>`},
+{id:'palavra',cap:'Palavra',noLogo:1,h:`<div class="wrap rise center slow" style="background:radial-gradient(circle at 50% 40%,#2a1b05,#0a0702 75%)"><div class="verse" style="--k:0"><p class="quote" style="font-size:5vw">“Levantemo-nos e edifiquemos.”</p><p class="who">Neemias 2:18</p></div><h2 class="y verse" style="--k:1">Começou com 8. Agora somos centenas construindo juntos.</h2></div>`},
+{id:'voce',h:`<img class="bg kb" src="img_maos.jpg" alt=""><div class="shade full"></div><div class="wrap rise slow"><h1>Você é importante<br>para nós.</h1><p class="lead" style="max-width:62vw">Tudo o que você viu começou com 8 pessoas numa roda, olhando no olho. Você está fazendo diferença por estar aqui hoje. Com você a gente tem mais força e mais voz para chegar lá.</p><p><span class="pill" style="font-size:4vw;padding:.2em .8em">Faça parte.</span></p></div>`},
+{id:'fim',noLogo:1,h:`<img class="bg kb" src="img_cafeif4.jpg" alt=""><div class="shade full"></div><div class="wrap rise center"><img class="logo-b" src="img_logo.png" alt="Coletivo Vetor Oeste" style="width:20vw"><h1 class="y">14 anos.<br>A roda continua.</h1><p class="lead">Juntos conseguimos construir um mundo melhor.</p><p class="lead soft">O futuro é o reflexo das nossas ações de hoje.</p></div>`}
+];
+const stage=document.getElementById('stage');
+S.forEach(s=>{const d=document.createElement('section');d.className='slide';d.id='s-'+s.id;
+ let h='';if(s.ba){const[a,b,ta,tb]=s.ba;h+=`<div class="ba" style="--p:50%"><img src="img_${a}" alt="Antes"><img class="after" src="img_${b}" alt="Depois"><div class="line"></div><div class="knob">⇆</div><span class="tag a">ANTES · ${ta}</span><span class="tag d">DEPOIS · ${tb}</span><input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar antes e depois"></div>`}
+ d.innerHTML=h+s.h;stage.appendChild(d)});
+const idIndex=id=>S.findIndex(s=>s.id===id);
+// conquistas por bairro
+const BAIRROS=['Todos',NH,AL,RJ,CD,FG,TU,BJ,PT,ME,RG];
+const fil=document.getElementById('filters'),tiles=document.getElementById('tiles');
+function renderTiles(b){tiles.innerHTML='';let n=0;CONQ.forEach((c,i)=>{if(b!=='Todos'&&c[2]!==b)return;const[t,ano,ba,lk,sl]=c;let el;
+ if(lk){el=document.createElement('a');el.href=L[lk][0];el.target='_blank';el.rel='noopener';el.className='tile go';el.innerHTML=`<b>${i+1}</b><span>${t} ↗<em>${ano?ano+' · ':''}${ba}</em></span>`}
+ else if(sl){el=document.createElement('div');el.className='tile go';el.tabIndex=0;el.setAttribute('role','button');el.onclick=e=>{e.stopPropagation();go(idIndex(sl))};el.innerHTML=`<b>${i+1}</b><span>${t} →<em>${ano?ano+' · ':''}${ba}</em></span>`}
+ else{el=document.createElement('div');el.className='tile';el.innerHTML=`<b>${i+1}</b><span>${t}<em>${ano?ano+' · ':''}${ba}</em></span>`}
+ el.style.animationDelay=(n++*25)+'ms';tiles.appendChild(el)})}
+if(fil)BAIRROS.forEach((b,i)=>{const x=document.createElement('button');x.className='fbtn'+(i?'':' sel');const cnt=b==='Todos'?CONQ.length:CONQ.filter(c=>c[2]===b).length;x.textContent=`${b} · ${cnt}`;x.onclick=e=>{e.stopPropagation();fil.querySelectorAll('.fbtn').forEach(y=>y.classList.remove('sel'));x.classList.add('sel');renderTiles(b)};fil.appendChild(x)});
+if(tiles)renderTiles('Todos');
+(document.getElementById('press')||{}).innerHTML=Object.keys(L).map(k=>`<a class="pcard" href="${L[k][0]}" target="_blank" rel="noopener"><small>${L[k][2]}</small><span>${L[k][1]}</span></a>`).join('');
+document.querySelectorAll('.ba').forEach(b=>{const r=b.querySelector('input');r.oninput=()=>b.style.setProperty('--p',r.value+'%');r.addEventListener('click',e=>e.stopPropagation())});
+// growth mosaic
+const POOL=[];{let a=[],b=FACES.map(f=>'rostos_'+f);{const tt=THUMBS.map(f=>'t_'+f),ss=Object.keys(SELCAP).map(c=>'img_sel_'+c+'.jpg');let x=0,y=0;while(x<tt.length||y<ss.length){if(x<tt.length)a.push(tt[x++]);if(x<tt.length)a.push(tt[x++]);if(y<ss.length)a.push(ss[y++])}}let i=0,j=0;while(i<a.length||j<b.length){if(i<a.length)POOL.push(a[i++]);if(j<b.length)POOL.push(b[j++]);if(j<b.length)POOL.push(b[j++])}}
+{const made=[];for(let q=0;q<FSN;q++)made.push('SP:'+Math.floor(q/100)+':'+(q%100));const ph=POOL.slice();const out=made.slice(0,8);let m=8,p=0;while(m<made.length||p<ph.length){for(let r=0;r<3&&m<made.length;r++)out.push(made[m++]);if(p<ph.length)out.push(ph[p++])}POOL.length=0;out.forEach(v=>POOL.push(v))}
+let gTimer=null;
+function runGrowth(){const grid=document.getElementById('grid'),num=document.getElementById('gnum'),nm=document.getElementById('gname'),fin=document.getElementById('gfinal'),gc=document.getElementById('gcount');
+ clearTimeout(gTimer);grid.innerHTML='';fin.classList.remove('show');gc.style.opacity=1;gc.style.transform='translate(-50%,-50%)';
+ const total=POOL.length;let n=0;const ar=innerWidth/innerHeight;
+ function layout(k){const cols=Math.max(1,Math.ceil(Math.sqrt(k*ar*1.33)));const rows=Math.ceil(k/cols);const cw=Math.floor((innerWidth-6)/cols),rh=Math.floor((innerHeight-6)/rows);const s=Math.min(cw,rh*1.33);grid.style.gridTemplateColumns=`repeat(${cols},${Math.floor(s)}px)`;grid.style.gridAutoRows=Math.floor(s*.75)+'px'}
+ function add(){const step=n<8?1:n<30?1:n<80?2:n<200?4:n<450?7:11;for(let q=0;q<step&&n<total;q++){const v=POOL[n];if(v.startsWith('SP:')){const p=v.split(':'),k=+p[1],q=+p[2];const d=document.createElement('div');d.className='sp';const ii=document.createElement('i');ii.style.backgroundImage='url(fs_s'+k+'.jpg)';ii.style.backgroundPosition=((q%10)/9*100)+'% '+(Math.floor(q/10)/9*100)+'%';d.appendChild(ii);grid.appendChild(d)}else{const im=document.createElement('img');im.src=v;im.alt='';grid.appendChild(im)}n++}
+  layout(n);num.textContent=n;nm.textContent=NOMES[(n*7)%NOMES.length];
+  if(n<=8)nm.textContent='Os fundadores · novembro de 2012';
+  if(n<total){const d=n<8?650:n<30?220:n<80?120:70;gTimer=setTimeout(add,d)}else{gTimer=setTimeout(()=>{gc.style.opacity=0;fin.classList.add('show');confetti(260)},1600)}}
+ gTimer=setTimeout(add,900)}
+// city rings
+let cTimers=[];
+function runCity(){cTimers.forEach(clearTimeout);cTimers=[];const R=document.getElementById('rings'),num=document.getElementById('cnum'),t=document.getElementById('ctitle');R.innerHTML='';num.textContent='0';
+ const rs=[['Rua',.16],['Bairro',.42],['Região',.7],['Cidade',1]];
+ rs.forEach(([lab,f])=>{const r=document.createElement('div');r.className='ring';r.style.width=r.style.height=(f*100)+'%';r.innerHTML=`<span>${lab}</span>`;r.dataset.l=lab;R.appendChild(r)});
+ const rings=[...R.children];let count=0;
+ const place=(name,cls,rad,ang)=>{const c=document.createElement('span');c.className='bchip '+cls;c.textContent=name;c.style.left=(50+rad*50*Math.cos(ang))+'%';c.style.top=(50+rad*50*Math.sin(ang))+'%';R.appendChild(c);requestAnimationFrame(()=>requestAnimationFrame(()=>c.classList.add('show')));count++;num.textContent=count};
+ const at=(ms,fn)=>cTimers.push(setTimeout(fn,ms));
+ at(300,()=>rings[0].classList.add('show'));
+ at(1500,()=>{rings[1].classList.add('show');t.textContent='Virou o nosso bairro.'});
+ WAVES[0].forEach((b,i)=>at(2300+i*420,()=>place(b,'w1',.27+(i%3)*.06,(i/WAVES[0].length)*Math.PI*2-Math.PI/2)));
+ const t2=2300+WAVES[0].length*420+500;
+ at(t2,()=>{rings[2].classList.add('show');t.textContent='Depois, a nossa região.'});
+ WAVES[1].forEach((b,i)=>at(t2+700+i*380,()=>place(b,'w2',.58+(i%2)*.07,(i/WAVES[1].length)*Math.PI*2-Math.PI/2+.3)));
+ const t3=t2+700+WAVES[1].length*380+500;
+ at(t3,()=>{rings[3].classList.add('show');t.textContent='Hoje, a cidade inteira.'});
+ WAVES[2].forEach((b,i)=>at(t3+700+i*300,()=>place(b,'w3',.8+(i%3)*.07,(i/WAVES[2].length)*Math.PI*2-Math.PI/2+.15)));
+ const t4=t3+700+WAVES[2].length*300+600;at(t4,()=>{t.textContent='E a roda já chega às cidades vizinhas.'});
+ WAVES[3].forEach((b,i)=>at(t4+600+i*420,()=>place(b,'w4',1.03,(i/WAVES[3].length)*Math.PI*2-Math.PI/2+.45)));
+ at(t4+600+WAVES[3].length*420+900,()=>{t.innerHTML='Dezenas de bairros e cidades.<br><span class="y">Uma roda só.</span>'})}
+// nav
+let cur=0;const slides=[...document.querySelectorAll('.slide')];
+const prog=document.getElementById('prog'),cap=document.getElementById('cap'),logoS=document.getElementById('logoS');
+S.forEach((s,i)=>{const t=document.createElement('i');if(s.cap&&i)t.className='chap';t.title=s.cap||'';t.onclick=e=>{e.stopPropagation();go(i)};prog.appendChild(t)});
+const capOf=i=>{for(let j=i;j>=0;j--)if(S[j].cap)return S[j].cap;return ''};
+function anim(sl){sl.querySelectorAll('[data-to]').forEach(el=>{const to=+el.dataset.to,plus=el.dataset.plus||'',t0=performance.now(),dur=to>5?2000:1100;const step=t=>{const k=Math.min(1,(t-t0)/dur),e=1-Math.pow(1-k,3);el.textContent=Math.round(to*e)+(k>=1?plus:'');if(k<1)requestAnimationFrame(step)};requestAnimationFrame(step)});
+ const ba=sl.querySelector('.ba');if(ba){const r=ba.querySelector('input');const t0=performance.now();const st=t=>{const k=Math.min(1,(t-t0)/2200),e=1-Math.pow(1-k,3),p=96-46*e;ba.style.setProperty('--p',p+'%');r.value=p;if(k<1)requestAnimationFrame(st)};requestAnimationFrame(st)}}
+const AUDS=['m1','m2','m3','m4'].map(id=>document.getElementById(id)),bMusic=document.getElementById('bMusic');let wantMusic=true,curT=-1;
+AUDS.forEach(a=>a.volume=0);
+function fadeA(a,v,ms,stop){clearInterval(a._f);const s0=a.volume,t0=performance.now();a._f=setInterval(()=>{const k=Math.min(1,(performance.now()-t0)/ms);a.volume=Math.max(0,Math.min(1,s0+(v-s0)*k));if(k>=1){clearInterval(a._f);if(stop&&v===0)a.pause()}},50)}
+const SEC=[S.findIndex(x=>x.id==='cresce'),S.findIndex(x=>x.id==='criancas'),S.findIndex(x=>x.id==='crescimento')];
+function trackOf(i){return i<SEC[0]?0:i<SEC[1]?1:i<SEC[2]?2:3}
+function musicLevel(){if(!wantMusic){AUDS.forEach(a=>fadeA(a,0,800,true));bMusic.classList.remove('on');return}
+ bMusic.classList.add('on');const id=S[cur].id;const v=id==='video'?0:(id==='virada'||id==='falta'||id==='jundiai')?0.32:(id==='crescimento'||id==='formigas'||id==='cidade'||id==='obrigado'||id==='equipe'||id==='reflexao'||id==='fim'||id==='frases')?0.85:0.5;const t=trackOf(cur);
+ AUDS.forEach((a,j)=>{if(j===t){if(curT!==t){a.currentTime=0}if(a.paused&&v>0)a.play().catch(()=>{});fadeA(a,v,curT!==t?2600:1500)}else fadeA(a,0,2600,true)});curT=t}
+
+const MASC={olhe:'Oi! Eu sou a formiguinha do Coletivo.',onofre:'Arrasta e veja o antes e o depois!',bilhao:'Tudo isso com trabalho coletivo!',missao:'E aí? Qual vai ser a sua missão?',fim:'Até o próximo Café!'};
+const mascot=document.getElementById('mascot'),mbub=document.getElementById('mbub');let mT=null;
+function mascotFor(id){clearTimeout(mT);const m=MASC[id];if(!m){mascot.classList.remove('show');mbub.classList.remove('on');return}
+ mascot.classList.remove('show');mbub.classList.remove('on');mT=setTimeout(()=>{mbub.textContent=m;mascot.classList.add('show');mbub.classList.add('on');mT=setTimeout(()=>mbub.classList.remove('on'),6500)},900)}
+const fx=document.getElementById('fx'),fc=fx.getContext('2d');let P=[],C=[];
+function fxSize(){fx.width=innerWidth*devicePixelRatio;fx.height=innerHeight*devicePixelRatio}fxSize();addEventListener('resize',fxSize);
+for(let i=0;i<46;i++)P.push({x:Math.random(),y:Math.random(),r:Math.random()*1.8+.6,v:Math.random()*.00025+.00008,a:Math.random()*.5+.15,p:Math.random()*6.28});
+function confetti(n=160){const cols=['#ffd21f','#ff8a00','#ffffff','#2f6bff','#1f9d55'];for(let i=0;i<n;i++)C.push({x:.5+(Math.random()-.5)*.3,y:.55,vx:(Math.random()-.5)*.018,vy:-Math.random()*.022-.008,s:Math.random()*8+5,c:cols[i%cols.length],r:Math.random()*6.28,vr:(Math.random()-.5)*.3,l:1})}
+function fxLoop(){const W=fx.width,H=fx.height,d=devicePixelRatio;fc.clearRect(0,0,W,H);
+ P.forEach(p=>{p.y-=p.v;p.p+=.01;if(p.y<-.02){p.y=1.02;p.x=Math.random()}fc.globalAlpha=p.a*(.6+.4*Math.sin(p.p));fc.fillStyle='#ffd21f';fc.beginPath();fc.arc((p.x+Math.sin(p.p)*.004)*W,p.y*H,p.r*d,0,6.28);fc.fill()});
+ C=C.filter(c=>c.l>0);C.forEach(c=>{c.x+=c.vx;c.y+=c.vy;c.vy+=.0006;c.r+=c.vr;c.l-=.006;fc.globalAlpha=Math.max(0,c.l);fc.save();fc.translate(c.x*W,c.y*H);fc.rotate(c.r);fc.fillStyle=c.c;fc.fillRect(-c.s*d/2,-c.s*d/4,c.s*d,c.s*d/2);fc.restore()});
+ fc.globalAlpha=1;
+ if(TR.length&&ANTIMG.complete){const V=antVariants();TR=TR.filter(a=>a.x<1.1);TR.forEach(a=>{a.x+=a.v;a.ph+=.35;const s=a.s*d,x=a.x*W,y=H-s*0.5+Math.sin(a.ph)*1.2*d;fc.save();fc.translate(x,y);fc.scale(1,1+Math.sin(a.ph)*.05);fc.drawImage(V[a.c],-s/2,-s*.47,s,s*.94);fc.restore()})}
+ requestAnimationFrame(fxLoop)}let TR=[];function antTrail(n=9){const base=-0.05;for(let i=0;i<n;i++)TR.push({x:base-i*0.045,v:.0016,ph:i,c:i%10,s:24+(i%3)*4})}fxLoop();
+
+// formigueiro animado
+let antRAF=null,antTimers=[];
+const ANTIMG=new Image();ANTIMG.src='img_formiga.png';let ANTV=null;
+function antVariants(){if(ANTV)return ANTV;const hues=[0,35,95,150,195,235,280,320,0,0];ANTV=hues.map((h,i)=>{const c=document.createElement('canvas');c.width=96;c.height=90;const x=c.getContext('2d');x.filter='hue-rotate('+h+'deg) saturate('+(i>7?0.4:1.2)+') brightness('+(i===9?0.55:1)+')';x.drawImage(ANTIMG,0,0,96,90);return c});return ANTV}
+function textPoints(txt,n,W,H,scale){const c=document.createElement('canvas');c.width=W;c.height=H;const x=c.getContext('2d');x.fillStyle='#fff';x.textAlign='center';x.textBaseline='middle';x.font='900 '+Math.floor(H*scale)+'px "Bricolage Grotesque",sans-serif';x.fillText(txt,W/2,H*0.58);const d=x.getImageData(0,0,W,H).data;let pts=[];let step=4;for(let tries=0;tries<12;tries++){pts=[];for(let y=0;y<H;y+=step)for(let xx=0;xx<W;xx+=step)if(d[(y*W+xx)*4+3]>128)pts.push([xx,y]);if(pts.length>n*1.6)step+=2;else if(pts.length<n)step=Math.max(2,step-1);else break}
+ for(let i=pts.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[pts[i],pts[j]]=[pts[j],pts[i]]}return pts}
+function stopAnts(){cancelAnimationFrame(antRAF);antRAF=null;antTimers.forEach(clearTimeout);antTimers=[]}
+function runAnts(){stopAnts();const cv=document.getElementById('antc');if(!cv)return;const dpr=devicePixelRatio||1;const W=cv.clientWidth,H=cv.clientHeight;cv.width=W*dpr;cv.height=H*dpr;const g=cv.getContext('2d');g.setTransform(dpr,0,0,dpr,0,0);
+ const V=antVariants();const T=document.getElementById('antT'),E=document.getElementById('antEb'),N=document.getElementById('antN');N.classList.remove('word');N.textContent=8;
+ const MAX=Math.min(620,Math.floor(W*H/2600));let ants=[];let mode='enter';let targets=null;let t0=performance.now();
+ const mk=(x,y,v,sz)=>({x,y,vx:0,vy:0,v:v,sz:sz,ph:Math.random()*6.28,tx:x,ty:y,ang:0,wan:Math.random()*6.28});
+ const cx=W/2,cy=H*0.6;
+ for(let i=0;i<8;i++){const a=mk(-60-i*50,cy+Math.sin(i)*40,0,46);a.tx=cx+Math.cos(i/8*6.28)*90;a.ty=cy+Math.sin(i/8*6.28)*90;ants.push(a)}
+ const say=(eb,t,n)=>{T.style.opacity=0;setTimeout(()=>{E.textContent=eb;T.textContent=t;T.style.opacity=1},350)};
+ const at=(ms,fn)=>antTimers.push(setTimeout(fn,ms));
+ at(4200,()=>{mode='multiply';N.classList.add('word');N.innerHTML='8 <small>→</small> '+'multiplicadores'.split('').map((c,i)=>`<i style="--i:${i}">${c}</i>`).join('');say('E a roda começou a crescer','De todos os jeitos, de todas as cores.')});
+ at(12500,()=>{mode='form';const p=textPoints('14',ants.length,W,H,0.62);targets=p;ants.forEach((a,i)=>{const q=p[i%p.length];a.tx=q[0];a.ty=q[1]});say('14 anos','Hoje somos muitas, e não paramos de nos multiplicar.')});
+ at(20000,()=>{mode='form';const R0=Math.min(W,H)*0.3;ants.forEach((a,i)=>{const k=i/ants.length*6.28;const ring=i%3;a.tx=cx+Math.cos(k)*(R0+ring*22);a.ty=H*0.58+Math.sin(k)*(R0*0.8+ring*18)});say('Em roda','Ninguém é melhor que ninguém.')});
+ at(34000,()=>{mode='form';const p=textPoints('VOCÊ',ants.length,W,H,0.36);ants.forEach((a,i)=>{const q=p[i%p.length];a.tx=q[0];a.ty=q[1]});say('Você que está aqui hoje','Ajude a gente a multiplicar.')});
+ at(27000,()=>{mode='form';const p=textPoints('JUNTOS',ants.length,W,H,0.3);ants.forEach((a,i)=>{const q=p[i%p.length];a.tx=q[0];a.ty=q[1]});say('Formigas juntas fazem a diferença','Juntas, a gente muda o bairro, a região e a cidade.')});
+ let last=performance.now();let mStart=0;
+ function step(now){const dt=Math.min(.05,(now-last)/1000);last=now;g.clearRect(0,0,W,H);
+  if(mode==='multiply'){if(!mStart)mStart=now;const want=Math.min(MAX,Math.floor(8*Math.pow(2,(now-mStart)/1000/1.05)));while(ants.length<want){const p=ants[Math.floor(Math.random()*ants.length)];const sz=22+Math.random()*30;const c=mk(p.x,p.y,Math.floor(Math.random()*V.length),sz);c.tx=40+Math.random()*(W-80);c.ty=H*0.22+Math.random()*(H*0.74);ants.push(c)}}
+  if(mode==='multiply')ants.forEach(a=>{if(Math.hypot(a.tx-a.x,a.ty-a.y)<20){a.tx=40+Math.random()*(W-80);a.ty=H*0.22+Math.random()*(H*0.74)}});
+  if(mode==='enter'&&!N.classList.contains('word'))N.textContent=8;
+  ants.forEach(a=>{const dx=a.tx-a.x,dy=a.ty-a.y,d=Math.hypot(dx,dy);const sp=mode==='multiply'?150:260;let tvx=0,tvy=0;if(d>2){tvx=dx/d*Math.min(sp,d*2.2);tvy=dy/d*Math.min(sp,d*2.2)}
+   a.wan+=dt*2;if(mode==='multiply'){tvx+=Math.cos(a.wan)*30;tvy+=Math.sin(a.wan*1.3)*30}
+   a.vx+=(tvx-a.vx)*Math.min(1,dt*4);a.vy+=(tvy-a.vy)*Math.min(1,dt*4);a.x+=a.vx*dt;a.y+=a.vy*dt;const spd=Math.hypot(a.vx,a.vy);
+   if(spd>8)a.ang=Math.atan2(a.vy,a.vx);a.ph+=dt*(4+spd*0.08);
+   const s=a.sz,bob=Math.sin(a.ph)*0.06;g.save();g.translate(a.x,a.y);const flip=Math.cos(a.ang)<0;g.scale(flip?-1:1,1);const tilt=flip?Math.PI-a.ang:a.ang;g.rotate(spd>8?Math.max(-.5,Math.min(.5,tilt)):0);g.scale(1,1+bob);g.drawImage(V[a.v],-s/2,-s*0.47,s,s*0.94);g.restore()});
+  antRAF=requestAnimationFrame(step)}
+ const go2=()=>{antRAF=requestAnimationFrame(step)};if(ANTIMG.complete)go2();else ANTIMG.onload=go2}
+function go(i){i=Math.max(0,Math.min(S.length-1,i));slides[cur].classList.remove('on');const v=slides[cur].querySelector('video');if(v)v.pause();
+ if(S[cur].id==='crescimento')clearTimeout(gTimer);if(S[cur].id==='cidade')cTimers.forEach(clearTimeout);if(S[cur].id==='formigas')stopAnts();if(S[cur].id==='multiplica')stopMantra();
+ cur=i;const sl=slides[cur];splitW(sl);sl.classList.remove('t1','t2','t3','t4');if(cur)sl.classList.add('t'+(1+cur%4));void sl.offsetWidth;sl.classList.add('on');anim(sl);
+ if(S[cur].id==='crescimento')runGrowth();if(S[cur].id==='formigas')runAnts();if(S[cur].id==='multiplica')runMantra();tlFor(S[cur].id);if(S[cur].id==='cidade')runCity();
+ logoS.style.opacity=S[cur].noLogo||S[cur].id==='video'?0:1;
+ [...prog.children].forEach((t,j)=>{t.classList.toggle('done',j<cur);t.classList.toggle('cur',j===cur)});cap.textContent=capOf(cur)+' · '+(cur+1)+'/'+S.length;
+ if(started){musicLevel();mascotFor(S[cur].id);if(['bilhao','missao','fim'].includes(S[cur].id))setTimeout(()=>confetti(),1200);if(['fundacao','cafes','voce','desempre'].includes(S[cur].id))setTimeout(()=>antTrail(S[cur].id==='fundacao'?8:14),700);antAct(S[cur].id,cur)}try{history.replaceState(null,'','#'+S[cur].id)}catch(e){}}
+const ACTS={fundacao:'march',cresce:'march',ouvidoria:'fiscal',viela:'build',arraia:'dance',onofre:'build',upa:'build',rua8:'fiscal',asfalto:'help',moradia:'build',ponte:'help',criancas:'balloon',if:'build',cafes:'help',proposta:'fiscal',desempre:'flag',falta:'fiscal',voce:'heart'};
+const PROPS={para:'<i class="chute"></i>',balloon:'<i class="ball"></i>',flag:'<i class="flag">14</i>',sleep:'<i class="zz">z z z</i>',carry:'<i class="heart">❤</i>',heart:'<i class="heart">❤</i>',lupa:'<i class="lupa">🔍</i>',pop:'<i class="hole"></i>',spin:'<i class="star">★</i>',think:'<i class="qq">?</i>',march:'<img class="x2" src="img_formiga.png" alt=""><img class="x3" src="img_formiga.png" alt="">'};
+const actor=document.getElementById('actor');
+const A='<img class="a" src="img_formiga.png" alt="">',AX=c=>`<img class="${c}" src="img_formiga.png" alt="">`;
+const FULL={build:()=>`<i class="house">${Array.from({length:9},(_,i)=>`<b style="--i:${i}"></b>`).join('')}<em class="roof"></em><em class="door"></em></i><span class="body"><i class="brick"></i>${A}</span>`,
+ fiscal:()=>`<span class="body"><i class="clip"></i>${A}</span><i class="ticks"><b>✓</b><b>✓</b><b>✓</b></i>`,
+ help:()=>`<span class="body"><i class="beam"></i>${AX('x2')}${A}</span>`,
+ march:()=>`${AX('x2')}${AX('x3')}${AX('x4')}${AX('x5')}${A}`};
+function antAct(id,i){actor.className='';actor.innerHTML='';if(id==='formigas'||MASC[id])return;let a=ACTS[id];if(!a)return;const cls=a==='heart'?'carry':a;void actor.offsetWidth;actor.innerHTML=FULL[a]?FULL[a]():(PROPS[a]||'')+A;actor.className='act-'+cls}
+const KEY=new Set(['roda','juntos','juntas','8','oito','invisíveis','centenas','você','multiplicar','voz','conquistou','continua','missão','gigante','14','nosso','pertencer','cor','sozinho']);
+const isK=w=>KEY.has(w.toLowerCase().replace(/[.,!?;“”"]/g,''));
+const YEAR={antes:2011,fundacao:2012,cartazes:2012,cresce:2013,ouvidoria:2013,viela:2013,arraia:2013,onofre:2013,slack:2013,mulheres:2014,upa:2013,rua8:2014,asfalto:2014,moradia:2015,ponte:2015,criancas:2015,if:2017,cafes:2021,proposta:2025,bilhao:2026,crescimento:2026,formigas:2026,cidade:2026,desempre:2026,falta:2026,multiplica:2027,missao:2027,palavra:2027,voce:2027,fim:2027};
+const tl=document.getElementById('tl'),tlt=document.getElementById('tlticks'),tlf=document.getElementById('tlfill'),tld=document.getElementById('tldot'),tly=document.getElementById('tly');
+for(let y=2012;y<=2027;y++){const e=document.createElement('span');e.className='tk'+(y===2027?' you':'');e.style.left=((y-2012)/15*100)+'%';e.textContent=y===2027?'VOCÊ':(y%2===0||y===2013?y:'');e.dataset.y=y;tlt.appendChild(e)}
+function tlFor(id){const y=YEAR[id];if(!y){tl.classList.remove('on');return}tl.classList.add('on');const k=Math.max(0,y-2012),pc=k/15*100;tlf.style.width=pc+'%';tld.style.left=pc+'%';tld.querySelector('img').style.setProperty('--s',(0.6+k*0.1).toFixed(2));tld.classList.toggle('end',y>=2025);tly.textContent=y===2011?'antes de 2012':y===2027?'e agora, você':y;[...tlt.children].forEach(e=>e.classList.toggle('past',+e.dataset.y<=y))}
+let mRaf=0,mTok=0;
+function runMult(){const cv=document.getElementById('multc');if(!cv||!ANTIMG.complete)return;const tok=++mTok;const W=cv.width=cv.offsetWidth,H=cv.height=cv.offsetHeight,x=cv.getContext('2d'),V=antVariants();const cx=W*.7,cy=H*.52,MAXN=1024,Rr=Math.min(H*.46,W*.29),c=Rr/Math.sqrt(MAXN),GA=Math.PI*(3-Math.sqrt(5));const pos=i=>{const r=c*Math.sqrt(i+.5),a=i*GA;return[cx+r*Math.cos(a),cy+r*Math.sin(a)]};const D=[];const add=(n)=>{const s=D.length;for(let i=s;i<n;i++){const par=i<8?[cx,cy]:[D[i-s].x,D[i-s].y];const[tx,ty]=pos(i);D.push({x:par[0],y:par[1],sx:par[0],sy:par[1],tx,ty,t0:performance.now(),col:i%10,rot:Math.random()*6.28})}};
+const num=document.getElementById('mnum'),cap=document.getElementById('mcap');const CAPS={8:'Começou com 8.',16:'Cada um traz mais um.',32:'E cada um traz mais um.',64:'A roda cresce.',128:'O bairro inteiro.',256:'A região inteira.',512:'A cidade olha para cá.',1024:'Juntos, somos gigantes.'};let n=8;add(8);num.textContent=8;cap.textContent=CAPS[8];const t0=performance.now();let nextT=2200;
+const sz=Math.max(7,c*1.9);
+function fr(now){if(tok!==mTok)return;if(now-t0>nextT&&n<MAXN){n*=2;add(n);num.textContent=n;cap.textContent=CAPS[n];num.classList.add('pop');setTimeout(()=>num.classList.remove('pop'),250);nextT+=n<128?1400:1100}
+x.clearRect(0,0,W,H);for(const d of D){const k=Math.min(1,(now-d.t0)/900),e=1-Math.pow(1-k,3);d.x=d.sx+(d.tx-d.sx)*e;d.y=d.sy+(d.ty-d.sy)*e;const s=n<=16?sz*3.2:n<=64?sz*1.8:sz;x.save();x.translate(d.x,d.y);x.rotate(d.rot+Math.sin(now/300+d.rot)*.15);x.drawImage(V[d.col],-s/2,-s*.47,s,s*.94);x.restore()}mRaf=requestAnimationFrame(fr)}mRaf=requestAnimationFrame(fr)}
+function stopMult(){mTok++;cancelAnimationFrame(mRaf)}
+let mtT=[];function stopMantra(){mtT.forEach(clearTimeout);mtT=[]}
+function runMantra(){stopMantra();const M=document.getElementById('mantra');if(!M)return;M.innerHTML='';
+ const SEQ=[['Começou com','8'],['pessoas numa','roda.'],['Viramos','centenas.'],['Agora a missão é','multiplicar.'],['Cada um','traz mais um.'],['Você é','multiplicador.']];
+ let t=300;SEQ.forEach(([s,b],k)=>{mtT.push(setTimeout(()=>{M.innerHTML=`<div class="sm">${s}</div>`},t));
+  mtT.push(setTimeout(()=>{M.insertAdjacentHTML('beforeend',`<div class="mbig${b.length>9?' w2':''}">${b}</div><div class="flash"></div>`);M.classList.remove('shake');void M.offsetWidth;M.classList.add('shake');if(k===5){confetti();antTrail(16)}},t+650));t+=k===0?2300:2000});
+ mtT.push(setTimeout(()=>{M.innerHTML=['Começou com <b>8</b>.','Hoje somos <b>centenas</b>.','Agora somos <u>multiplicadores</u>.'].map((x,i)=>`<div class="fin" style="animation-delay:${i*.9}s">${x}</div>`).join('')},t+600))}
+
+function splitW(sl){sl.querySelectorAll('h1,h2').forEach(h=>{if(h.dataset.sp||h.closest('.topnames,.gal,.mem'))return;h.dataset.sp=1;let k=0;[...h.childNodes].forEach(nd=>{if(nd.nodeType===3){const parts=nd.textContent.split(/(\s+)/);const fr=document.createDocumentFragment();parts.forEach(p=>{if(!p)return;if(/^\s+$/.test(p))fr.appendChild(document.createTextNode(p));else{const s=document.createElement('span');s.className='w'+(isK(p)?' k':'');s.style.setProperty('--d',k++);s.textContent=p;fr.appendChild(s)}});nd.replaceWith(fr)}else if(nd.nodeType===1&&nd.tagName!=='BR'){nd.classList.add('w');if(nd.textContent.split(/\s+/).some(isK))nd.classList.add('k');nd.style.setProperty('--d',k++)}})})}
+const next=()=>go(cur+1),prev=()=>go(cur-1);
+document.getElementById('bNext').onclick=e=>{e.stopPropagation();next()};document.getElementById('bPrev').onclick=e=>{e.stopPropagation();prev()};
+bMusic.onclick=e=>{e.stopPropagation();wantMusic=!wantMusic;musicLevel()};
+let started=false;const startEl=document.getElementById('start');
+function begin(){if(started)return;started=true;startEl.classList.add('gone');musicLevel();go(cur)}
+document.getElementById('bStart').onclick=e=>{e.stopPropagation();begin()};startEl.onclick=begin;
+document.addEventListener('keydown',e=>{if(!started){if([' ','Enter','ArrowRight'].includes(e.key)){e.preventDefault();begin()}return}
+ if(menu.classList.contains('open')||lb.classList.contains('open')){if(e.key==='Escape'){menu.classList.remove('open');closeLb()}return}
+ if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();next()}else if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();prev()}else if(e.key==='Home')go(0);else if(e.key==='End')go(S.length-1);else if(e.key==='f'||e.key==='F')full();else if(e.key==='m'||e.key==='M')openMenu();else if(e.key==='s'||e.key==='S'){wantMusic=!wantMusic;musicLevel()}});
+stage.addEventListener('click',e=>{if(e.target.closest('a,button,input,video,[data-zoom],.tile,.fbtn,.pcard,.filters,.tiles'))return;const x=e.clientX/innerWidth;x<.25?prev():next()});
+let tx=null;stage.addEventListener('touchstart',e=>{tx=e.touches[0].clientX},{passive:true});stage.addEventListener('touchend',e=>{if(tx===null)return;const dx=e.changedTouches[0].clientX-tx;if(Math.abs(dx)>60)dx<0?next():prev();tx=null});
+const lb=document.getElementById('lb');function closeLb(){lb.classList.remove('open');lb.innerHTML=''}
+lb.onclick=closeLb;
+document.addEventListener('click',e=>{const z=e.target.closest('[data-zoom]');if(z){e.stopPropagation();lb.innerHTML=`<img src="${z.src}" alt="${z.alt}">`;lb.classList.add('open')}});
+const menu=document.getElementById('menu'),mg=document.getElementById('mgrid');
+S.forEach((s,i)=>{if(!s.cap)return;const b=document.createElement('button');b.innerHTML=`<b>${String(i+1).padStart(2,'0')}</b>${s.cap}`;b.onclick=()=>{menu.classList.remove('open');go(i)};mg.appendChild(b)});
+function openMenu(){menu.classList.add('open')}
+document.getElementById('bMenu').onclick=e=>{e.stopPropagation();openMenu()};menu.onclick=e=>{if(e.target===menu)menu.classList.remove('open')};
+function full(){try{if(!document.fullscreenElement)document.documentElement.requestFullscreen();else document.exitFullscreen()}catch(e){}}
+document.getElementById('bFull').onclick=e=>{e.stopPropagation();full()};
+const bar=document.getElementById('bar');let ht;const wake=()=>{bar.classList.remove('hide');clearTimeout(ht);ht=setTimeout(()=>bar.classList.add('hide'),3500)};document.addEventListener('mousemove',wake);document.addEventListener('keydown',wake);wake();
+try{const k=idIndex(location.hash.slice(1));if(k>=0)cur=k}catch(e){}
+slides[cur].classList.add('on');
+</script>
+
+</body></html>
