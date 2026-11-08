@@ -325,6 +325,10 @@ footer a{color:#fff}
       <div class="data">20/11<small>2012</small></div>
       <p data-t="nomeTxt"></p>
     </div>
+    <a class="nome" href="apresentacao/" target="_blank" rel="noopener" style="text-decoration:none;background:var(--navy);color:#fff;border-color:var(--navy)">
+      <div class="data" style="color:var(--amarelo)">14<small style="color:#C7D6E6" data-t="ltAnos"></small></div>
+      <div><p style="font-family:var(--display);font-weight:800;font-size:clamp(26px,4vw,38px);line-height:1;text-transform:uppercase" data-t="ltT"></p><p style="color:#C7D6E6;margin-top:8px" data-t="ltP"></p><span class="btn btn-sol" style="margin-top:14px;min-height:46px" data-t="ltBtn"></span></div>
+    </a>
   </div>
   <section class="sec">
     <div class="wrap">
@@ -352,7 +356,7 @@ footer a{color:#fff}
 
 <!-- HISTÓRIA -->
 <div class="view" id="v-historia" hidden>
-  <div class="pagehead"><div class="wrap"><span class="eyebrow" data-t="nav_historia"></span><h2 data-t="histH"></h2><p data-t="histP"></p></div></div>
+  <div class="pagehead"><div class="wrap"><span class="eyebrow" data-t="nav_historia"></span><h2 data-t="histH"></h2><p data-t="histP"></p><div class="btns"><a class="btn btn-sol" href="apresentacao/" target="_blank" rel="noopener" data-t="ltBtn"></a></div></div></div>
   <section class="sec"><div class="wrap">
     <div class="fases">
       <div class="f1"><b>2012 – 2016</b><span data-t="fase1"></span></div>
@@ -504,6 +508,10 @@ const X=a=>Array.isArray(a)?(a[LANGS.indexOf(L)]||a[0]):a;
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 
 const UI={
+ltAnos:["anos","years","años","ans","年"],
+ltT:["A linha do tempo do Café Coletivo","The Community Coffee timeline","La línea del tiempo del Café Colectivo","La frise du Café Collectif","集体咖啡会时间线"],
+ltP:["A apresentação dos 14 anos, com fotos, músicas e as conquistas de cada ano. Melhor no computador ou na TV.","The 14-year presentation with photos, music and each year's wins. Best on a computer or TV.","La presentación de los 14 años, con fotos, música y los logros de cada año. Mejor en computadora o TV.","La présentation des 14 ans, avec photos, musique et victoires de chaque année. Idéal sur ordinateur ou TV.","14周年演示，包含照片、音乐和每年的成果。建议在电脑或电视上观看。"],
+ltBtn:["Assistir à linha do tempo","Watch the timeline","Ver la línea del tiempo","Voir la frise","观看时间线"],
 nav_inicio:["Início","Home","Inicio","Accueil","首页"],
 nav_historia:["História","History","Historia","Histoire","历史"],
 nav_participacao:["Participação","Participation","Participación","Participation","参与"],
